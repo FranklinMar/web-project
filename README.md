@@ -1,2 +1,2 @@
-# web-project
+# Web-project
 Web project of "Basics of web-programming" using PHP and Laravel framework
