@@ -116,7 +116,7 @@ nav .right {
   padding: 0;
   /* width:1440px; */
   height: 808.99px;
-  background: url(Web-Project/slice1background.png) no-repeat center top;
+  background: url(photo/slice1background.png) no-repeat center top;
   z-index: 1;
 }
 
@@ -233,7 +233,7 @@ nav .right {
   height: 932px;
   justify-content: center;
   /* width:1440px; */
-  background: url(Web-Project/slice2background.png) no-repeat center top;
+  background: url(photo/slice2background.png) no-repeat center top;
   z-index: 0;
 }
 
@@ -393,7 +393,7 @@ nav .right {
   vertical-align: middle;
   /* width: 39.6px;
   height: 39.6px;
-  background: url(Web-Project/RocketLeft.svg) center left no-repeat; */
+  background: url(photo/RocketLeft.svg) center left no-repeat; */
   /* transform: matrix(-0.71, 0.71, 0.71, 0.71, 0, 0); */
   /* Inside auto layout */
   flex: none;
@@ -408,7 +408,7 @@ nav .right {
   padding: 0;
   height: 60px;
   /* width:1440px; */
-  background: url(Web-Project/slice2sep.png) no-repeat left top;
+  background: url(photo/slice2sep.png) no-repeat left top;
   z-index: 1;
 }
 
@@ -423,7 +423,7 @@ nav .right {
   height: 932px;
   justify-content: center;
   /* width:1440px; */
-  background: url(Web-Project/slice3background.png) no-repeat center top;
+  background: url(photo/slice3background.png) no-repeat center top;
   z-index: 0;
 }
 
@@ -473,24 +473,24 @@ nav .right {
   height: clamp(225px, 11.7291666666667rem + 10.3703703703704vw, 327px);
 }
 
-.slice3 .content {
+/* .slice3 .content {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  /* padding: clamp(19px, 0.854166667rem + 1.481481481vw /*27px/, 35px) 0px 0px clamp(0px, -0.270833333rem + 1.203703704vw /*7.5px/, 13px); */
+  /* padding: clamp(19px, 0.854166667rem + 1.481481481vw /*27px/, 35px) 0px 0px clamp(0px, -0.270833333rem + 1.203703704vw /*7.5px/, 13px); /
   padding: 25px 13px;
   /* position: absolute;
   width: 558px;
   height: 338px;
   left: 13px;
-  top: 35px; */
+  top: 35px; /
   width: clamp(330px, 14.85416667rem + 25.64814815vw, 607px);
   height: clamp(303px, 16.95833333rem +	8.796296296vw, 398px);
 
   background: rgba(145, 46, 84, 0.5);
   box-shadow: -4px -4px 4px 4px rgba(255, 255, 255, 0.25), 4px 4px 4px 4px rgba(255, 255, 255, 0.25);
   /* Note: backdrop-filter has minimal browser support */
-  /* filter: blur(4px); */
+  /* filter: blur(4px); /
   backdrop-filter: blur(4px);
   border-radius: 140px 70px 10px 180px;
 
@@ -499,6 +499,34 @@ nav .right {
   font-style: normal;
   font-weight: 400;
   font-size: clamp(14px, 0.708333333rem +	0.740740741vw , 22px);
+  /* line-height: 33px; /
+  text-align: right;
+
+  color: #FFFFFF;
+} */
+
+.slice3 .content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 25px 15px;
+  /* width: 584px; */
+  width: 40.5555555556vw;
+  /* height: 388px; */
+  
+  background: rgba(145, 46, 84, 0.5);
+  box-shadow: -4px -4px 4px 4px rgba(255, 255, 255, 0.25), 4px 4px 4px 4px rgba(255, 255, 255, 0.25);
+  /* filter: blur(4px); */
+  backdrop-filter: blur(4px);
+  /* Note: backdrop-filter has minimal browser support */
+  border-radius: 140px 70px 10px 180px;
+  /* Inside auto layout */
+  flex: none;
+  flex-grow: 0;
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
   /* line-height: 33px; */
   text-align: right;
 
@@ -513,6 +541,6 @@ nav .right {
   padding: 0;
   height: 60px;
   /* width:1440px; */
-  background: url(Web-Project/slice3sep.png) no-repeat right top;
+  background: url(photo/slice3sep.png) no-repeat right top;
   z-index: 1;
 }
