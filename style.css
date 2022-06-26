@@ -17,19 +17,19 @@ nav {
   margin: 0;
   padding: 0;
   position: static;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 50px;
   background: #1C1026;
-  box-shadow: 0px -4px 4px 4px #FFFFFF;
+  box-shadow: 0 -4px 4px 4px #FFFFFF;
 }
 
 nav .div-text {
   width: auto;
   height: 27px;
 
-  font-family: 'Space Mono';
+  font-family: 'Space Mono', monospace;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -46,7 +46,7 @@ nav .left {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   gap: 35px;
 
   position: absolute;
@@ -62,7 +62,7 @@ nav .logo {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   gap: 4px;
   width: auto;
   height: 46px;
@@ -71,7 +71,7 @@ nav .logo {
   flex-grow: 0;
 }
 
-nav .logoimg {
+nav .logo-img {
   /*float: left;*/
   width: 46px;
   height: 46px;
@@ -82,7 +82,7 @@ nav .link {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
-  padding: 0px;
+  padding: 0;
   gap: 8px;
   width: auto;
   height: 27px;
@@ -96,7 +96,7 @@ nav .right {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0;
   gap: 35px;
   position: absolute;
   width: 229px;
@@ -112,10 +112,10 @@ nav .right {
   position: relative;
   top: 4px;
   width: 100%;
-  margin: 0;
-  padding: 0;
-  /* width:1440px; */
   height: 808.99px;
+  margin: 0;
+  padding: 85px 0 0;
+  /* width:1440px; */
   background: url(photo/slice1background.png) no-repeat center top;
   z-index: 1;
 }
@@ -125,20 +125,20 @@ nav .right {
   /* flex-direction: row; */
   justify-content: center;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   gap: 35px;
-  position: absolute;
   /* width: 1040px; */
   height: 512px;
-  left: 13.8888888889vw;
-  top: 85px;
+  /*position: absolute;*/
+  /*left: 13.8888888889vw;*/
+  /*top: 85px;*/
 }
 
 .slice1 .info {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0;
   gap: 17px;
   /* width: 481px; */
   width: 33.4027777778vw;
@@ -150,7 +150,7 @@ nav .right {
 }
 
 .slice1 h1 {
-  font-family: 'Share Tech';
+  font-family: 'Share Tech', sans-serif;
   font-style: normal;
   font-weight: 400;
   /* font-size: 48px; */
@@ -158,21 +158,21 @@ nav .right {
   /* font-size: calc(32px + (48px - 32px) * ((100vw - 360px) / (1440px - 360px))); */
   /* line-height: 54px; */
   color: #FFFFFF;
-  margin: 0px;
+  margin: 0;
   /* Inside auto layout */
   flex: none;
   flex-grow: 0;
 }
 
 .slice1 p {
-  font-family: 'Space Mono';
+  font-family: 'Space Mono', monospace;
   font-style: normal;
   font-weight: 400;
   /* font-size: 26px; */
   font-size: clamp(1rem, 0.791666667rem + 0.925925925925926vw, 1.625rem);
   /* line-height: 39px; */
   color: #FFFFFF;
-  margin: 0px;
+  margin: 0;
   /* Inside auto layout */
   flex: none;
   flex-grow: 0;
@@ -203,11 +203,13 @@ nav .right {
 
 .slice1 .img{
   width: 38.263888888vw;
+  max-width: 585px;
+  min-width: 330px;
   height: auto;
 }
 
 .slice1 .button-text {
-  font-family: 'Space Mono';
+  font-family: 'Space Mono', monospace;
   font-style: normal;
   font-weight: 400;
   font-size: 28px;
@@ -219,7 +221,7 @@ nav .right {
 }
 .slice1 .button-img {
   width: clamp(2rem, 1.366666667rem + 1.259259259vw, 2.5rem);
-  height: clamp(2rem, 1.366666667rem + 1.259259259vw, 2.5rem);
+  height: auto/*clamp(2rem, 1.366666667rem + 1.259259259vw, 2.5rem)*/;
 }
 
 
@@ -227,7 +229,7 @@ nav .right {
 .slice2 {
   position: relative;
   width: 100%;
-  top:-149.986px;
+  top:-297px;
   margin: 0;
   padding: 0;
   height: 932px;
@@ -242,7 +244,7 @@ nav .right {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   gap: 30px;
   position: absolute;
   margin: auto;
@@ -255,7 +257,7 @@ nav .right {
 }
 
 .slice2 .content h2 {
-  font-family: 'Share Tech';
+  font-family: 'Share Tech', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: clamp(36px, 38px, 40px);
@@ -283,7 +285,7 @@ nav .right {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 0px;
+  padding: 0;
   gap: 15px;
   width: 72.2222222222vw;
   height: 418px;
@@ -324,7 +326,7 @@ nav .right {
   flex-direction: row;
   justify-content: center;
   align-items: flex-end;
-  padding: 0px;
+  padding: 0;
   /* width: 56.5277777778vw; */
   height: fit-content;
   /* Inside auto layout */
@@ -335,7 +337,7 @@ nav .right {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   width: 273px;
   height: fit-content;
   /* Inside auto layout */
@@ -349,7 +351,7 @@ nav .right {
   flex-grow: 0;
 }
 .slice2 .grid > div > a > p {
-  font-family: 'Space Mono';
+  font-family: 'Space Mono', monospace;
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
@@ -366,7 +368,7 @@ nav .right {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   gap: 15px;
   /* Inside auto layout */
   flex: none;
@@ -403,7 +405,7 @@ nav .right {
 .slice2sep {
   position: relative;
   width: 100%;
-  top:-209.986px;
+  top:-357px;
   margin: 0;
   padding: 0;
   height: 60px;
@@ -417,11 +419,12 @@ nav .right {
 .slice3 {
   position: relative;
   width: 100%;
-  top:-239.5px;
+  top:-387.5px;
   margin: 0;
-  padding: 0;
+  padding: 230px 0 0;
   height: 932px;
   justify-content: center;
+  align-items: center;
   /* width:1440px; */
   background: url(photo/slice3background.png) no-repeat center top;
   z-index: 0;
@@ -431,20 +434,20 @@ nav .right {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   gap: 55px;
 
-  position: absolute;
+  /*position: absolute;*/
+  /*top: 229px;*/
   /* width: 1147px;
   height: 498px;
   left: 200px; */
-  left: 13.8888888889vw;
-  top: 229px;
+  /*left: 13.8888888889vw;*/
 }
 
 .slice3 .flex-column > h2{
   margin: 0;
-  font-family: 'Share Tech';
+  font-family: 'Share Tech', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: clamp(36px, 38px, 40px);
@@ -456,10 +459,10 @@ nav .right {
 
 .slice3 .flex-row {
   display: flex;
-  flex-direction: row;
+  /*flex-direction: row;*/
   justify-content: center;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   gap: 46px;
   /* width: 1147px;
   height: 398px; */
@@ -470,7 +473,7 @@ nav .right {
 
 .slice3 .community {
   width: clamp(329.82px, 17.1933333333333rem + 15.2018518518519vw, 494px);
-  height: clamp(225px, 11.7291666666667rem + 10.3703703703704vw, 327px);
+  height: auto/*clamp(225px, 11.7291666666667rem + 10.3703703703704vw, 327px)*/;
 }
 
 /* .slice3 .content {
@@ -505,42 +508,202 @@ nav .right {
   color: #FFFFFF;
 } */
 
-.slice3 .content {
+/*.slice3 .content {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   padding: 25px 15px;
-  /* width: 584px; */
+  !* width: 584px; *!
   width: 40.5555555556vw;
-  /* height: 388px; */
+  !* height: 388px; *!
   
   background: rgba(145, 46, 84, 0.5);
   box-shadow: -4px -4px 4px 4px rgba(255, 255, 255, 0.25), 4px 4px 4px 4px rgba(255, 255, 255, 0.25);
-  /* filter: blur(4px); */
+  !* filter: blur(4px); *!
   backdrop-filter: blur(4px);
-  /* Note: backdrop-filter has minimal browser support */
+  !* Note: backdrop-filter has minimal browser support *!
   border-radius: 140px 70px 10px 180px;
-  /* Inside auto layout */
+  !* Inside auto layout *!
   flex: none;
   flex-grow: 0;
   font-family: 'Space Mono';
   font-style: normal;
   font-weight: 400;
   font-size: 22px;
-  /* line-height: 33px; */
+  !* line-height: 33px; *!
   text-align: right;
 
   color: #FFFFFF;
+}*/
+
+.slice3 .content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 25px;
+  /*width: 502px;*/
+  /*height: 431px;*/
+  min-width: 330px;
+  max-width: 502px;
+  background: rgba(145, 46, 84, 0.5);
+  box-shadow: -4px -4px 4px 4px rgba(255, 255, 255, 0.25), 4px 4px 4px 4px rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+  /* Note: backdrop-filter has minimal browser support */
+  border-radius: 140px 70px 10px 120px;
+  /* Inside auto layout */
+  flex: none;
+  flex-grow: 0;
+}
+
+.slice3 .text {
+  padding: 0;
+  margin: 0;
+  /*width: 430px;*/
+  width: 25vw;
+  min-width: 310px;
+  max-width: 452px;
+  /*height: 330px;*/
+
+  font-family: 'Space Mono', monospace;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 33px;
+  text-align: right;
+  color: #FFFFFF;
+  /* Inside auto layout */
+  flex: none;
+  flex-grow: 0;
 }
 
 .slice3sep {
   position: relative;
   width: 100%;
-  top:-302px;
+  top:-680px;
   margin: 0;
   padding: 0;
   height: 60px;
   /* width:1440px; */
   background: url(photo/slice3sep.png) no-repeat right top;
   z-index: 1;
+}
+
+
+
+.slice4 {
+  position: relative;
+  width: 100%;
+  top:-710.5px;
+  margin: 0;
+  padding: 200px 0 0;
+  height: 932px;
+  justify-content: center;
+  align-items: center;
+  /* width:1440px; */
+  background: url(photo/slice4background.png) no-repeat center top;
+  z-index: 0;
+}
+
+.slice4sep {
+  position: relative;
+  width: 100%;
+  top:-1058.5px;
+  margin: 0;
+  padding: 0;
+  height: 60px;
+  /* width:1440px; */
+  background: url(photo/slice4sep.png) no-repeat left top;
+  z-index: 1;
+}
+
+.slice4 .flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  gap: 45px;
+}
+
+.slice4 .flex-column > h2{
+  margin: 0;
+  font-family: 'Share Tech', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  /* line-height: 45px; */
+  /* identical to box height */
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.slice4 .flex-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0;
+  gap: 16px;
+  /* Inside auto layout */
+  flex: none;
+  flex-grow: 0;
+}
+
+.slice4 .flex-row > div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  gap: 12px;
+  width: 260px;
+  /*height: 334px;*/
+  /* Inside auto layout */
+  flex: none;
+  flex-grow: 0;
+}
+
+.slice4 .icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  gap: 10px;
+  width: 120px;
+  height: 120px;
+
+  background: rgba(0, 158, 253, 0.8);
+  border-radius: 180px;
+  /* Inside auto layout */
+  flex: none;
+  flex-grow: 0;
+}
+
+.slice4 h3 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Space Mono', monospace;
+  font-style: normal;
+  font-weight: 400;
+  /*font-size: 32px;*/
+  font-size: 30px;
+  /*line-height: 47px;*/
+  text-align: center;
+  color: #FFFFFF;
+  /* Inside auto layout */
+  flex: none;
+  flex-grow: 0;
+}
+
+.slice4 p {
+  font-family: 'Space Mono', monospace;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  /*line-height: 36px;*/
+  /* identical to box height */
+  text-align: center;
+  color: #FFFFFF;
+  /* Inside auto layout */
+  flex: none;
+  flex-grow: 0;
 }
