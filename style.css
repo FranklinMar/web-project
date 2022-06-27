@@ -1,7 +1,5 @@
 .pos {
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
   border: 0;
   width: 100%;
   position: absolute;
@@ -9,8 +7,6 @@
 }
 
 .slices {
-  padding: 0;
-  margin: 0;
   position: relative;
 }
 
@@ -25,7 +21,6 @@
   top: 50px;
   background: url(photo/slice1background.png) no-repeat center top;
   background-size: clamp(1440px, 100%, 100%) 809px;
-  margin: 0;
   padding-top: 85px;
   z-index: 1;
 }
@@ -34,7 +29,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0;
   gap: 35px;
   height: 512px;
 }
@@ -43,7 +37,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0;
   gap: 17px;
   max-width: 453px;
   width: 33.4027777778%;
@@ -57,7 +50,6 @@
   font-weight: 400;
   font-size: clamp(2rem, 1.66666666667rem + 1.48148148148vw, 3rem);
   color: #FFFFFF;
-  margin: 0;
 }
 
 .slice1 p {
@@ -67,7 +59,6 @@
   font-weight: 400;
   font-size: clamp(1rem, 0.791666667rem + 0.925925925925926vw, 1.625rem);
   color: #FFFFFF;
-  margin: 0;
 }
 
 .slice1 .button {
@@ -127,7 +118,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0;
   gap: 30px;
   position: absolute;
   margin: auto;
@@ -142,7 +132,6 @@
   font-weight: 400;
   font-size: clamp(36px, 38px, 40px);
   text-align: center;
-  margin: 0;
   color: #FFFFFF;
 }
 
@@ -151,7 +140,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 0;
   gap: 15px;
   width: 72.2222222222vw;
   height: 418px;
@@ -187,14 +175,12 @@
   flex-direction: row;
   justify-content: center;
   align-items: flex-end;
-  padding: 0;
   height: fit-content;
 }
 .slice2 .flex-row > div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0;
   width: 273px;
   height: fit-content;
   flex: none;
@@ -211,7 +197,6 @@
   font-size: 32px;
   line-height: 47px;
   text-align: center;
-  margin: 0;
   color: #FFFFFF;
 }
 
@@ -220,7 +205,6 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 0;
   gap: 15px;
   flex: none;
   order: 2;
@@ -248,7 +232,6 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 0;
 
   position: absolute;
   width: 100%;
@@ -266,7 +249,6 @@
 .slice3 {
   box-sizing: border-box;
   width: 100%;
-  margin: 0;
   padding-top: 230px;
   height: 900px;
   justify-content: center;
@@ -279,12 +261,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0;
   gap: 55px;
 }
 
-.slice3 .flex-column > h2{
-  margin: 0;
+.slice3 .flex-column > h2 {
   font-family: 'Share Tech', sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -297,7 +277,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0;
   gap: 46px;
 }
 
@@ -320,8 +299,6 @@
 }
 
 .slice3 .text {
-  padding: 0;
-  margin: 0;
   width: 25vw;
   min-width: 310px;
   max-width: 452px;
@@ -340,7 +317,6 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 0;
 
   position: absolute;
   width: 100%;
@@ -361,7 +337,6 @@
 
 .slice4 {
   width: 100%;
-  margin: 0;
   box-sizing: border-box;
   padding-top: 200px;
   height: 810px;
@@ -375,12 +350,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0;
   gap: 45px;
 }
 
 .slice4 .flex-column > h2{
-  margin: 0;
   font-family: 'Share Tech', sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -394,7 +367,6 @@
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  padding: 0;
   gap: 16px;
 }
 
@@ -402,7 +374,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0;
   gap: 12px;
   width: 260px;
 }
@@ -422,8 +393,6 @@
 }
 
 .slice4 h3 {
-  margin: 0;
-  padding: 0;
   font-family: 'Space Mono', monospace;
   font-style: normal;
   font-weight: 400;
@@ -446,7 +415,6 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 0;
 
   position: absolute;
   width: 100%;
@@ -464,7 +432,6 @@
 
 .slice5 {
   width: 100%;
-  margin: 0;
   box-sizing: border-box;
   padding: 140px 0 0;
   height: 891px;
@@ -479,7 +446,6 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 0;
   gap: 194px;
 }
 
@@ -487,13 +453,10 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0;
   gap: 50px;
 }
 
 .slice5 .text h2 {
-  margin: 0;
-  padding: 0;
   font-family: 'Share Tech Mono', sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -515,7 +478,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  padding: 0;
   gap: 60px;
 }
 
