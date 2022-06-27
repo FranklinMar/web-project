@@ -1,8 +1,5 @@
 body {
     background: #6B40FF;
-    /*min-height: 1000px;*/
-    /*height: 100vh;
-    max-height: 1024px;*/
     height: 1024px;
 }
 
@@ -29,10 +26,6 @@ main {
     position: absolute;
     width: 1090px;
     height: 974px;
-    /*top: 0;*/
-    /*right: 0;*/
-    /*left: calc(50% - 1089.24px/2 - 0.38px);*/
-    /*top: calc(50% - 974px/2);*/
     margin: 0;
     padding: 0;
     background: linear-gradient(90deg, #6B40FF 26.44%, rgba(10, 1, 17, 0.5) 88.54%);
@@ -43,16 +36,11 @@ main {
     box-sizing: border-box;
     flex-direction: column;
     align-items: center;
-    /*padding: 40px 72px 70px;*/
     padding-top: 40px;
     gap: 33px;
 
-    /*position: absolute;*/
     width: 434px;
     height: 431px;
-    /*left: calc(50% - 434px/2 + 0.5px);*/
-    /*margin: auto;
-    top: 110px;*/
     margin-left: auto;
     margin-right: auto;
 
@@ -69,7 +57,6 @@ main {
     font-weight: 700;
     font-size: 60px;
     line-height: 71px;
-    /* identical to box height */
     color: #FFFFFF;
 }
 
@@ -85,7 +72,7 @@ main {
     height: 101px;
 }
 
-input/*.field*/ {
+input {
     background: #201F41;
     box-sizing: border-box;
 
@@ -95,17 +82,11 @@ input/*.field*/ {
     border: 1px solid #c4c4c4;
     border-radius: 28px;
     padding-left: 15px;
-    /*width: 51px;*/
-    /*height: 28px;*/
-    /*position: absolute;*/
-    /*left: 15px;*/
-    /*top: calc(50% - 28px/2);*/
 
     font-family: 'Space Mono', monospace;
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
-    /*line-height: 28px;*/
 
     color: #FFFFFF;
 
@@ -145,17 +126,10 @@ input:focus, input:hover{
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 25px;
 
-    /*width: 87px;*/
-    /*height: 36px;*/
-
     font-family: 'Space Mono', monospace;
     font-style: normal;
     font-weight: 700;
     font-size: 27px;
-    /*line-height: 36px;*/
-    /* identical to box height */
-
-
     color: #FFFFFF;
 }
 
@@ -190,11 +164,9 @@ input:focus, input:hover{
     font-weight: 700;
     font-size: calc(1.208333333rem - 0.37037037vw);
     line-height: 18px;
-    /* identical to box height */
 
     text-align: right;
     letter-spacing: -0.05em;
-
     color: #FFFFFF;
 }
 
@@ -220,12 +192,10 @@ input:focus, input:hover{
         align-items: center;
     }
     .main {
-        /*display: contents;*/
         all: initial;
         display: flex;
         flex-direction: column;
         align-items: center;
-        /*padding: 33px 35px;*/
         gap: 24px;
 
         position: absolute;
@@ -233,7 +203,6 @@ input:focus, input:hover{
         height: 395px;
         margin-left: auto;
         margin-right: auto;
-        /*left: calc(50% - 360px/2);*/
         top: 130px;
     }
 }
