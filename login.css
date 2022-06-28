@@ -1,6 +1,9 @@
 body {
+    display: flex;
+    position: relative;
     background: #6B40FF;
-    height: 1024px;
+    box-sizing: initial;
+    border: none;
 }
 
 main {
@@ -15,17 +18,31 @@ main {
 
 .background {
     position: absolute;
-    width: 1090px;
-    height: 974px;
+    /*width: 1090px;*/
+    height: 100%;
+    max-height: calc(100vh - 50px);
+    box-sizing: border-box;
+    /*height: 974px;*/
     right: 0;
     top: 50px;
 }
 
 .background .mask {
     position: absolute;
-    width: 1090px;
-    height: 974px;
+    top: 0;
+    right: 0;
+    width: 75.6944444444vw/*1090px*/;
+    box-sizing: border-box;
+    /*height: 974px;*/
+    height: 100%;
     background: linear-gradient(90deg, #6B40FF 26.44%, rgba(10, 1, 17, 0.5) 88.54%);
+}
+
+.background > img {
+    box-sizing: border-box;
+
+    /*height: 972px;*/
+    height: calc(100% - 4px);
 }
 
 .main {

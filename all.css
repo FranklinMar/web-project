@@ -11,6 +11,13 @@ html, body {
     min-height: 100vh;
     box-sizing: border-box;
 }
+
+main{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 /*
 
 body {
