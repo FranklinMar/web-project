@@ -397,7 +397,8 @@ h1 {
 
 .part2 .row {
     margin: 0 auto 0 auto;
-    width: 1240px;
+    width: /*1240px*/100%;
+    max-width: 1240px;
     height: fit-content;
 }
 
@@ -405,7 +406,7 @@ h1 {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-left: clamp(15px, 0.625rem + 1.388888889vw, 30px);
+    margin-left: 35px;/*clamp(35px, -0.208333333rem + 9.259259259vw, 130px);*/
     /*margin-left: 9.02777777778%;*/
 
     /*box-sizing: border-box;
@@ -466,13 +467,18 @@ h1 {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    width: 100%;
     align-items: center;
+    /*align-content: stretch;*/
     padding: 14px /*129px*/0 14px 0;
     background: rgba(107, 64, 255, 0.75);
 }
 
 .part2 .flex-column .bar {
-    width: 1180px;
+    max-width: 1180px;
+    /*width: 81.9444444444vw;*/
+    width: 100%;
+    /*width: 1180px;*/
     height: 52px;
     /*padding-right: 20px;*/
     display: flex;
@@ -480,12 +486,13 @@ h1 {
     justify-content: center;
     align-items: flex-end;
     /*padding: 8px 19px;*/
+    /*flex: 1;*/
 
     background: rgba(40, 245, 204, 0.4);
     border-radius: 15px 15px 0 0;
 }
 
-.part2 .flex-column .bar .button {
+.part2 .flex-column .button {
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
@@ -528,43 +535,63 @@ h1 {
 .part2 .flex-column .game-column {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /*align-items: center;*/
     padding: 0;
+    width: 100%;
     gap: 24px;
     margin-bottom: 200px;
+    max-width: 1180px;
+    /*width: 81.9444444444vw;*/
+    /*width: 100%;*/
 }
 
 .part2 .game-column .game {
-    box-sizing: border-box;
+    /*box-sizing: border-box;*/
     /*width: 1180px;*/
+    /*width: available;*/
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: stretch; /* TODO ЦЕ ВОНО. ВОНО ЗАБИРАЄ ВСЮ ВИСОТУ В БЛОЦІ FLEX-ROW*/
     padding: 0;
-    flex: 1 1 auto;
+    /*flex: 1 1 auto;*/
+    /*max-height: 250px;*/
+    height: fit-content;
+    /*max-width: 1180px;*/
+
 
     background: #1C1026;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .part2 .game-column .game > img {
+    /*display: block TODO ?????*/
     cursor: pointer;
-    width: 445px;
-    height: 250px;
+    filter: drop-shadow(4px 0px 4px rgba(255, 255, 255, 0.25));
+    /*max-height: 250px;*/
+
+    height: auto;
+    width: auto;
+    max-width:445px;
+    max-height:100%;
+    /*object-fit: cover;*/
+    /*width: 445px;
+    height: 100%;*/
 
     /*background: url(image.png);*/
-    filter: drop-shadow(4px 0px 4px rgba(255, 255, 255, 0.25));
 }
 
 .part2 .game-column .game .info {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    /*align-items: flex-start;*/
+    align-content: stretch;
     padding: 25px 20px 22px;
     gap: 12px;
     background: rgba(0,0,0,0);
 
-    flex: 1 1 auto;
+    flex: 1;
+    /*flex: 1 1 auto;*/
 }
 
 .part2 .game-column .game .info > h6 {
@@ -573,7 +600,7 @@ h1 {
     font-style: normal;
     font-weight: 400;
     font-size: 40px;
-    line-height: 45px;
+    /*line-height: 45px;*/
     /* identical to box height */
     color: #FFFFFF;
 }
@@ -583,19 +610,21 @@ h1 {
     font-style: normal;
     font-weight: 700;
     font-size: 22px;
-    line-height: 33px;
+    /*line-height: 33px;*/
     letter-spacing: -0.06em;
 
     color: rgba(255, 255, 255, 0.75);
+    height: available;
+    flex: 1;/* TODO І ЦЕ ТЕЕЖ!!!!! ААААА НАРЕШТІ */
 }
 
 .part2 .game-column .game .info .data {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    /*align-items: center;*/
     padding: 0;
-    gap: 477px;
+    /*gap: 477px;*/
 }
 
 .part2 .game-column .game .info .data > p {
@@ -603,7 +632,7 @@ h1 {
     font-style: normal;
     font-weight: 700;
     font-size: 32px;
-    line-height: 47px;
+    /*line-height: 47px;*/
     text-align: right;
     color: #FFFFFF;
 }
