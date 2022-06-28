@@ -52,31 +52,34 @@
         <div class="menu">
             <div class="menu-panel">
                 <div class="flex-row">
-                    <a><div class="button">
+                    <a href="#"><div class="button">
                         <img src="photo/categ.svg" alt="Категорії">
                         <p>Категорії</p>
                     </div></a>
-                    <a><div class="button">
+                    <a href="#"><div class="button">
                         <img src="photo/new.svg" alt="Новинки">
                         <p>Новинки</p>
                     </div></a>
-                    <a><div class="button">
+                    <a href="#"><div class="button">
                         <img src="photo/top.svg" alt="Хіти рейтингу">
                         <p>Хіти рейтингу</p>
                     </div></a>
-                    <a><div class="button">
+                    <a href="#"><div class="button">
                         <img src="photo/discount.svg" alt="Особлив">
-                        <p>Категорії</p>
+                        <p>Особливі пропозиції</p>
                     </div></a>
                 </div>
-                <div class="search">
-                    <input class="input" name="search" type="text" placeholder="Пошук">
-                    <button>
-                        <div class="button">
-                            <img src="photo/search.png" alt="Пошук">
-                        </div>
-                    </button>
-                </div>
+<!--                <div class="search">-->
+                    <label class="search"><!--style="display: contents"-->
+                        <input class="input" name="search   " type="text" placeholder="Пошук">
+                        <button>
+                            <div class="button">
+                                <img src="photo/search.png" alt="Пошук">
+                            </div>
+                        </button>
+
+                    </label>
+<!--                </div>-->
             </div>
         </div>
         <h1>Особливі пропозиції</h1>
@@ -84,11 +87,11 @@
             <div class="display">
                 <!--<div class="content">-->
                     <div class="options">
-                        <a><div class="button">
+                        <a href="#"><div class="button">
                             <p>Детальніше</p>
                             <img src="photo/details.svg" alt="Деталі">
                         </div></a>
-                        <a><div class="button">
+                        <a href="#"><div class="button">
                             <p>Додати до корзини</p>
                             <img src="photo/tobasket.svg" alt="Улюблене">
                         </div></a>
@@ -102,9 +105,8 @@
                 <!--</div>-->
             </div>
             <div class="game-column">
-                <input id="game1" type="radio" name="games" checked="checked">
-                <label for="game1">
-                    <div class="game"><!-- class="game active"-->
+                <div class="mobile-group">
+                    <a href="#" class="game"><!--<div class="game">--><!-- class="game active"-->
                         <img src="photo/rust.png" alt="Rust">
                         <!--<div class="content">
                             <p>Rust</p>
@@ -124,11 +126,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </label>
-                <input id="game2" type="radio" name="games">
-                <label for="game2">
-                    <div class="game">
+                    <!--</div>--></a>
+                    <a href="#" class="game">
                         <img src="photo/terrariaposter.png" alt="Terraria">
                         <div class="content">
                             <p>Terraria</p>
@@ -140,11 +139,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </label>
-                <input id="game3" type="radio" name="games">
-                <label for="game3">
-                    <div class="game">
+                    </a>
+                    <a href="#" class="game">
                         <img src="photo/rdr2.png" alt="Red Dead Redemption 2">
                         <div class="content">
                             <p>Red Dead Redemption 2</p>
@@ -156,11 +152,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </label>
-                <input id="game4" type="radio" name="games">
-                <label for="game4">
-                    <div class="game">
+                    </a>
+                    <a href="#" class="game">
                         <img src="photo/sot.png" alt="Sea of Thieves">
                         <div class="content">
                             <p>Rust</p>
@@ -171,8 +164,83 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </label>
+                    </a>
+                </div>
+
+
+                <div class="radio-group">
+                    <input id="game1" type="radio" name="games" checked="checked">
+                    <label for="game1">
+                        <div class="game"><!-- class="game active"-->
+                            <img src="photo/rust.png" alt="Rust">
+                            <!--<div class="content">
+                                <p>Rust</p>
+                                <div class="data">
+                                    <p>$15.00</p>
+                                    <div class="platforms">
+                                        <img src="photo/steam.svg" alt="Steam">
+                                    </div>
+                                </div>
+                            </div>-->
+                            <div class="content">
+                                <p>Rust</p>
+                                <div class="data">
+                                    <p>$15.00</p>
+                                    <div class="platforms">
+                                        <img src="photo/steam.svg" alt="Steam">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                    <input id="game2" type="radio" name="games">
+                    <label for="game2">
+                        <div class="game">
+                            <img src="photo/terrariaposter.png" alt="Terraria">
+                            <div class="content">
+                                <p>Terraria</p>
+                                <div class="data">
+                                    <p>$20.14</p>
+                                    <div class="platforms">
+                                        <img src="photo/steam.svg" alt="Steam">
+                                        <img src="photo/gog.svg" alt="Gog">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                    <input id="game3" type="radio" name="games">
+                    <label for="game3">
+                        <div class="game">
+                            <img src="photo/rdr2.png" alt="Red Dead Redemption 2">
+                            <div class="content">
+                                <p>Red Dead Redemption 2</p>
+                                <div class="data">
+                                    <p>$24.00</p>
+                                    <div class="platforms">
+                                        <img src="photo/steam.svg" alt="Steam">
+                                        <img src="photo/epic.svg" alt="Epic Games Store">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                    <input id="game4" type="radio" name="games">
+                    <label for="game4">
+                        <div class="game">
+                            <img src="photo/sot.png" alt="Sea of Thieves">
+                            <div class="content">
+                                <p>Rust</p>
+                                <div class="data">
+                                    <p>$15.00</p>
+                                    <div class="platforms">
+                                        <img src="photo/steam.svg" alt="Steam">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
             </div>
         </div>
 
