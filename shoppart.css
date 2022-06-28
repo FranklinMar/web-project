@@ -279,11 +279,12 @@ h1 {
     align-items: flex-end;
     width: 25vw;
     /*max-width: 360px;*/
-    /*max-height: 440px;*/
-    height: available;
+    max-height: 440px;
+    height: /*available*/440px;
     max-width: 360px;
     /*max-height: ;*/
     /*gap: 40px;*/
+    gap: 40px;
     flex: 1;
 }
 
@@ -310,7 +311,7 @@ h1 {
     box-sizing: border-box;
     /*width: 50%;*/
     width: 50%;
-    height: 100%;
+    height: auto; /* TODO СЛАВА БОГУ ЗА auto! */
     margin-top: auto;
     margin-bottom: auto;
 }
