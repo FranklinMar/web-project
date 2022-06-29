@@ -11,16 +11,13 @@
     <?php 
     $heads = scandir("project/headers");
     $pages = scandir("project/pages");
-    // echo $_GET["p"];
-    // print_r($pages);
-    $page_name = trim(strip_tags($_GET["p"])); // str_replace(".php", "", $_GET["p"])
+    $page_name = trim(strip_tags($_GET["p"]));
     $error = false;
 
     if (!$page_name) {
         $page_name = "landing";
     } elseif (!in_array($page_name.".php", $pages)) {
         $error = true;
-        // echo "<h1 class=></h1><p>Сторінку не знайдено</p>";
     }
 
     if ($error){
@@ -30,7 +27,6 @@
         require "./project/headers/$page_name.php";
     }
 
-    // require "../project/headers/landing.php"; 
     echo '</head><body>';
     
     if ($error) {
