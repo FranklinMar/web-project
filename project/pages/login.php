@@ -15,7 +15,7 @@
                 <input name="password" type="password" placeholder="Пароль">
             </label><!--class="field" -->
         </div>
-        </form
+        </form>
         <div class="action">
             <button type="submit" form="form"><div class="button">
                 Увійти

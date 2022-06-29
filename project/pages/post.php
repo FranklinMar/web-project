@@ -15,6 +15,7 @@
 <?php
 $login = "EMPTY";
 $password = "EMPTY";
+$search = "EMPTY";
 
 if (isset($_POST["login"])){
     $login = $_POST["login"];
@@ -24,14 +25,18 @@ if(isset($_POST["password"])){
     $password = $_POST["password"];
 }
 
+if (isset($_POST["search"])){
+    $search = $_POST["search"];
+}
+
 echo '<div class="error">
     <h1>Sorry, but this page isn`t done yet,<br> but Thank You
     for visiting it :)</h1>
     <p>Data you queried by method "POST":<br>
     Login: '.$login.'<br>
-    Password: '.$password.'<br><br>
+    Password: '.$password.'<br>
+    Search: '.$search.'<br><br>
     Don`t worry, I won`t tell anyone</p><br>
-    <a href="index.php" class="error-link">Return to home</a>
 </div>';
 ?>
 </body>

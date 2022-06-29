@@ -21,13 +21,14 @@
             </div>
 <!--                <div class="search">-->
                 <label class="search"><!--style="display: contents"-->
-                    <input class="input" name="search   " type="text" placeholder="Пошук">
-                    <button>
+                <form action="project/pages/post.php" method="POST" id="form" style="display: contents">
+                    <input class="input" name="search" type="text" placeholder="Пошук">
+                    <button type="submit" form="form">
                         <div class="button">
                             <img src="photo/search.png" alt="Пошук">
                         </div>
                     </button>
-
+                </form>
                 </label>
 <!--                </div>-->
         </div>
