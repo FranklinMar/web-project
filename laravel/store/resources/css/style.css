@@ -1,0 +1,570 @@
+.pos {
+  box-sizing: border-box;
+  border: 0;
+  width: 100%;
+  position: absolute;
+  top: 709px;
+}
+
+.slices {
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+}
+
+.slice1 {
+  position: absolute;
+  width: 100%;
+  height: 809px;
+  box-sizing: border-box;
+  left: 0;
+  top: 50px;
+  background: url(../img/slice1background.png) no-repeat center top;
+  background-size: clamp(1440px, 100%, 100%) 809px;
+  padding-top: 85px;
+  z-index: 1;
+}
+
+.slice1 .flex-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+  height: 512px;
+}
+
+.slice1 .content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 17px;
+  max-width: 453px;
+  width: 33.4027777778%;
+  height: 25.5555555556%;
+
+}
+
+.slice1 h1 {
+  font-family: 'Share Tech', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  /*font-size: clamp(2rem, 1.66666666667rem + 1.48148148148vw, 3rem);*/
+  font-size: 48px;
+  color: #FFFFFF;
+}
+
+.slice1 p {
+  max-width: 453px;
+  font-family: 'Space Mono', monospace;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px/*clamp(1rem, 0.791666667rem + 0.925925925925926vw, 1.625rem)*/;
+  color: #FFFFFF;
+}
+
+.slice1 .button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  padding: clamp(0.6875rem, 0.5rem + 0.833333333333333vw,1.625rem) clamp(22px, 23.5px, 25px);
+  gap: 15px;
+  background: rgba(40, 245, 204, 0.4);
+  border-radius: 25px;
+}
+
+.slice1 .button:hover {
+  transition: 0.2s;
+  background: rgba(40, 245, 204, 0.6);
+}
+
+.slice1 .button:active {
+  transition: 0.2s;
+  background: rgba(40, 245, 204, 1);
+}
+
+.slice1 .img{
+  width: 38.263888888vw;
+  max-width: 585px;
+  min-width: 330px;
+  height: auto;
+}
+
+.slice1 .button-text {
+  font-family: 'Space Mono', monospace;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  text-decoration-line: underline;
+  color: #FFFFFF;
+}
+.slice1 .button-img {
+  width: clamp(2rem, 1.366666667rem + 1.259259259vw, 2.5rem);
+  height: auto;
+}
+
+
+
+.slice2 {
+  width: 100%;
+  height: 902px;
+  box-sizing: border-box;
+  padding-top: 261px;
+  background: url(../img/slice2background.png) no-repeat center top;
+  background-size: clamp(1440px, 100%, 100%) 902px;
+  /*justify-content: center;*/
+}
+
+.slice2 .flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  position: absolute;
+  margin: auto;
+  /*width: 72.2222222222vw;*/
+  width: 100%;
+  /*left: 13.8888888889vw;*/
+  height: 525px;
+}
+
+.slice2 .flex-column h2 {
+  font-family: 'Share Tech', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(36px, 38px, 40px);
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.slice2 .flex-column .content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  /*width: 72.2222222222vw;*/
+  /*height: 418px;*/
+}
+
+.slice2 .flex-column .content .button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 56px;
+  height: 56px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 56px;
+  cursor: pointer;
+}
+
+.slice2 .flex-column .content .button:hover {
+  transition: 0.2s;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.slice2 .flex-column .content .button:active {
+  transition: 0.2s;
+  background: rgba(255, 255, 255, 1);
+}
+.slice2 .flex-column .content .flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  height: fit-content;
+}
+.slice2 .flex-row > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /*width: 273px;*/
+  width: fit-content;
+  max-width: 273px;
+  height: fit-content;
+}
+.slice2 .flex-row > div > a > img{
+  width: 273px;
+}
+.slice2 .flex-row > div > a > p {
+  font-family: 'Space Mono', monospace;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  /*line-height: 47px;*/
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.slice2 .select {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.slice2 .select > div {
+  width: 20px;
+  height: 20px;
+  background: rgba(204, 192, 203, 0.5);
+  border-radius: 10px;
+}
+
+.slice2 .select > div.active {
+  transition: 0.2s;
+  background: #CCC0CB;
+}
+
+.slice2 .button-icon {
+  vertical-align: middle;
+}
+
+.slice2sep {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  top: 872px;
+}
+
+.slice2sep .trail {
+  width: calc(100% - 52px);
+  height: 10px;
+  background: linear-gradient(90deg, #1666FF 0%, #6B40FF 50.52%, #BF1CFF 99.99%, #C424FF 100%, #C424FF 100%);
+  border-radius: 20px 0 0 20px;
+}
+
+.slice3 {
+  box-sizing: border-box;
+  width: 100%;
+  padding-top: 230px;
+  height: 900px;
+  /*justify-content: center;*/
+  /*align-items: center;*/
+  background: url(../img/slice3background.png) no-repeat center top;
+  background-size: clamp(1440px, 100%, 100%) 900px;
+}
+
+.slice3 .flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 55px;
+}
+
+.slice3 .flex-column > h2 {
+  font-family: 'Share Tech', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(36px, 38px, 40px);
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.slice3 .flex-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 46px;
+}
+
+.slice3 .community {
+  width: clamp(329.82px, 17.1933333333333rem + 15.2018518518519vw, 494px);
+  height: auto;
+}
+
+.slice3 .content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 25px;
+  min-width: 330px;
+  max-width: 502px;
+  background: rgba(145, 46, 84, 0.5);
+  box-shadow: -4px -4px 4px 4px rgba(255, 255, 255, 0.25), 4px 4px 4px 4px rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+  border-radius: 140px 70px 10px 120px;
+}
+
+.slice3 .text {
+  width: 25vw;
+  min-width: 310px;
+  max-width: 452px;
+
+  font-family: 'Space Mono', monospace;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  /*line-height: 33px;*/
+  text-align: right;
+  color: #FFFFFF;
+}
+
+.slice3sep {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  top: 1772px;
+}
+
+.slice3sep .trail {
+  width: calc(100% - 52px);
+  height: 10px;
+
+  background: linear-gradient(90deg, #2AF598 0%, #6B40FF 53.65%, #009EFD 100%);
+  border-radius: 20px 0 0 20px;
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+
+
+.slice4 {
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 200px;
+  height: 810px;
+  /*justify-content: center;*/
+  /*align-items: center;*/
+  background: url(../img/slice4background.png) no-repeat center top;
+  background-size: clamp(1440px, 100%, 100%) 810px;
+}
+
+.slice4 .flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 45px;
+}
+
+.slice4 .flex-column > h2{
+  font-family: 'Share Tech', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.slice4 .flex-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between/*center*/;
+  align-items: flex-start;
+  width: 100%;
+  /*gap: 96px!*16px*!;*/
+  gap: 25px;
+  max-width: 1088px;
+}
+
+.slice4 .flex-row > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  /*width: 260px;*/
+  width: 100%;
+  max-width: 200px;
+}
+
+.slice4 .icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  gap: 10px;
+  width: 120px;
+  height: 120px;
+
+  background: rgba(0, 158, 253, 0.8);
+  border-radius: 180px;
+}
+
+.slice4 h3 {
+  font-family: 'Space Mono', monospace;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px/*30px*/;
+  text-align: center;
+  max-width: 200px;
+  color: #FFFFFF;
+}
+
+.slice4 p {
+  font-family: 'Space Mono', monospace;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.slice4sep {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  top: 2582px;
+}
+
+.slice4sep .trail {
+  width: calc(100% - 52px);
+  height: 10px;
+
+  background: linear-gradient(90deg, #28F5CC 0%, #04372F 100%);
+  border-radius: 20px 0 0 20px;
+}
+
+.slice5 {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 140px 0 0;
+  height: 891px;
+  /*justify-content: center;*/
+  /*align-items: center;*/
+  background: url(../img/slice5background.png) no-repeat center top;
+  background-size: clamp(1440px, 100%, 100%) 891px;
+}
+
+.slice5 .content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 194px;
+}
+
+.slice5 .content .text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 50px;
+}
+
+.slice5 .text h2 {
+  font-family: 'Share Tech Mono', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  color: #FFFFFF;
+}
+
+.slice5 .text p {
+  min-width: 280px;
+  max-width: 458px;
+  font-family: 'Space Mono', monospace;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  color: #FFFFFF;
+}
+
+.slice5 .content .flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 60px;
+}
+
+.slice5 .button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 55px;
+  gap: 4px;
+  background: rgba(0, 158, 253, 0.6);
+  border-radius: 50px;
+}
+
+.slice5 .button:hover {
+  transition: 0.2s;
+  background: rgba(0, 158, 253, 0.8);
+}
+
+.slice5 .button:active {
+  background: #009EFD;
+}
+
+.slice5 .button .button-text {
+  font-family: 'Space Mono', monospace;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  color: #FFFFFF;
+}
+
+.slice5 .button .button-icon {
+  max-width: 40px;
+  min-width: 30px;
+  height: auto;
+}
+
+
+
+@media (max-width: 1000px) {
+
+  .slice2 .flex-column .content {
+    margin-left: 90px;
+    overflow: auto;
+    /*display: contents;*/
+  }
+
+  .slice2 .flex-column .content .button {
+    display: none;
+  }
+
+  /*.slice2 .flex-column .content .flex-row {
+    overflow: auto;
+    margin-left: 45px;
+  }*/
+
+  .slice2 .flex-column {
+    left: 45px;
+  }
+
+  .slice4 .flex-row {
+    margin-left: 90px;
+    overflow: auto;
+  }
+}
+
+
+
+@media (max-width: 700px) {
+  .slice1 .flex-row {
+    flex-direction: column-reverse;
+  }
+
+  .slice1 .content {
+    width: 100%;
+    height: 100%;
+    gap: 25px
+  }
+
+  .slice1 .content .context{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    gap: 10px;
+  }
+}
