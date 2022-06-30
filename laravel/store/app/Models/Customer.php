@@ -1,5 +1,6 @@
 <?php 
 
+namespace App\Models;
 
 class Customer {
   public int $id;
@@ -25,8 +26,15 @@ class Customer {
     $_SESSION['customers'][$this->id] = $this;
   }
 
+  public static function inLogins(string $login): bool{
+    if(!isset($_SESSION['customers-login'])) {
+      return false;
+    }
+    return in_array($login, $_SESSION['customers-login']);
+  }
+
   public static function validate(string $login, string $password): bool {
-    if(!isset($_SESSION['customers-login']) || !in_array($login, $_SESSION['customers-login'])) {
+    if (!Customer::inLogins($login)){ 
       return false;
     }
     $array = $_SESSION['customers'];

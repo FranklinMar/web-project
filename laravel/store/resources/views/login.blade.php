@@ -62,77 +62,86 @@
   </div>
   <main>
     <div class="main">
-      @if ( $boolean )
-      <h1>Увійти</h1>
-      <form action="/login/submit" method="POST" style="display: contents">
-        <div class="fields">
-          <label>
-            @csrf
-            <input id="login" required="required" name="login" type="text" placeholder="Логін">
-            <!-- {{$login = request()->input('login')}}-->
-          </label><!--class="field" -->
-          <label>
-            @csrf
-            <input name="password" required="required" type="password" placeholder="Пароль">
-              <!-- <strong class="warning" style="display: none;">Цей логін уже зайнято</strong> -->
-          </label><!--class="field" -->
-        </div>
-        <div class="action">
-          <button class="button" type="submit">
-            Увійти
-          </button>
-          <div class="options">
-            <a href="#"><small>Забули свій пароль?</small></a>
-            <a href="/signup"><small>Зареєструватись</small></a>
-          </div>
-        </div>
-      </form>
-      </div>
+      @isset( $success )
+      <h1>Ви увійшли в акаунт!<br>Вітаємо {{$success}}</h1>
       @else
-      <h1>Реєстрація</h1>
-      <form action="/signup/submit" method="POST" style="display: contents">
-        <div class="fields">
-          <label>
-            @csrf
-            <input id="loginreg" name="loginreg" required="required" type="text" placeholder="Логін"><br>
-              <!-- <strong class="warning" style="display: none;">Цей логін уже зайнято</strong> -->
-          </label><!--class="field" -->
-          <label>
-            @csrf
-            <input id="email" name="email" required="required" type="email" placeholder="Email">
-              <!-- <strong class="warning" style="display: none;">Цей логін уже зайнято</strong> -->
-          </label>
-          <label>
-            @csrf
-            <input id="pwd1" name="pwd1" required="required" type="password" placeholder="Пароль">
-              <!-- <strong class="warning" style="display: none;">Цей логін уже зайнято</strong> -->
-          </label><!--class="field" -->
-          <label>
-            @csrf
-            <input id="pwd2" name="pwd2" required="required" type="password" placeholder="Повторіть пароль">
-              <!-- <strong class="warning" style="display: none;">Цей логін уже зайнято</strong> -->
-              <!-- @php
-                $pwd1 = request()->input('pwd1');
-                $pwd2 = request()->input('pwd2');
-                $match = ($pwd1 == $pwd2);
-              @endphp
-              @if (!$match)
-                <strong class="warning">{{$pwd1.$pwd2.$match}}Паролі не співпадають</strong>
-              @endif -->
-          </label>
-              <!-- <strong class="warning">{{$pwd1.$pwd2.$match}}Паролі не співпадають</strong> -->
-        </div>
-        <div class="action">
-        <!-- {{ (!$match) ? '' : 'disabled' }} -->
-          <button class="button" type="submit"> 
-            Зареєструватись
-          </button>
-          <div class="options">
-            <a href="/login"><small>Зареєстровані? Увійти</small></a>
+        @if ( $boolean )
+        <h1>Увійти</h1>
+        <form action="/login/submit" method="POST" style="display: contents">
+          <div class="fields">
+            <label>
+              @csrf
+              <input id="login" required="required" name="login" type="text" placeholder="Логін">
+              <!-- {{$login = request()->input('login')}}-->
+            </label><!--class="field" -->
+            <label>
+              @csrf
+              <input name="password" required="required" type="password" placeholder="Пароль">
+                <!-- <strong class="warning" style="display: none;">Цей логін уже зайнято</strong> -->
+            </label><!--class="field" -->
+            @isset($error)
+              <strong class="warning">{{$error}}</strong>
+            @endisset
           </div>
+          <div class="action">
+            <button class="button" type="submit">
+              Увійти
+            </button>
+            <div class="options">
+              <a href="#"><small>Забули свій пароль?</small></a>
+              <a href="/signup"><small>Зареєструватись</small></a>
+            </div>
+          </div>
+        </form>
         </div>
-      </form>
-      @endif
+        @else
+        <h1>Реєстрація</h1>
+        <form action="/signup/submit" method="POST" style="display: contents">
+          <div class="fields">
+            <label>
+              @csrf
+              <input id="loginreg" name="loginreg" required="required" type="text" placeholder="Логін"><br>
+                <!-- <strong class="warning" style="display: none;">Цей логін уже зайнято</strong> -->
+            </label><!--class="field" -->
+            <label>
+              @csrf
+              <input id="email" name="email" required="required" type="email" placeholder="Email">
+                <!-- <strong class="warning" style="display: none;">Цей логін уже зайнято</strong> -->
+            </label>
+            <label>
+              @csrf
+              <input id="pwd1" name="pwd1" required="required" type="password" placeholder="Пароль">
+                <!-- <strong class="warning" style="display: none;">Цей логін уже зайнято</strong> -->
+            </label><!--class="field" -->
+            <label>
+              @csrf
+              <input id="pwd2" name="pwd2" required="required" type="password" placeholder="Повторіть пароль">
+                <!-- <strong class="warning" style="display: none;">Цей логін уже зайнято</strong> -->
+                <!-- @php
+                  $pwd1 = request()->input('pwd1');
+                  $pwd2 = request()->input('pwd2');
+                  $match = ($pwd1 == $pwd2);
+                @endphp
+                @if (!$match)
+                  <strong class="warning">{{$pwd1.$pwd2.$match}}Паролі не співпадають</strong>
+                @endif -->
+            </label>
+            @isset($error)
+              <strong class="warning">{{$error}}</strong>
+            @endisset
+          </div>
+          <div class="action">
+          <!-- {{ (!$match) ? '' : 'disabled' }} -->
+            <button class="button" type="submit"> 
+              Зареєструватись
+            </button>
+            <div class="options">
+              <a href="/login"><small>Зареєстровані? Увійти</small></a>
+            </div>
+          </div>
+        </form>
+        @endif
+      @endisset
     </div>
     <footer>
       <div class="left">
