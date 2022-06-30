@@ -7,40 +7,40 @@
     <link rel="preconnect" href="http://fonts.googleapis.com">
     <link rel="preconnect" href="http://fonts.gstatic.com" crossorigin>
     <link href="http://fonts.googleapis.com/css2?family=Share+Tech&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="" href="all.css">
+    <link rel="stylesheet" type="" href="/css/all.css">
 
     <title>Galactic games store</title>
-    <link rel="stylesheet" type="" href="../resources/css/landing.css">
-    <link rel="stylesheet" type="" href="../resources/css/darkbackground.css">
+    <link rel="stylesheet" type="" href="/css/landing.css">
+    <link rel="stylesheet" type="" href="/css/darkbackground.css">
 </head>
 <body>
     <nav>
         <span class="left">
-            <a href="welcome" class="logo">
-                <img src="../resources/img/logotype.png" class="logo-img" alt="Logo">
+            <a href="/welcome" class="logo">
+                <img src="/img/logotype.png" class="logo-img" alt="Logo">
                 <div class="text">Galactic games</div>
             </a>
-            <a href="aboutus" class="link">
+            <a href="/aboutus" class="link">
                 <div class="text">Про нас</div>
-                <img src="../resources/img/aboutus.svg" alt="About Us">
+                <img src="/img/aboutus.svg" alt="About Us">
             </a>
             <a href="#" class="link" style="display: none;">
                 <div class="text">Підтримка</div>
-                <img src="../resources/img/onlinesup.svg" alt="Support">
+                <img src="/img/onlinesup.svg" alt="Support">
             </a>
             <a href="#" class="link" style="display: none;">
                 <div class="text">Спільнота</div>
-                <img src="../resources/img/comm.svg" alt="Community">
+                <img src="/img/comm.svg" alt="Community">
             </a>
         </span>
         <span class="right">
-            <a href="shop" class="link">
+            <a href="/shop" class="link">
                 <div class="text">Крамниця</div>
-                <img src="../resources/img/shop.svg" alt="Shop">
+                <img src="/img/shop.svg" alt="Shop">
             </a>
-            <a href="login" class="link">
+            <a href="/login" class="link">
                 <div class="text">Вхід</div>
-                <img src="../resources/img/acc.svg" alt="Log in">
+                <img src="/img/acc.svg" alt="Log in">
             </a>
             <button class="menu"><div>
                 <svg></svg>
@@ -56,12 +56,12 @@
             <h1>Starfall of Videogames</h1>
             <p>Пориньте у світ безмежних можливостей у далекій-далекій галактиці магазину відеоігор
                 Galactic Games Store.</p>
-            <a href="shop" class="button">
+            <a href="/shop" class="button">
                 <p>Крамниця</p>
-                <img src="../resources/img/shuttleLink.svg" alt="Перейти до крамниці">
+                <img src="/img/shuttleLink.svg" alt="Перейти до крамниці">
             </a>
         </div>
-        <img src="../resources/img/maskgalaxy.png" alt="Каталог ігор магазину">
+        <img src="/img/maskgalaxy.png" alt="Каталог ігор магазину">
     </div>
 
 </div>
@@ -71,27 +71,27 @@
             <h2>Лідери рейтину та популярності</h2>
             <div class="main">
                 <button>
-                    <img src="../resources/img/RocketLeft.svg" alt="Swipe left">
+                    <img src="/img/RocketLeft.svg" alt="Swipe left">
                 </button>
                 <div class="products">
                     <a href="#" class="product">
-                        <img src="../resources/img/minecraft.png" alt="Minecraft">
+                        <img src="/img/minecraft.png" alt="Minecraft">
                         <p>Minecraft</p>
                         <p>$25.01</p>
                     </a>
                     <a href="#" class="product">
-                        <img src="../resources/img/portal2.png" alt="Portal 2">
+                        <img src="/img/portal2.png" alt="Portal 2">
                         <p>Portal 2</p>
                         <p>$20.14</p>
                     </a>
                     <a href="#" class="product">
-                        <img src="../resources/img/terraria.png" alt="Terraria">
+                        <img src="/img/terraria.png" alt="Terraria">
                         <p>Terraria</p>
                         <p>$20.14</p>
                     </a>
                 </div>
                 <button type="button">
-                    <img src="../resources/img/RocketRight.svg" alt="Swipe right">
+                    <img src="/img/RocketRight.svg" alt="Swipe right">
                 </button>
             </div>
             <div class="circles">
@@ -103,7 +103,7 @@
             </div>
         </div>
         <div class="slice2sep">
-            <img src="../resources/img/sep1.svg" alt="">
+            <img src="/img/sep1.svg" alt="">
             <svg class="trail"></svg>
         </div>
     </div>
@@ -111,7 +111,7 @@
         <div class="content">
             <h2>Доєднайтесь до SPACE спільноти у Galactic games store</h2>
             <div class="main">
-                <img src="../resources/img/community.svg" class="community" alt="Community chat">
+                <img src="/img/community.svg" class="community" alt="Community chat">
                 <div class="info">
                     Galactic games запрошує вас (отримати найнеймовірніші враження) доєднатися до космічної онлайн спільноти
                     з гравцями зі всіх куточків всесвіту.<br><br>Зустрічайте нових людей (та інопланетян), приєднуйтеся до
@@ -121,7 +121,7 @@
         </div>
         <div class="slice3sep">
             <svg class="trail"></svg>
-            <img src="../resources/img/sep2.svg" alt="">
+            <img src="/img/sep2.svg" alt="">
         </div>
     </div>
     <div class="slice4">
@@ -130,28 +130,28 @@
             <div class="main">
                 <div class="element">
                     <div class="icon">
-                        <img src="../resources/img/time.svg" alt="Замовлення наперед">
+                        <img src="/img/time.svg" alt="Замовлення наперед">
                     </div>
                     <h3>Preordering games</h3>
                     <p>Text</p>
                 </div>
                 <div class="element">
                     <div class="icon">
-                        <img src="../resources/img/payment.svg" alt="Легко оплачувати">
+                        <img src="/img/payment.svg" alt="Легко оплачувати">
                     </div>
                     <h3>Easy payment</h3>
                     <p>Text</p>
                 </div>
                 <div class="element">
                     <div class="icon">
-                        <img src="../resources/img/comcenter.svg" alt="Ігрові центри спільноти">
+                        <img src="/img/comcenter.svg" alt="Ігрові центри спільноти">
                     </div>
                     <h3>Game centers of community</h3>
                     <p>Text</p>
                 </div>
                 <div class="element">
                     <div class="icon">
-                        <img src="../resources/img/game.svg" alt="Розповсюдження ігор онлайн">
+                        <img src="/img/game.svg" alt="Розповсюдження ігор онлайн">
                     </div>
                     <h3>Online game distribution</h3>
                     <p>Text</p>
@@ -159,7 +159,7 @@
             </div>
         </div>
         <div class="slice4sep">
-            <img src="../resources/img/sep3.svg" alt="">
+            <img src="/img/sep3.svg" alt="">
             <svg class="trail"></svg>
         </div>
     </div>
@@ -171,13 +171,13 @@
                     магазині Galactic games store.</p>
             </div>
             <div class="buttons">
-                <a href="shop" class="button">
+                <a href="/shop" class="button">
                     <p>Крамниця</p>
-                    <img src="../resources/img/playstore.svg" alt="Крамниця">
+                    <img src="/img/playstore.svg" alt="Крамниця">
                 </a>
-                <a href="login" class="button">
+                <a href="/login" class="button">
                     <p>Увійти</p>
-                    <img src="../resources/img/login.svg" alt="Увійти">
+                    <img src="/img/login.svg" alt="Увійти">
                 </a>
             </div>
         </div>
@@ -185,7 +185,7 @@
     <footer>
         <div class="left">
             <div class="logo">
-                <img src="../resources/img/logotype.png" class="logo-img" alt="Galactic games">
+                <img src="/img/logotype.png" class="logo-img" alt="Galactic games">
                 <div class="text">Galactic games</div>
             </div>
             <div class="content">
@@ -198,9 +198,9 @@
                 Слідкуйте за нами
             </div>
             <div class="media">
-                <a href="https://twitter.com/"><img src="../resources/img/twitter.svg" alt="Twitter link"></a>
-                <a href="https://www.facebook.com/"><img src="../resources/img/facebook.svg" alt="Facebook link"></a>
-                <a href="https://web.telegram.org/"><img src="../resources/img/telegram.svg" alt="Telegram link"></a>
+                <a href="https://twitter.com/"><img src="/img/twitter.svg" alt="Twitter link"></a>
+                <a href="https://www.facebook.com/"><img src="/img/facebook.svg" alt="Facebook link"></a>
+                <a href="https://web.telegram.org/"><img src="/img/telegram.svg" alt="Telegram link"></a>
             </div>
         </div>
     </footer>

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GeneralController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,8 +14,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
+Route::get('/', [GeneralController::class, 'welcome']);
+Route::get('/home', [GeneralController::class, 'welcome']);
+Route::get('/welcome', [GeneralController::class, 'welcome']);
+
+Route::get('/shop', [GeneralController::class, 'shop']);
+Route::get('/store', [GeneralController::class, 'shop']);
+
+Route::get('/aboutus', [GeneralController::class, 'aboutus']);
+
+Route::get('/login', [GeneralController::class, 'login']);
+Route::get('/signup', [GeneralController::class, 'signup']);
 
 // Route::get('/');

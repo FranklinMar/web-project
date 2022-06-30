@@ -8,38 +8,38 @@
     <link rel="preconnect" href="http://fonts.gstatic.com" crossorigin>
     <link href="http://fonts.googleapis.com/css2?family=Share+Tech&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <title>Про нас</title>
-    <link rel="stylesheet" type="" href="../resources/css/aboutus.css">
-    <link rel="stylesheet" type="" href="../resources/css/darkbackground.css">
-    <link rel="stylesheet" type="" href="../resources/css/all.css">
+    <link rel="stylesheet" type="" href="/css/aboutus.css">
+    <link rel="stylesheet" type="" href="/css/darkbackground.css">
+    <link rel="stylesheet" type="" href="/css/all.css">
 </head>
 <body>
     <nav>
         <span class="left">
-            <a href="#" class="logo">
-            <img src="../resources/img/logotype.png" class="logo-img" alt="Logo">
+            <a href="/welcome" class="logo">
+            <img src="/img/logotype.png" class="logo-img" alt="Logo">
             <div class="text">Galactic games</div>
             </a>
-            <a href="#" class="link">
+            <a href="/aboutus" class="link">
             <div class="text">Про нас</div>
-            <img src="../resources/img/aboutus.svg" alt="About Us">
+            <img src="/img/aboutus.svg" alt="About Us">
             </a>
             <a href="#" class="link" style="display: none;">
             <div class="text">Підтримка</div>
-            <img src="../resources/img/onlinesup.svg" alt="Support">
+            <img src="/img/onlinesup.svg" alt="Support">
             </a>
             <a href="#" class="link" style="display: none;">
             <div class="text">Спільнота</div>
-            <img src="../resources/img/comm.svg" alt="Community">
+            <img src="/img/comm.svg" alt="Community">
             </a>
         </span>
         <span class="right">
-                <a href="#" class="link">
+                <a href="/shop" class="link">
                 <div class="text">Крамниця</div>
-                <img src="../resources/img/shop.svg" alt="Shop">
+                <img src="/img/shop.svg" alt="Shop">
                 </a>
-                <a href="#" class="link">
+                <a href="/login" class="link">
                 <div class="text">Вхід</div>
-                <img src="../resources/img/acc.svg" alt="Log in">
+                <img src="/img/acc.svg" alt="Log in">
                 </a>
                 <button class="menu"><div>
                 <svg></svg>
@@ -62,12 +62,12 @@
                 <li>Стрімкий розвиток. Завдяки сучасним технологіям, наша компанія створює та покращує даний проект для
                     більш якісного обслуговування споживачів.</li>
             </ul>
-            <img src="../resources/img/logotype.png" alt="Galactic Games Logo">
+            <img src="/img/logotype.png" alt="Galactic Games Logo">
         </div>
         <footer>
             <div class="left">
                 <div class="logo">
-                    <img src="../resources/img/logotype.png" class="logo-img" alt="Galactic games">
+                    <img src="/img/logotype.png" class="logo-img" alt="Galactic games">
                 <div class="text">Galactic games</div>
             </div>
                 <div class="content">
@@ -80,9 +80,9 @@
                     Слідкуйте за нами
                 </div>
                 <div class="media">
-                    <a href="https://twitter.com/"><img src="../resources/img/twitter.svg" alt="Twitter link"></a>
-                    <a href="https://www.facebook.com/"><img src="../resources/img/facebook.svg" alt="Facebook link"></a>
-                    <a href="https://web.telegram.org/"><img src="../resources/img/telegram.svg" alt="Telegram link"></a>
+                    <a href="https://twitter.com/"><img src="/img/twitter.svg" alt="Twitter link"></a>
+                    <a href="https://www.facebook.com/"><img src="/img/facebook.svg" alt="Facebook link"></a>
+                    <a href="https://web.telegram.org/"><img src="/img/telegram.svg" alt="Telegram link"></a>
                 </div>
             </div>
         </footer>

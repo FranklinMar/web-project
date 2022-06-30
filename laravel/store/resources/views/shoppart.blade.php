@@ -8,38 +8,38 @@
     <link rel="preconnect" href="http://fonts.gstatic.com" crossorigin>
     <link href="http://fonts.googleapis.com/css2?family=Share+Tech&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <title>Особливі пропозиції</title>
-    <link rel="stylesheet" type="" href="../resources/css/shoppart.css">
-    <link rel="stylesheet" type="" href="../resources/css/bluebackground.css">
-    <link rel="stylesheet" type="" href="../resources/css/all.css">
+    <link rel="stylesheet" type="" href="/css/shoppart.css">
+    <link rel="stylesheet" type="" href="/css/bluebackground.css">
+    <link rel="stylesheet" type="" href="/css/all.css">
 </head>
 <body>
     <nav>
         <span class="left">
-            <a href="welcome" class="logo">
-            <img src="../resources/img/logotype.png" class="logo-img" alt="Logo">
+            <a href="/welcome" class="logo">
+            <img src="/img/logotype.png" class="logo-img" alt="Logo">
             <div class="text">Galactic games</div>
             </a>
-            <a href="aboutus" class="link">
+            <a href="/aboutus" class="link">
             <div class="text">Про нас</div>
-            <img src="../resources/img/aboutus.svg" alt="About Us">
+            <img src="/img/aboutus.svg" alt="About Us">
             </a>
             <a href="#" class="link" style="display: none;">
             <div class="text">Підтримка</div>
-            <img src="../resources/img/onlinesup.svg" alt="Support">
+            <img src="/img/onlinesup.svg" alt="Support">
             </a>
             <a href="#" class="link" style="display: none;">
             <div class="text">Спільнота</div>
-            <img src="../resources/img/comm.svg" alt="Community">
+            <img src="/img/comm.svg" alt="Community">
             </a>
         </span>
         <span class="right">
-            <a href="shop" class="link">
+            <a href="/shop" class="link">
             <div class="text">Крамниця</div>
-            <img src="../resources/img/shop.svg" alt="Shop">
+            <img src="/img/shop.svg" alt="Shop">
             </a>
-            <a href="login" class="link">
+            <a href="/login" class="link">
             <div class="text">Вхід</div>
-            <img src="../resources/img/acc.svg" alt="Log in">
+            <img src="/img/acc.svg" alt="Log in">
             </a>
             <button class="menu"><div>
             <svg></svg>
@@ -53,19 +53,19 @@
             <div class="menu-panel">
                 <div class="flex-row">
                     <a href="#"><div class="button">
-                        <img src="../resources/img/categ.svg" alt="Категорії">
+                        <img src="/img/categ.svg" alt="Категорії">
                         <p>Категорії</p>
                     </div></a>
                     <a href="#"><div class="button">
-                        <img src="../resources/img/new.svg" alt="Новинки">
+                        <img src="/img/new.svg" alt="Новинки">
                         <p>Новинки</p>
                     </div></a>
                     <a href="#"><div class="button">
-                        <img src="../resources/img/top.svg" alt="Хіти рейтингу">
+                        <img src="/img/top.svg" alt="Хіти рейтингу">
                         <p>Хіти рейтингу</p>
                     </div></a>
                     <a href="shoppart"><div class="button">
-                        <img src="../resources/img/discount.svg" alt="Особливі пропозиції">
+                        <img src="/img/discount.svg" alt="Особливі пропозиції">
                         <p>Особливі пропозиції</p>
                     </div></a>
                 </div>
@@ -74,7 +74,7 @@
                         @csrf
                         <input class="input" name="search" type="text" placeholder="Пошук">
                         <button class="button">
-                                <img src="../resources/img/search.png" alt="Пошук">
+                                <img src="/img/search.png" alt="Пошук">
                         </button>
                       </form>
                     </label>
@@ -86,67 +86,67 @@
                     <div class="options">
                         <a href="#"><div class="button">
                             <p>Детальніше</p>
-                            <img src="../resources/img/details.svg" alt="Деталі">
+                            <img src="/img/details.svg" alt="Деталі">
                         </div></a>
                         <a href="#"><div class="button">
                             <p>Додати до корзини</p>
-                            <img src="../resources/img/tobasket.svg" alt="Улюблене">
+                            <img src="/img/tobasket.svg" alt="Улюблене">
                         </div></a>
                     </div>
                     <div class="data">
                         <div class="platforms">
-                            <img src="../resources/img/steam.svg" alt="Steam">
+                            <img src="/img/steam.svg" alt="Steam">
                         </div>
                         <p class="text">$15.00</p>
                     </div>
             </div>
             <div class="game-column">
                     <a href="#" class="game mobile-group">
-                        <img src="../resources/img/rust.png" alt="Rust">
+                        <img src="/img/rust.png" alt="Rust">
                         <div class="content">
                             <p>Rust</p>
                             <div class="data">
                                 <p>$15.00</p>
                                 <div class="platforms">
-                                    <img src="../resources/img/steam.svg" alt="Steam">
+                                    <img src="/img/steam.svg" alt="Steam">
                                 </div>
                             </div>
                         </div>
                     </a>
                     <a href="#" class="game mobile-group">
-                        <img src="../resources/img/terrariaposter.png" alt="Terraria">
+                        <img src="/img/terrariaposter.png" alt="Terraria">
                         <div class="content">
                             <p>Terraria</p>
                             <div class="data">
                                 <p>$20.14</p>
                                 <div class="platforms">
-                                    <img src="../resources/img/steam.svg" alt="Steam">
-                                    <img src="../resources/img/gog.svg" alt="Gog">
+                                    <img src="/img/steam.svg" alt="Steam">
+                                    <img src="/img/gog.svg" alt="Gog">
                                 </div>
                             </div>
                         </div>
                     </a>
                     <a href="#" class="game mobile-group">
-                        <img src="../resources/img/rdr2.png" alt="Red Dead Redemption 2">
+                        <img src="/img/rdr2.png" alt="Red Dead Redemption 2">
                         <div class="content">
                             <p>Red Dead Redemption 2</p>
                             <div class="data">
                                 <p>$24.00</p>
                                 <div class="platforms">
-                                    <img src="../resources/img/steam.svg" alt="Steam">
-                                    <img src="../resources/img/epic.svg" alt="Epic Games Store">
+                                    <img src="/img/steam.svg" alt="Steam">
+                                    <img src="/img/epic.svg" alt="Epic Games Store">
                                 </div>
                             </div>
                         </div>
                     </a>
                     <a href="#" class="game mobile-group">
-                        <img src="../resources/img/sot.png" alt="Sea of Thieves">
+                        <img src="/img/sot.png" alt="Sea of Thieves">
                         <div class="content">
                             <p>Sea of thieves</p>
                             <div class="data">
                                 <p>$15.00</p>
                                 <div class="platforms">
-                                    <img src="../resources/img/steam.svg" alt="Steam">
+                                    <img src="/img/steam.svg" alt="Steam">
                                 </div>
                             </div>
                         </div>
@@ -157,13 +157,13 @@
                     <input id="game1" type="radio" name="games" checked="checked">
                     <label for="game1">
                         <div class="game"><!-- class="game active"-->
-                            <img src="../resources/img/rust.png" alt="Rust">
+                            <img src="/img/rust.png" alt="Rust">
                             <div class="content">
                                 <p>Rust</p>
                                 <div class="data">
                                     <p>$15.00</p>
                                     <div class="platforms">
-                                        <img src="../resources/img/steam.svg" alt="Steam">
+                                        <img src="/img/steam.svg" alt="Steam">
                                     </div>
                                 </div>
                             </div>
@@ -172,14 +172,14 @@
                     <input id="game2" type="radio" name="games">
                     <label for="game2">
                         <div class="game">
-                            <img src="../resources/img/terrariaposter.png" alt="Terraria">
+                            <img src="/img/terrariaposter.png" alt="Terraria">
                             <div class="content">
                                 <p>Terraria</p>
                                 <div class="data">
                                     <p>$20.14</p>
                                     <div class="platforms">
-                                        <img src="../resources/img/steam.svg" alt="Steam">
-                                        <img src="../resources/img/gog.svg" alt="Gog">
+                                        <img src="/img/steam.svg" alt="Steam">
+                                        <img src="/img/gog.svg" alt="Gog">
                                     </div>
                                 </div>
                             </div>
@@ -188,14 +188,14 @@
                     <input id="game3" type="radio" name="games">
                     <label for="game3">
                         <div class="game">
-                            <img src="../resources/img/rdr2.png" alt="Red Dead Redemption 2">
+                            <img src="/img/rdr2.png" alt="Red Dead Redemption 2">
                             <div class="content">
                                 <p>Red Dead Redemption 2</p>
                                 <div class="data">
                                     <p>$24.00</p>
                                     <div class="platforms">
-                                        <img src="../resources/img/steam.svg" alt="Steam">
-                                        <img src="../resources/img/epic.svg" alt="Epic Games Store">
+                                        <img src="/img/steam.svg" alt="Steam">
+                                        <img src="/img/epic.svg" alt="Epic Games Store">
                                     </div>
                                 </div>
                             </div>
@@ -204,13 +204,13 @@
                     <input id="game4" type="radio" name="games">
                     <label for="game4">
                         <div class="game">
-                            <img src="../resources/img/sot.png" alt="Sea of Thieves">
+                            <img src="/img/sot.png" alt="Sea of Thieves">
                             <div class="content">
                                 <p>Sea of thieves</p>
                                 <div class="data">
                                     <p>$15.00</p>
                                     <div class="platforms">
-                                        <img src="../resources/img/steam.svg" alt="Steam">
+                                        <img src="/img/steam.svg" alt="Steam">
                                     </div>
                                 </div>
                             </div>
@@ -226,13 +226,13 @@
                 <div class="buttons">
                     <input id="switch1" type="radio" name="switch" checked="checked">
                     <label for="switch1" class="button">
-                        <img src="../resources/img/top.svg" alt="Хіти рейтингу">
+                        <img src="/img/top.svg" alt="Хіти рейтингу">
                         <p>Хіти Рейтингу</p>
                     </label>
 
                     <input id="switch2" type="radio" name="switch">
                     <label for="switch2" class="button">
-                        <img src="../resources/img/new.svg" alt="Новинки">
+                        <img src="/img/new.svg" alt="Новинки">
                         <p>Новинки</p>
                     </label>
                 </div>
@@ -245,13 +245,13 @@
                 </div>
                 <div class="game-column">
                     <a href="#"><div class="game">
-                        <img src="../resources/img/gta5.png" alt="Grand Theft Auto V">
+                        <img src="/img/gta5.png" alt="Grand Theft Auto V">
                         <div class="info">
                             <h6>Grand theft auto V: Premium Edition</h6>
                             <div class="data">
                                 <div class="platforms">
-                                    <img src="../resources/img/steam.svg" alt="Steam">
-                                    <img src="../resources/img/epic.svg" alt="Epic Games Store">
+                                    <img src="/img/steam.svg" alt="Steam">
+                                    <img src="/img/epic.svg" alt="Epic Games Store">
                                 </div>
                                 <p>$25.00</p>
                             </div>
@@ -259,13 +259,13 @@
                         </div>
                     </div></a>
                     <a href="#"><div class="game">
-                        <img src="../resources/img/gta5.png" alt="Grand Theft Auto V">
+                        <img src="/img/gta5.png" alt="Grand Theft Auto V">
                         <div class="info">
                             <h6>Grand theft auto V: Premium Edition</h6>
                             <div class="data">
                                 <div class="platforms">
-                                    <img src="../resources/img/steam.svg" alt="Steam">
-                                    <img src="../resources/img/epic.svg" alt="Epic Games Store">
+                                    <img src="/img/steam.svg" alt="Steam">
+                                    <img src="/img/epic.svg" alt="Epic Games Store">
                                 </div>
                                 <p>$25.00</p>
                             </div>
@@ -277,7 +277,7 @@
             <footer>
                 <div class="left">
                     <div class="logo">
-                        <img src="../resources/img/logotype.png" class="logo-img" alt="Galactic games">
+                        <img src="/img/logotype.png" class="logo-img" alt="Galactic games">
                         <div class="text">Galactic games</div>
                     </div>
                     <div class="content">
@@ -290,9 +290,9 @@
                         Слідкуйте за нами
                     </div>
                     <div class="media">
-                        <a href="https://twitter.com/"><img src="../resources/img/twitter.svg" alt="Twitter link"></a>
-                        <a href="https://www.facebook.com/"><img src="../resources/img/facebook.svg" alt="Facebook link"></a>
-                        <a href="https://web.telegram.org/"><img src="../resources/img/telegram.svg" alt="Telegram link"></a>
+                        <a href="https://twitter.com/"><img src="/img/twitter.svg" alt="Twitter link"></a>
+                        <a href="https://www.facebook.com/"><img src="/img/facebook.svg" alt="Facebook link"></a>
+                        <a href="https://web.telegram.org/"><img src="/img/telegram.svg" alt="Telegram link"></a>
                     </div>
                 </div>
             </footer>
