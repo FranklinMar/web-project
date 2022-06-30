@@ -74,12 +74,19 @@ class SignInController extends Controller {
 
     if(Customer::inLogins($login)){
       // return view("login", ['boolean' => false, 'error' => 'Даний логін зайнятий']);
-      $error = 'Даний логін зайнятий';
+      if (!$error){
+        $error = [];
+      }
+      array_push($error, 'Даний логін зайнятий');
     }
 
     if($password != $confirmpwd) {
+      if (!$error){
+        $error = [];
+      }
       // return view("login", ['boolean' => false, 'error' => 'Паролі не збігаються']);
-      $error .= ' Паролі не збігаються';
+      // $error .= ' Паролі не збігаються';
+      array_push($error, 'Паролі не збігаються');
     }
     
     

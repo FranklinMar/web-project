@@ -127,7 +127,9 @@
                 @endif -->
             </label>
             @isset($error)
-              <strong class="warning">{{$error}}</strong>
+              @foreach($error as $i)
+                <strong class="warning">{{$i}}</strong>
+              @endforeach
             @endisset
           </div>
           <div class="action">
