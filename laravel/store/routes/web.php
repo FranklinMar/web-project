@@ -31,7 +31,7 @@ Route::get('/login', [SignInController::class, 'login'])/*->name('login')*/;
 Route::get('/signup', [SignInController::class, 'signup'])/*->name('signup')*/;
 
 Route::post('/login/submit', [SignInController::class, 'loginPost']);
-Route::post('/login/error', [SignInController::class, 'logError']);
+// Route::post('/login/error', [SignInController::class, 'logError']);
 Route::post('/signup/submit', [SignInController::class, 'signupPost']);
 
 // Route::get('/');

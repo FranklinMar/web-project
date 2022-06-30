@@ -45,13 +45,13 @@ class SignInController extends Controller {
     // return redirect('/login/error')->with('error', $error);
   }
 
-  public function logError(){
-    if (isset($error)){
-      return view("login", ['boolean' => true, 'error' => $error]);
-    } else {
-      return redirect([SignInController::class, 'login']);
-    }
-  }
+  // public function logError(){
+  //   if (isset($error)){
+  //     return view("login", ['boolean' => true, 'error' => $error]);
+  //   } else {
+  //     return redirect([SignInController::class, 'login']);
+  //   }
+  // }
 
   public function signupPost(Request $request){
     // session_start();
