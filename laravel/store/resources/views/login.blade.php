@@ -63,7 +63,7 @@
   <main>
     <div class="main">
       @isset( $success )
-      <h1>Ви увійшли в акаунт!<br>Вітаємо {{$success}}</h1>
+      <h1 style="font-size: 20px">{{$success}}</h1>
       @else
         @if ( $boolean )
         <h1>Увійти</h1>

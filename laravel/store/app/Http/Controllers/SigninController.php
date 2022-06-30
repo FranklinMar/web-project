@@ -8,14 +8,17 @@ use Illuminate\Http\Request;
 class SignInController extends Controller {
 
   public function login(){
+    // session_start();
     return view("login", ['boolean' => true]);
   }
 
   public function signup(){
+    // session_start();
     return view("login", ['boolean' => false]);
   }
 
   public function loginPost(Request $request){
+    // session_start();
     $validation = $request->validate([
       'login' => 'required',
       'password' => 'required'
@@ -30,12 +33,13 @@ class SignInController extends Controller {
       if (Customer::validate($login, $password)){
         setcookie('login',$request->input('login'));
         setcookie('password',$request->input('password'));
-        return view("login", ['boolean' => true, 'success' => $login]);
+        return view("login", ['boolean' => true, 'success' => 'Ви увійшли в акаунт!Вітаємо '.$login.'!']);
       } else {
         $error = "Невірний пароль";
       }
     } else {
       $error = "Даного логіна не існує";
+      // print_r($_SESSION['customers-login']);
     }
     return view("login", ['boolean' => true, 'error' => $error]);
     // return redirect('/login/error')->with('error', $error);
@@ -50,6 +54,7 @@ class SignInController extends Controller {
   }
 
   public function signupPost(Request $request){
+    // session_start();
     $validation = $request->validate([
         'loginreg' => 'required',
         'email' => 'required',
@@ -74,19 +79,16 @@ class SignInController extends Controller {
 
     if($password != $confirmpwd) {
       // return view("login", ['boolean' => false, 'error' => 'Паролі не збігаються']);
-      if (!$error){
-        $error .= '<br>Паролі не збігаються';
-      } else {
-        $error = 'Паролі не збігаються';
-      }
+      $error .= ' Паролі не збігаються';
     }
     
-    if (!$error) {
+    
+    if ($error) {
       return view("login", ['boolean' => false, 'error' => $error]);
     }
     $customer = new Customer($login, $email, $password);
     setcookie('login', $login);
     setcookie('password', $password);
-    return view("login", ['boolean' => false, 'success' => $login.$email.$password.$confirmpwd]);
+    return view("login", ['boolean' => false, 'success' => 'Ви успішно зареєструвалися!Вітаємо '.$login.'!']);
   }
 }
