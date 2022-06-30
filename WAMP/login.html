@@ -54,22 +54,55 @@
   </div>
   <main>
     <div class="main">
-      <h1>Увійти</h1>
-      <div class="fields">
-        <label>
-          <input name="email" type="text" placeholder="Логін">
-        </label><!--class="field" -->
-        <label>
-          <input name="password" type="password" placeholder="Пароль">
-        </label><!--class="field" -->
+        <div id="login" style="display: contents">
+        <h1>Увійти</h1>
+        <form action="" method="POST" id="form" style="display: contents">
+        <div class="fields">
+          <label>
+            <input name="email" type="text" placeholder="Логін">
+          </label><!--class="field" -->
+          <label>
+            <input name="password" type="password" placeholder="Пароль">
+          </label><!--class="field" -->
+        </div>
+        </form>
+        <div class="action">
+          <button class="button" type="submit" form="form">
+            Увійти
+          </button>
+          <div class="options">
+            <a href="#"><small>Забули свій пароль?</small></a>
+            <a href="#"><small>Зареєструватись</small></a>
+          </div>
+        </div>
       </div>
-      <div class="action">
-        <button><div class="button">
-          Увійти
-        </div></button>
-        <div class="options">
-          <a href="#"><small>Забули свій пароль?</small></a>
-          <a href="#"><small>Зареєструватись</small></a>
+      <div id="signup" style="display: none">
+        <h1>Реєстрація</h1>
+        <form action="" method="POST" id="sign" style="display: contents">
+        <div class="fields">
+          <label>
+            <input name="login" type="text" placeholder="Логін">
+          </label><!--class="field" -->
+          <label>
+            <input name="email" type="email" placeholder="Email">
+          </label>
+          <label>
+            <input name="createpwd" type="password" placeholder="Пароль">
+          </label><!--class="field" -->
+          <label>
+            <input name="confirmpwd" type="text" placeholder="Повторіть пароль">
+          </label>
+        </div>
+        </form>
+        <div class="action">
+          <button class="button" type="submit" form="sign">
+            Зареєструватись
+          </button>
+          <div class="options">
+            <a href="#"><small>Зареєстровані? Увійти</small></a>
+<!--            <a href="#"><small>Забули свій пароль?</small></a>-->
+<!--            <a href="#"><small>Зареєструватись</small></a>-->
+          </div>
         </div>
       </div>
     </div>

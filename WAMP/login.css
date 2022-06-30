@@ -31,7 +31,8 @@ main {
     position: absolute;
     top: 0;
     right: 0;
-    width: 75.6944444444vw/*1090px*/;
+   /* width: 75.6944444444vw!*1090px*!;*/
+    width: 100%;
     box-sizing: border-box;
     /*height: 974px;*/
     height: 100%;
@@ -50,11 +51,14 @@ main {
     box-sizing: border-box;
     flex-direction: column;
     align-items: center;
-    padding-top: 40px;
-    gap: 33px;
+    /*padding-top: 40px;*/
+    gap: 25px;
 
-    width: 434px;
-    height: 431px;
+    /*width: 434px;*/
+    /*height: 431px;*/
+    width: fit-content;
+    height: fit-content;
+    padding: 40px 72px 70px;
     margin-left: auto;
     margin-right: auto;
 
@@ -79,8 +83,10 @@ main {
     align-items: center;
     gap: 25px;
 
-    width: 290px;
-    height: 101px;
+    /*width: 290px;*/
+    width: fit-content;
+    height: fit-content;
+    /*height: 101px;*/
 }
 
 input {
@@ -160,7 +166,9 @@ input:focus, input:hover{
 .options {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    /*align-items: !*flex-start*!center;*/
+    /*align-content: center;*/
+    justify-content: center;
     gap: 32px;
 
     width: 280px;
@@ -174,7 +182,7 @@ input:focus, input:hover{
     font-size: calc(1.208333333rem - 0.37037037vw);
     line-height: 18px;
 
-    text-align: right;
+    text-align: center/*right*/;
     letter-spacing: -0.05em;
     color: #FFFFFF;
 }
