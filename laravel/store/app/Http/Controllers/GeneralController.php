@@ -16,12 +16,4 @@ class GeneralController extends Controller {
     return view("shoppart");
   }
 
-  public function login(){
-    return view("login");
-  }
-
-  public function signup(){
-    return view("login");
-  }
-
 }

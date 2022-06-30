@@ -10,6 +10,14 @@
   <title>Log in</title>
   <link rel="stylesheet" type="" href="/css/login.css">
   <link rel="stylesheet" type="" href="/css/all.css">
+  <style>
+    .warning {
+      color: #BF1CFF;
+      font-family: 'Space Mono', monospace;
+      font-style: normal;
+      font-weight: 700;
+    }
+  </style>
 </head>
 <body>
   <nav>
@@ -54,17 +62,19 @@
   </div>
   <main>
     <div class="main">
-        <div id="login" style="display: contents">
-        <h1>Увійти</h1>
-        <form action="login" method="POST" style="display: contents">
+      @if ( $boolean )
+      <h1>Увійти</h1>
+      <form action="login" method="POST" style="display: contents">
         <div class="fields">
           <label>
             @csrf
-            <input name="email" type="text" placeholder="Логін">
+            <input id="login" required="required" name="login" type="text" placeholder="Логін">
+            <!-- {{$login = request()->input('login')}}-->
           </label><!--class="field" -->
           <label>
             @csrf
-            <input name="password" type="password" placeholder="Пароль">
+            <input name="password" required="required" type="password" placeholder="Пароль">
+              <!-- <strong class="warning" style="display: none;">Цей логін уже зайнято</strong> -->
           </label><!--class="field" -->
         </div>
         <div class="action">
@@ -78,25 +88,43 @@
         </div>
       </form>
       </div>
-      <div id="signup" style="display: none">
-        <h1>Реєстрація</h1>
-        <form action="signup" method="POST" style="display: contents">
+      @else
+      <h1>Реєстрація</h1>
+      <form action="signup" method="POST" style="display: contents">
         <div class="fields">
           <label>
-            <input name="login" type="text" placeholder="Логін">
+            @csrf
+            <input id="loginreg" name="loginreg" required="required" type="text" placeholder="Логін"><br>
+              <!-- <strong class="warning" style="display: none;">Цей логін уже зайнято</strong> -->
           </label><!--class="field" -->
           <label>
-            <input name="email" type="email" placeholder="Email">
+            @csrf
+            <input id="email" name="email" required="required" type="email" placeholder="Email">
+              <!-- <strong class="warning" style="display: none;">Цей логін уже зайнято</strong> -->
           </label>
           <label>
-            <input name="createpwd" type="password" placeholder="Пароль">
+            @csrf
+            <input id="pwd1" name="createpwd" required="required" type="password" placeholder="Пароль">
+              <!-- <strong class="warning" style="display: none;">Цей логін уже зайнято</strong> -->
           </label><!--class="field" -->
           <label>
-            <input name="confirmpwd" type="text" placeholder="Повторіть пароль">
+            @csrf
+            <input id="pwd2" name="confirmpwd" required="required" type="password" placeholder="Повторіть пароль">
+              <!-- <strong class="warning" style="display: none;">Цей логін уже зайнято</strong> -->
+              <!-- @php
+                $pwd1 = request()->input('pwd1');
+                $pwd2 = request()->input('pwd2');
+                $match = ($pwd1 == $pwd2);
+              @endphp
+              @if (!$match)
+                <strong class="warning">{{$pwd1.$pwd2.$match}}Паролі не співпадають</strong>
+              @endif -->
           </label>
+              <!-- <strong class="warning">{{$pwd1.$pwd2.$match}}Паролі не співпадають</strong> -->
         </div>
         <div class="action">
-          <button class="button" type="submit" form="sign">
+        <!-- {{ (!$match) ? '' : 'disabled' }} -->
+          <button class="button" type="submit"> 
             Зареєструватись
           </button>
           <div class="options">
@@ -104,7 +132,7 @@
           </div>
         </div>
       </form>
-      </div>
+      @endif
     </div>
     <footer>
       <div class="left">

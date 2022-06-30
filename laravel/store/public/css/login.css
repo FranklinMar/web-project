@@ -8,7 +8,10 @@ body {
 
 main {
     position: absolute;
-    padding: 110px 0 0;
+    /* padding: 110px 0 0; */
+    padding: 60px 0 0;
+    align-items: center;
+    align-content: center;
     box-sizing: border-box;
     width: 100%;
     height: auto;

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GeneralController;
+use App\Http\Controllers\SignInController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +27,7 @@ Route::get('/store', [GeneralController::class, 'shop']);
 
 Route::get('/aboutus', [GeneralController::class, 'aboutus']);
 
-Route::get('/login', [GeneralController::class, 'login']);
-Route::get('/signup', [GeneralController::class, 'signup']);
+Route::get('/login', [SignInController::class, 'login'])->name('login');
+Route::get('/signup', [SignInController::class, 'signup'])->name('signup');
 
 // Route::get('/');
