@@ -64,7 +64,7 @@
     <div class="main">
       @if ( $boolean )
       <h1>Увійти</h1>
-      <form action="login" method="POST" style="display: contents">
+      <form action="/login/submit" method="POST" style="display: contents">
         <div class="fields">
           <label>
             @csrf
@@ -90,7 +90,7 @@
       </div>
       @else
       <h1>Реєстрація</h1>
-      <form action="signup" method="POST" style="display: contents">
+      <form action="/signup/submit" method="POST" style="display: contents">
         <div class="fields">
           <label>
             @csrf
@@ -104,12 +104,12 @@
           </label>
           <label>
             @csrf
-            <input id="pwd1" name="createpwd" required="required" type="password" placeholder="Пароль">
+            <input id="pwd1" name="pwd1" required="required" type="password" placeholder="Пароль">
               <!-- <strong class="warning" style="display: none;">Цей логін уже зайнято</strong> -->
           </label><!--class="field" -->
           <label>
             @csrf
-            <input id="pwd2" name="confirmpwd" required="required" type="password" placeholder="Повторіть пароль">
+            <input id="pwd2" name="pwd2" required="required" type="password" placeholder="Повторіть пароль">
               <!-- <strong class="warning" style="display: none;">Цей логін уже зайнято</strong> -->
               <!-- @php
                 $pwd1 = request()->input('pwd1');

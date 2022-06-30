@@ -27,7 +27,10 @@ Route::get('/store', [GeneralController::class, 'shop']);
 
 Route::get('/aboutus', [GeneralController::class, 'aboutus']);
 
-Route::get('/login', [SignInController::class, 'login'])->name('login');
-Route::get('/signup', [SignInController::class, 'signup'])->name('signup');
+Route::get('/login', [SignInController::class, 'login'])/*->name('login')*/;
+Route::get('/signup', [SignInController::class, 'signup'])/*->name('signup')*/;
+
+Route::post('/login/submit', [SignInController::class, 'loginPost']);
+Route::post('/signup/submit', [SignInController::class, 'signupPost']);
 
 // Route::get('/');
