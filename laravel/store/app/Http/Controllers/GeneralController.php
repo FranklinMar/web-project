@@ -12,8 +12,8 @@ class GeneralController extends Controller {
     return view("aboutus");
   }
 
-  public function shop(){
-    return view("shoppart");
-  }
+  // public function shop(){
+  //   return view("shoppart");
+  // }
 
 }

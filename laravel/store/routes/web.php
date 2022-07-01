@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\GameController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\SignInController;
+use App\Http\Controllers\ShopController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,16 +24,19 @@ Route::get('/', [GeneralController::class, 'welcome']);
 Route::get('/home', [GeneralController::class, 'welcome']);
 Route::get('/welcome', [GeneralController::class, 'welcome']);
 
-Route::get('/shop', [GeneralController::class, 'shop']);
-Route::get('/store', [GeneralController::class, 'shop']);
+Route::get('/shop', [ShopController::class, 'shop']);
+Route::get('/store', [ShopController::class, 'shop']);
 
 Route::get('/aboutus', [GeneralController::class, 'aboutus']);
 
 Route::get('/login', [SignInController::class, 'login'])/*->name('login')*/;
 Route::get('/signup', [SignInController::class, 'signup'])/*->name('signup')*/;
 
-Route::post('/login/submit', [SignInController::class, 'loginPost']);
+Route::get('/game/{id}', [GameController::class, 'game']);
+
+// Route::post('/login/submit', [SignInController::class, 'loginPost']);
+// Route::post('/signup/submit', [SignInController::class, 'signupPost']);
+
 // Route::post('/login/error', [SignInController::class, 'logError']);
-Route::post('/signup/submit', [SignInController::class, 'signupPost']);
 
 // Route::get('/');

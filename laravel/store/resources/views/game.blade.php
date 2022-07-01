@@ -66,15 +66,16 @@
 <div class="game-page game-page-group layout">
 <main class="game-page-main layout">
     <!-- ======= section2 ======= -->
+    @isset($game)
     <section class="game-page-section2__section2 layout" style="margin-top: 50px; margin-bottom: 200px;">
         <div class="game-page-section2__flex layout">
-            <h1 class="game-page-section2__hero-title layout">Half-Life: Alyx</h1>
+            <h1 class="game-page-section2__hero-title layout">{{ $game->name }}</h1>
             <div class="game-page-section2__block14 layout">
                 <div class="game-page-section2__block14-item">
                     <div class="game-page-section2__block18 layout">
 <!--                        <div style="&#45;&#45;src:url(/assets/2250af3834f531e526d680bd1dcf332a.png)"-->
 <!--                                class="game-page-section2__image3 layout"></div>-->
-                        <img src="/img/posterhl.png" alt="Poster" style="max-width: 815.86px/*available*/;
+                        <img src="/games/{{ $game->url }}.png" alt="Poster" style="max-width: 815.86px/*available*/;
                     max-height: 460.51px/*available*/;width:100%;height:100%; object-fit: contain"
                              class="game-page-section2__image3 layout">
                     </div>
@@ -82,26 +83,22 @@
                 <div class="game-page-section2__block14-spacer"></div>
                 <div class="game-page-section2__block14-item1">
                     <div class="game-page-section2__block15 layout">
-                        <h2 class="game-page-section2__medium-title4 layout">
-                            Half-Life: Alyx is Valve’s VR return to the Half-Life series. It’s the story of an impossible fight
-                            against a vicious alien race known as the Combine, set between the events of Half-Life and Half-Life
-                            2. Playing as Alyx Vance, you are humanity’s only chance for survival.
-                        </h2>
+                        <h2 class="game-page-section2__medium-title4 layout">{{ $game->shortDes }}</h2>
                         <div class="game-page-section2__block16 layout">
                             <div class="game-page-section2__block17 layout">
                                 <h4 class="game-page-section2__highlights3 layout">RELEASE DATA:</h4>
                                 <div class="game-page-section2__block17-spacer"></div>
-                                <h4 class="game-page-section2__highlights4 layout">23 Mar, 2020</h4>
+                                <h4 class="game-page-section2__highlights4 layout">{{ $game->release }}</h4>
                             </div>
                             <div class="game-page-section2__block17 layout">
                                 <h4 class="game-page-section2__highlights31 layout">DEVELOPER:</h4>
                                 <div class="game-page-section2__block17-spacer1"></div>
-                                <h4 class="game-page-section2__highlights4 layout1">Valve</h4>
+                                <h4 class="game-page-section2__highlights4 layout1">{{ $game->dev }}</h4>
                             </div>
                             <div class="game-page-section2__block17 layout">
                                 <h4 class="game-page-section2__highlights32 layout">PUBLISHER:</h4>
                                 <div class="game-page-section2__block17-spacer2"></div>
-                                <h4 class="game-page-section2__highlights4 layout2">Valve</h4>
+                                <h4 class="game-page-section2__highlights4 layout2">{{ $game->pub }}</h4>
                             </div>
                         </div>
                     </div>
@@ -122,13 +119,13 @@
                             <div class="game-page-section2__block8 layout">
                                 <div class="game-page-section2__block8-item">
                                     <div class="game-page-section2__block9 layout">
-                                        <h4 class="game-page-section2__highlights1 layout">$25.00</h4>
+                                        <h4 class="game-page-section2__highlights1 layout">{{ $game->price }}</h4>
                                     </div>
                                 </div>
                                 <div class="game-page-section2__block8-spacer"></div>
                                 <div class="game-page-section2__block8-item1">
-                                  <form style="display: contents;" action="">
-                                  <button style="display: contents;">
+                                  <form style="display: contents;" action="/game/add/{{ $game->id }}" method="POST">
+                                  <button style="display: contents;" type="submit>
                                     <div
                                             style="--src:url(/img/addtocart.png)"
                                             class="game-page-section2__block10 layout">
@@ -141,7 +138,7 @@
                         </div>
                         <div class="game-page-section2__flex1 layout">
                             <div class="game-page-section2__flex1-item">
-                                <h1 class="game-page-section2__big-title layout">Buy Half Life: Alyx</h1>
+                                <h1 class="game-page-section2__big-title layout">Buy {{ $game->name }}</h1>
                             </div>
                             <div class="game-page-section2__flex1-spacer"></div>
                             <div class="game-page-section2__flex1-spacer1"></div>
@@ -159,33 +156,20 @@
                     <div class="game-page-section2__block13 layout">
                         <h4 class="game-page-section2__highlights2-box layout">
                     <pre class="game-page-section2__highlights2">
-Half-Life: Alyx is Valve’s VR return to the Half-Life series. It’s the story of an impossible fight against a vicious alien race known as the Combine, set between the events of Half-Life and Half-Life 2.
 
-Playing as Alyx Vance, you are humanity’s only chance for survival. The Combine’s control of the planet since the Black Mesa incident has only strengthened as they corral the remaining population in cities. Among them are some of Earth’s greatest scientists: you and your father, Dr. Eli Vance.
+                     {{ $game->description }} 
 
-As founders of a fledgling resistance, you’ve continued your clandestine scientific activity—performing critical research, and building invaluable tools for the few humans brave enough to defy the Combine.
-
-Every day, you learn more about your enemy, and every day you work toward finding a weakness.
-
-ABOUT GAMEPLAY IN VR:
-
-Valve’s return to the Half-Life universe that started it all was built from the ground up for virtual reality. VR was built to enable the gameplay that sits at the heart of Half-Life.
-
-Immerse yourself in deep environmental interactions, puzzle solving, world exploration, and visceral combat.
-
-Lean to aim around a broken wall and under a Barnacle to make an impossible shot. Rummage through shelves to find a healing syringe and some shotgun shells. Manipulate tools to hack alien interfaces. Toss a bottle through a window to distract an enemy. Rip a Headcrab off your face and throw it out the window.
-
-COMMUNITY-BUILT ENVIRONMENTS
-
-A set of Source 2 tools for building new levels is included with the game, enabling any player to build and contribute new environments for the community to enjoy through Half-Life: Alyx&#x27;s Steam Workshop. Hammer, Valve’s level authoring tool, has been updated with all of the game&#x27;s virtual reality gameplay tools and components.</pre
-                    >
+                    </pre>
                         </h4>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
+  @else
+    <h1> Error 404.<h1><br><p>Sorry but there is no game here you are looking for.</p>
+    <a href="/shop"> Return to shop </a>
+  @endisset
     <footer>
         <div class="left">
             <div class="logo">

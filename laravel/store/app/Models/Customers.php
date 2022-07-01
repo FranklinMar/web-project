@@ -1,8 +1,9 @@
 <?php 
 
-namespace App;
+// namespace App;
+namespace App\Models;
 
-
+use App\Models\Games;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -13,7 +14,8 @@ class Customers extends Model {
   protected $table = 'customer';
 
   public function games() {
-    return $this->belongsToMany('App\Games');
+    // return $this->belongsToMany('App\Games');
+    return $this->belongsToMany(Games::class);
   }
 
   public static function findByLogin(string $login) {

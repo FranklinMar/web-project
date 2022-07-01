@@ -244,7 +244,25 @@
                     </div></a>
                 </div>
                 <div class="game-column">
-                    <a href="#"><div class="game">
+                  @isset ($games)
+                    @foreach ($games as $game)
+                    <a href="/game/{{ $game->id }}"><div class="game">
+                        <img src="/games/{{ $game->url }}.png" alt="{{ $game -> name }}">
+                        <div class="info">
+                            <h6>{{ $game -> name }}</h6>
+                            <div class="data">
+                                <div class="platforms">
+                                    @foreach ($game->platforms as $platform)
+                                    <img src="/platforms/{{ $platform->url }}" alt="{{ $platform->name }}">
+                                    @endforeach
+                                </div>
+                                <p>{{ $game->price }}</p>
+                            </div>
+                            <p>{{ $game->shortDes }}</p>
+                        </div>
+                    </div></a>
+                    @endforeach
+                    <!-- <a href="#"><div class="game">
                         <img src="/img/gta5.png" alt="Grand Theft Auto V">
                         <div class="info">
                             <h6>Grand theft auto V: Premium Edition</h6>
@@ -271,7 +289,7 @@
                             </div>
                             <p>Description...</p>
                         </div>
-                    </div></a>
+                    </div></a> -->
                 </div>
             </div>
             <footer>
