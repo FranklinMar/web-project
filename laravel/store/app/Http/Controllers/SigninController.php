@@ -3,19 +3,113 @@
 namespace App\Http\Controllers;
 
 use App\Models\Customer;
+use App\Models\Customers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 
 class SignInController extends Controller {
 
   public function login(){
+    // unset($_COOKIE['password']);
     // session_start();
+    // if (Cookie::has('login') && Cookie::has('password')){
+    if(isset($_COOKIE['login']) && isset($_COOKIE['password'])) {
+      return redirect('/basket');
+    }
     return view("login", ['boolean' => true]);
   }
 
   public function signup(){
     // session_start();
+    // if(Cookie::has('login') && Cookie::has('password')){
+    if(isset($_COOKIE['login']) && isset($_COOKIE['password'])) {
+      return redirect('/basket');
+    }
     return view("login", ['boolean' => false]);
   }
+
+  public function loginPost(Request $request){
+    // session_start();
+    $request->validate([
+      'login' => 'required',
+      'password' => 'required'
+    ]);
+
+    $login = $request->input('login');
+    $password = $request->input('password');
+    $error = null;
+    if (Customers::findByLogin($login)){
+      if (Customers::authorize($login, $password)){
+        setcookie('login',$request->input('login'));
+        setcookie('password',$request->input('password'));
+        return redirect("/shop");
+      } else {
+        $error = "Невірний пароль";
+      }
+    } else {
+      $error = "Даного логіна не існує";
+    }
+    return view("login", ['boolean' => true, 'error' => [$error]]);
+  }
+
+  public function signupPost(Request $request){
+    $request->validate([
+        'loginreg' => 'required',
+        'email' => 'required',
+        'pwd1' => 'required',
+        'pwd2' => 'required',
+    ]);
+    // $loginreg = $_POST["login"];
+    // $email = $_POST["email"];
+    // $pwd1 = $_POST["pwd1"];
+    // $pwd2 = $_POST["pwd2"];
+    $login = $request->input('loginreg');
+    $email = $request->input('email');
+    $password = $request->input('pwd1');
+    $confirmpwd = $request->input('pwd2');
+    $errors = null;
+
+    if(Customers::findByLogin($login)){
+      // return view("login", ['boolean' => false, 'error' => 'Даний логін зайнятий']);
+      if (!$errors){
+        $errors = [];
+      }
+      array_push($errors, 'Даний логін зайнятий');
+    }
+
+    if($password != $confirmpwd) {
+      if (!$errors){
+        $errors = [];
+      }
+      // return view("login", ['boolean' => false, 'error' => 'Паролі не збігаються']);
+      // $error .= ' Паролі не збігаються';
+      array_push($errors, 'Паролі не збігаються');
+    }
+    
+    if ($errors) {
+      return view("login", ['boolean' => false, 'error' => $errors]);
+    }
+    $customer = new Customers();
+    $customer->login = $login;
+    $customer->email = $email;
+    $customer->password = $password;
+    $customer->save();
+    // $customer = n;ew Customer($login, $email, $password);
+    setcookie('login', $login);
+    setcookie('password', $password);
+    // return view("login", ['boolean' => false]);
+    return redirect("/shop");
+  }
+
+  public function logout(){
+      // setcookie('login', null);
+      unset($_COOKIE['login']);
+      unset($_COOKIE['password']);
+      // Cookie::queue(Cookie::forget('login'));
+      // Cookie::queue(Cookie::forget('password'));
+      return redirect("/");
+  }
+
 
   // public function loginPost(Request $request){
   //   // session_start();

@@ -34,20 +34,57 @@
             </a>
         </span>
         <span class="right">
-            <a href="/shop" class="link">
-                <div class="text">Крамниця</div>
-                <img src="/img/shop.svg" alt="Shop">
-            </a>
-            <a href="/login" class="link">
-                <div class="text">Вхід</div>
-                <img src="/img/acc.svg" alt="Log in">
-            </a>
-            <button class="menu"><div>
-                <svg></svg>
-                <svg></svg>
-                <svg></svg>
-            </div></button>
-        </span>
+      <a href="/shop" class="link">
+        <div class="text">Крамниця</div>
+        <img src="/img/shop.svg" alt="Shop">
+      </a>
+      
+      @if (isset($_COOKIE['login']) && isset($_COOKIE['password']))
+      <a href="/basket" class="link">
+        <div class="text">Корзина</div>
+        <img src="/img/basket.svg" alt="Cart">
+      </a>
+      <a href="/logout" class="link">
+        <div class="text">Вихід</div>
+        <img src="/img/acc.svg" alt="Log in">
+      </a>
+      @else
+      <a href="/login" class="link">
+        <div class="text">Вхід</div>
+        <img src="/img/acc.svg" alt="Log in">
+      </a>
+      @endif
+      <!-- @if (Cookie::has('login') && Cookie::has('password'))
+      <a href="/basket" class="link">
+        <div class="text">Корзина</div>
+        <img src="/img/basket.svg" alt="Cart">
+      </a>
+      <a href="/logout" class="link">
+        <div class="text">Вихід</div>
+        <img src="/img/acc.svg" alt="Log in">
+      </a>
+      @else
+      <a href="/login" class="link">
+        <div class="text">Вхід</div>
+        <img src="/img/acc.svg" alt="Log in">
+      </a>
+      @endif -->
+      <!-- @if (Cookie::has('login') && Cookie::has('password'))
+      <a href="/basket" class="link">
+        <div class="text">Корзина</div>
+        <img src="/img/basket.svg" alt="Cart">
+      </a>
+      @endif
+      <a href="{{ (Cookie::has('login') && Cookie::has('password')) ? '/logout' : '/login' }}" class="link">
+        <div class="text">{{ (Cookie::has('login') && Cookie::has('password')) ? 'Вихід' : 'Вхід' }}</div>
+        <img src="/img/acc.svg" alt="Account">
+      </a> -->
+      <button class="menu"><div>
+        <svg></svg>
+        <svg></svg>
+        <svg></svg>
+      </div></button>
+    </span>
     </nav>
 <div class="slice1">
 

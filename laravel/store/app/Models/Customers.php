@@ -15,7 +15,7 @@ class Customers extends Model {
 
   public function games() {
     // return $this->belongsToMany('App\Games');
-    return $this->belongsToMany(Games::class);
+    return $this->belongsToMany(Games::class, 'basket', 'idCustomer', 'idGame', 'id', 'id');
   }
 
   public static function findByLogin(string $login) {

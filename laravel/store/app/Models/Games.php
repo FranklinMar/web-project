@@ -17,13 +17,14 @@ class Games extends Model {
   //   return $this->belongsTo('App\Model\GamePlatforms')
   // }
   public function platforms() {
-    // return $this->belongsToMany('App\Platforms');
-    return $this->belongsToMany(Platforms::class);
+    // return $this->belongsToMany('App\Models\Platforms');
+    return $this->belongsToMany(Platforms::class, 'gameplatforms', 'idGame', 'idPlatform', 'id', 'id');
   }
 
   public function customers() {
-    // return $this->belongsToMany('App\Customers');
-    return $this->belongsToMany(Customers::class);
+    // return $this->belongsToMany('App\Models\Customers');
+    return $this->belongsToMany(Customers::class, 'basket', 'idCustomer', 'idGame', 'id', 'id');
+    // $this->belongsTo()
   }
 
 }

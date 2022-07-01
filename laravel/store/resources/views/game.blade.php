@@ -75,7 +75,7 @@
                     <div class="game-page-section2__block18 layout">
 <!--                        <div style="&#45;&#45;src:url(/assets/2250af3834f531e526d680bd1dcf332a.png)"-->
 <!--                                class="game-page-section2__image3 layout"></div>-->
-                        <img src="/games/{{ $game->url }}.png" alt="Poster" style="max-width: 815.86px/*available*/;
+                        <img src="/games/{{ $game->url }}" alt="Poster" style="max-width: 815.86px/*available*/;
                     max-height: 460.51px/*available*/;width:100%;height:100%; object-fit: contain"
                              class="game-page-section2__image3 layout">
                     </div>
@@ -109,39 +109,45 @@
                         style="--src:url(/img/gradient.png)"
                         class="game-page-section2__block7 layout"
                 >
-                    <div class="game-page-section2__group layout">
-                        <div class="game-page-section2__flex2 layout">
+                    <div class="game-page-section2__group layout" style="flex-direction: row;">
+                        <div class="game-page-section2__flex1 layout">
+                            <div class="game-page-section2__flex1-item" style="flex: none;">
+                                <h1 class="game-page-section2__big-title layout">Buy {{ $game->name }}</h1>
+                            </div>
+                            <!-- <div class="game-page-section2__flex1-spacer"></div> -->
+                            <!-- <div class="game-page-section2__flex1-spacer1"></div> -->
+                        </div>
+                        <div class="game-page-section2__flex2 layout" style="align-items: flex-end;">
 <!--                            <div-->
 <!--                                    style="&#45;&#45;src:url(/img/steam.svg)"-->
 <!--                                    class="game-page-section2__icon1 layout"-->
 <!--                            ></div>-->
-                            <img src="/img/steam.svg" alt="Steam" class="game-page-section2__icon1 layout">
+                            <div style="display: flex; flex-direction: row; align-content: flex-end; justify-content: right; width:fit-content;">
+                              @foreach ($game->platforms as $platform)
+                              <img src="/img/{{ $platform->url }}" alt="{{ $platform->name }}" class=" layout" style="max-width: 30px; object-fit: contain;">
+                              @endforeach
+                            </div>
                             <div class="game-page-section2__block8 layout">
                                 <div class="game-page-section2__block8-item">
                                     <div class="game-page-section2__block9 layout">
-                                        <h4 class="game-page-section2__highlights1 layout">{{ $game->price }}</h4>
+                                        <h4 class="game-page-section2__highlights1 layout">${{ number_format((float)$game->price, 2, '.', '') }}</h4>
                                     </div>
                                 </div>
-                                <div class="game-page-section2__block8-spacer"></div>
-                                <div class="game-page-section2__block8-item1">
-                                  <form style="display: contents;" action="/game/add/{{ $game->id }}" method="POST">
-                                  <button style="display: contents;" type="submit>
-                                    <div
-                                            style="--src:url(/img/addtocart.png)"
-                                            class="game-page-section2__block10 layout">
-                                        <h2 class="game-page-section2__medium-title2 layout">Add to Cart</h2>
-                                    </div>
+                                <div class="game-page-section2__block8-spacer" style="flex:none"></div>
+                                <div class="game-page-section2__block8-item1" style="width:fit-content; align-items:center; align-content:center; justify-content: center;">
+                                  <!-- <form id="form" style="display: contents;" action="/game/add/{{ $game->id }}" method="POST"> -->
+                                  <form id="form" style="display: contents;" action="/game/add/" method="POST">
+                                  <!-- <button style="display: contents;" type="submit"> -->
+                                    <!-- <div -->
+                                            <!-- style="--src:url(/img/addtocart.png)" -->
+                                            <!-- class="game-page-section2__block10 layout"> -->
+                                    <button name="gameId" value="{{ $game->id }}" style="--src:url(/img/addtocart.png)" class="game-page-section2__block10 layout" type="submit"> 
+                                        <h2 class="game-page-section2__medium-title2 layout" style="width: 100%; height:100%;">Add to Cart</h2>
+                                    <!-- </div> -->
                                   </button>
                                 </form>
                                 </div>
                             </div>
-                        </div>
-                        <div class="game-page-section2__flex1 layout">
-                            <div class="game-page-section2__flex1-item">
-                                <h1 class="game-page-section2__big-title layout">Buy {{ $game->name }}</h1>
-                            </div>
-                            <div class="game-page-section2__flex1-spacer"></div>
-                            <div class="game-page-section2__flex1-spacer1"></div>
                         </div>
                     </div>
                 </div>
@@ -167,8 +173,10 @@
         </div>
     </section>
   @else
-    <h1> Error 404.<h1><br><p>Sorry but there is no game here you are looking for.</p>
+  <div class="error">
+    <h1> Error 404.</h1><br><p>Sorry but there is no game here you are looking for.</p>
     <a href="/shop"> Return to shop </a>
+</div>
   @endisset
     <footer>
         <div class="left">

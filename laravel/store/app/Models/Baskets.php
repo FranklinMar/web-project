@@ -15,11 +15,11 @@ class Baskets extends Model {
   protected $table = 'basket';
 
   public function games() {
-    return $this->hasMany(Games::class);
+    return $this->hasMany(Games::class, 'idGame');
   }
 
   public function customers() {
-    return $this->hasMany(Customers::class);
+    return $this->hasMany(Customers::class, 'idCustomer');
   }
 
 }

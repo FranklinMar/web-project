@@ -405,6 +405,7 @@ footer .right .media img {
     font-style: normal;
     font-weight: 700;
     font-size: 60px;
+    text-align: center;
     /* line-height: 71px; */
     color: #FFFFFF;
 }
@@ -414,6 +415,7 @@ footer .right .media img {
     font-style: normal;
     font-weight: 700;
     font-size: 30px;
+    text-align: center;
     /* line-height: 71px; */
     color: #FFFFFF;
 }
@@ -422,7 +424,8 @@ footer .right .media img {
     font-family: 'Space Mono', monospace;
     font-style: normal;
     font-weight: 700;
-    font-size: 60px;
+    font-size: 30px;
     /*line-height: 40px;*/
+    text-align: center;
     color: blueviolet;
 }

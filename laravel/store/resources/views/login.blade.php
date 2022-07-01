@@ -44,10 +44,21 @@
         <div class="text">Крамниця</div>
         <img src="/img/shop.svg" alt="Shop">
       </a>
+      @if (isset($_COOKIE['login']) && isset($_COOKIE['password']))
+      <a href="/basket" class="link">
+        <div class="text">Корзина</div>
+        <img src="/img/basket.svg" alt="Cart">
+      </a>
+      <a href="/logout" class="link">
+        <div class="text">Вихід</div>
+        <img src="/img/acc.svg" alt="Log in">
+      </a>
+      @else
       <a href="/login" class="link">
         <div class="text">Вхід</div>
         <img src="/img/acc.svg" alt="Log in">
       </a>
+      @endif
       <button class="menu"><div>
         <svg></svg>
         <svg></svg>
@@ -62,9 +73,9 @@
   </div>
   <main>
     <div class="main">
-      @isset( $success )
-      <h1 style="font-size: 20px">{{$success}}</h1>
-      @else
+      <!-- @isset( $success ) -->
+      <!-- <h1 style="font-size: 20px">{{$success}}</h1> -->
+      <!-- @else -->
         @if ( $boolean )
         <h1>Увійти</h1>
         <form action="/login/submit" method="POST" style="display: contents">
@@ -79,8 +90,11 @@
               <input name="password" required="required" type="password" placeholder="Пароль">
                 <!-- <strong class="warning" style="display: none;">Цей логін уже зайнято</strong> -->
             </label><!--class="field" -->
+            
             @isset($error)
-              <strong class="warning">{{$error}}</strong>
+              @foreach($error as $i)
+                <strong class="warning">{{$i}}</strong>
+              @endforeach
             @endisset
           </div>
           <div class="action">
@@ -143,7 +157,7 @@
           </div>
         </form>
         @endif
-      @endisset
+      <!-- @endisset -->
     </div>
     <footer>
       <div class="left">

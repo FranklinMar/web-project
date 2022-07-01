@@ -15,8 +15,8 @@ class Platforms extends Model {
   protected $table = "platforms";
   
   public function games() {
-    // return $this->belongsToMany('App\Games');
-    return $this->belongsToMany(Games::class);
+    // return $this->belongsToMany('App\Models\Games');
+    return $this->belongsToMany(Games::class, 'gameplatforms', 'idPlatform', 'idGame', 'id', 'id');
   }
 }
 

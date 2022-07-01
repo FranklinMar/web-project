@@ -247,7 +247,7 @@
                   @isset ($games)
                     @foreach ($games as $game)
                     <a href="/game/{{ $game->id }}"><div class="game">
-                        <img src="/games/{{ $game->url }}.png" alt="{{ $game -> name }}">
+                        <img src="/games/{{ $game->url }}" alt="{{ $game -> name }}">
                         <div class="info">
                             <h6>{{ $game -> name }}</h6>
                             <div class="data">
@@ -256,12 +256,13 @@
                                     <img src="/platforms/{{ $platform->url }}" alt="{{ $platform->name }}">
                                     @endforeach
                                 </div>
-                                <p>{{ $game->price }}</p>
+                                <p>${{ number_format((float)$game->price, 2, '.', '') }}</p>
                             </div>
                             <p>{{ $game->shortDes }}</p>
                         </div>
                     </div></a>
                     @endforeach
+                  @endisset
                     <!-- <a href="#"><div class="game">
                         <img src="/img/gta5.png" alt="Grand Theft Auto V">
                         <div class="info">
