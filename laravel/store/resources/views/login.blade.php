@@ -44,7 +44,22 @@
         <div class="text">Крамниця</div>
         <img src="/img/shop.svg" alt="Shop">
       </a>
-      @if (isset($_COOKIE['login']) && isset($_COOKIE['password']))
+      @if (session()->has('login') && session()->has('password'))
+      <a href="/basket" class="link">
+        <div class="text">Корзина</div>
+        <img src="/img/basket.svg" alt="Cart">
+      </a>
+        <a href="/logout" class="link"> 
+          <div class="text">Вихід</div>
+          <img src="/img/acc.svg" alt="Log out">
+        </a>
+      @else
+        <a href="/login" class="link">
+          <div class="text">Вхід</div>
+          <img src="/img/acc.svg" alt="Log in">
+        </a>
+      @endif
+      <!-- @if (isset($_COOKIE['login']) && isset($_COOKIE['password']))
       <a href="/basket" class="link">
         <div class="text">Корзина</div>
         <img src="/img/basket.svg" alt="Cart">
@@ -58,7 +73,7 @@
         <div class="text">Вхід</div>
         <img src="/img/acc.svg" alt="Log in">
       </a>
-      @endif
+      @endif -->
       <button class="menu"><div>
         <svg></svg>
         <svg></svg>

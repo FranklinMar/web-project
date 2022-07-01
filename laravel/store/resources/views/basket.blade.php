@@ -50,10 +50,25 @@
                 <div class="text">Крамниця</div>
                 <img src="/img/shop.svg" alt="Shop">
             </a>
+            @if (session()->has('login') && session()->has('password'))
+            <a href="/basket" class="link">
+              <div class="text">Корзина</div>
+              <img src="/img/basket.svg" alt="Cart">
+            </a>
+              <a href="/logout" class="link"> 
+                <div class="text">Вихід</div>
+                <img src="/img/acc.svg" alt="Log out">
+              </a>
+            @else
             <a href="/login" class="link">
+              <div class="text">Вхід</div>
+              <img src="/img/acc.svg" alt="Log in">
+            </a>
+            @endif
+            <!-- <a href="/login" class="link">
                 <div class="text">Вхід</div>
                 <img src="/img/acc.svg" alt="Log in">
-            </a>
+            </a> -->
             <button class="menu"><div>
                 <svg></svg>
                 <svg></svg>
@@ -105,17 +120,20 @@
 <!--            <div style="&#45;&#45;src:url(//img/line.png)" class="basket-img layout8"></div>-->
             <img src="/img/line.png" class="basket-img layout8" alt="">
         </div>
-        <div class="basket-group6 layout">
-            <div class="basket-flex16 layout">
-                <div class="basket-flex16-item" style="width:100%; flex:1;"><!--  max-width: 180px;-->
+
+
+        
+        <div class="basket-group6 layout" style="flex-direction: row; justify-content: space-between;">
+            <div class="basket-flex16 layout" style="width:100%;">
+                <div class="basket-flex16-item" style="width:100%;"><!--  max-width: 180px;-->
 <!--                    <div style="&#45;&#45;src:url(//img/gtaposter.png)" class="basket-img3 layout"></div>-->
                     <img src="/img/gtaposter.png" class="basket-img3 layout" alt="Постер">
                 </div>
                 <div class="basket-flex16-spacer"></div>
-                <div class="basket-flex16-item1">
-                    <div class="basket-flex17 layout">
-                        <div class="basket-flex18 layout">
-                            <div class="basket-flex18-item">
+                <div class="basket-flex16-item1" style="display: contents; width:100%; flex: none;">
+                    <div class="basket-flex17 layout" style="width: 100%;">
+                        <div class="basket-flex18 layout" style="justify-content: space-between;">
+                            <div class="basket-flex18-item" style="flex: none;">
                                 <div class="basket-flex19 layout">
                                     <div class="basket-txt13 layout">Grand theft auto V: Premium Edition</div>
                                     <div class="basket-img layout9" style="max-height: 32px;max-width: 120px;
@@ -128,7 +146,7 @@ height:100%;width:100%">
                             <div class="basket-flex18-spacer"></div>
                             <div class="basket-txt14 layout">$25.00</div>
                         </div>
-                        <div class="basket-flex20 layout">
+                        <div class="basket-flex20 layout" style="margin: 7px 0 0 0;justify-content: right; width: auto;">
                             <form style="display:contents;" action="" method="POST">
                             <button style="display:contents;" type="submit">
                             <div class="basket-flex20-item button">
@@ -149,14 +167,16 @@ height:100%;width:100%">
                 </div>
             </div>
         </div>
+
+
         <div class="basket-group9 layout">
-            <div class="basket-flex21 layout">
-                <div class="basket-flex22 layout">
+            <div class="basket-flex21 layout" style="align-content: flex-end;">
+                <div class="basket-flex22 layout" style="flex-direction: row">
                     <div class="basket-flex22-item"><div class="basket-txt layout1">Підсумок:</div></div>
                     <div class="basket-flex22-spacer"></div>
                     <div class="basket-flex22-item"><div class="basket-txt17 layout">$25.00</div></div>
                 </div>
-                <div class="basket-group10 layout button">
+                <div class="basket-group10 layout button" style="margin: 0; align-self: flex-end;">
                         <form action="" style="display: contents" method="POST">
                             <button type="submit" style="display: contents">
                                 <div class="basket-txt18 layout">Придбати</div>

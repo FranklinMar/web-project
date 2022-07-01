@@ -12,6 +12,10 @@ class Customers extends Model {
   use HasFactory;
 
   protected $table = 'customer';
+  protected $guarded = [];
+  public $timetstamps = false;
+  const UPDATED_AT = null; 
+  const CREATED_AT = null; 
 
   public function games() {
     // return $this->belongsToMany('App\Games');
@@ -21,7 +25,7 @@ class Customers extends Model {
   public static function findByLogin(string $login) {
     //$customers = Customers::all();
     foreach (Customers::all() as $customer) {
-      if ($customer['login'] == $login) {
+      if (strcasecmp(trim($customer['login']), trim($login)) == 0) {
         return $customer;
       }
     }

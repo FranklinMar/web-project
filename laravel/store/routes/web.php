@@ -1,6 +1,8 @@
 <?php
 
 // use App\Http\Controllers\GameController;
+
+use App\Http\Controllers\BasketController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\SignInController;
@@ -31,6 +33,9 @@ Route::get('/store', [ShopController::class, 'shop']);
 Route::get('/shoppart', [ShopController::class, 'shop']);
 
 Route::get('/game/{id}', [ShopController::class, 'game']);
+
+Route::get('/basket', [BasketController::class, 'basket']);
+Route::get('/cart', [BasketController::class, 'basket']);
 
 Route::get('/login', [SignInController::class, 'login'])/*->name('login')*/;
 Route::get('/signup', [SignInController::class, 'signup'])/*->name('signup')*/;

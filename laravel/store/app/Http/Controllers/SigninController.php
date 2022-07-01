@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Customer;
 use App\Models\Customers;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Cookie;
 
 class SignInController extends Controller {
 
@@ -13,7 +12,9 @@ class SignInController extends Controller {
     // unset($_COOKIE['password']);
     // session_start();
     // if (Cookie::has('login') && Cookie::has('password')){
-    if(isset($_COOKIE['login']) && isset($_COOKIE['password'])) {
+    // if(isset($_COOKIE['login']) && isset($_COOKIE['password'])) {
+    if(session()->has('login') && session()->has('password')) {
+    // if(Session::has('login') && Session::has('password')) {
       return redirect('/basket');
     }
     return view("login", ['boolean' => true]);
@@ -22,7 +23,9 @@ class SignInController extends Controller {
   public function signup(){
     // session_start();
     // if(Cookie::has('login') && Cookie::has('password')){
-    if(isset($_COOKIE['login']) && isset($_COOKIE['password'])) {
+    // if(isset($_COOKIE['login']) && isset($_COOKIE['password'])) {
+    if(session()->has('login') && session()->has('password')) {
+    // if(Session::has('login') && Session::has('password')) {
       return redirect('/basket');
     }
     return view("login", ['boolean' => false]);
@@ -40,8 +43,12 @@ class SignInController extends Controller {
     $error = null;
     if (Customers::findByLogin($login)){
       if (Customers::authorize($login, $password)){
-        setcookie('login',$request->input('login'));
-        setcookie('password',$request->input('password'));
+        $request->session()->push('login', $login);
+        $request->session()->push('password', $password);
+        // setcookie('login',$request->input('login'));
+        // setcookie('password',$request->input('password'));
+        // Session::put('login', $login);
+        // Session::put('password');
         return redirect("/shop");
       } else {
         $error = "Невірний пароль";
@@ -89,25 +96,42 @@ class SignInController extends Controller {
     if ($errors) {
       return view("login", ['boolean' => false, 'error' => $errors]);
     }
-    $customer = new Customers();
-    $customer->login = $login;
-    $customer->email = $email;
-    $customer->password = $password;
-    $customer->save();
+    // $customer = new Customers();
+    // $customer->login = $login;
+    // $customer->email = $email;
+    // $customer->password = $password;
+    // $customer->save();
+    // $customer = new Customers([$login, $email, $password]);
+    $customer = Customers::create([
+      'login' => $login,
+      'email' => $email,
+      'password' => $password
+    ]);
+    $request->session()->push('login', $login);
+    $request->session()->push('password', $password);
     // $customer = n;ew Customer($login, $email, $password);
-    setcookie('login', $login);
-    setcookie('password', $password);
+    // setcookie('login', $login);
+    // setcookie('password', $password);
+    // Session::put('login', $login);
+    // Session::put('password', $password);
     // return view("login", ['boolean' => false]);
     return redirect("/shop");
   }
 
-  public function logout(){
+  public function logout(/*Request $request*/){
       // setcookie('login', null);
-      unset($_COOKIE['login']);
-      unset($_COOKIE['password']);
+      // unset($_COOKIE['login']);
+      // unset($_COOKIE['password']);
+      // $request->session()->forget('login');
+      // $request->session()->forget('password');
+      session()->forget('login');
+      session()->forget('password');
+      // Session::forget('login');
+      // Session::forget('password');
+      // Session::flush();
       // Cookie::queue(Cookie::forget('login'));
       // Cookie::queue(Cookie::forget('password'));
-      return redirect("/");
+      return redirect("/welcome");
   }
 
 
