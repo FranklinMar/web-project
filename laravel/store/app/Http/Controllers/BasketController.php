@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Customers;
 use App\Models\Games;
 
 class BasketController extends Controller {
@@ -10,7 +11,19 @@ class BasketController extends Controller {
     if(!session()->has('login') && !session()->has('password')) {
       return redirect('/login');
     }
-    return view('basket');
+    $login = session()->get('login', '')[0];
+    $customer = Customers::findByLogin($login);
+    $games = $customer->games;
+    for ($i = 0; $i < count($games); $i++) {
+      if ($games[$i]->payed) {
+        unset($games[$i]);
+      }
+    }
+    $total = 0.0;
+    foreach($games as $game) {
+      $total += ((double) $game->price);
+    }
+    return view('basket', ['games' => $games, 'customer' => $customer, 'total' => $total]);
   }
 }
 

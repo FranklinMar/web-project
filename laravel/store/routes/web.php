@@ -33,6 +33,7 @@ Route::get('/store', [ShopController::class, 'shop']);
 Route::get('/shoppart', [ShopController::class, 'shop']);
 
 Route::get('/game/{id}', [ShopController::class, 'game']);
+Route::post('/game/add', [ShopController::class, 'addtobasket']);
 
 Route::get('/basket', [BasketController::class, 'basket']);
 Route::get('/cart', [BasketController::class, 'basket']);

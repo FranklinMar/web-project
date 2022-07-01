@@ -13,6 +13,10 @@ class Baskets extends Model {
   use HasFactory;
 
   protected $table = 'basket';
+  protected $guarded = [];
+  public $timetstamps = false;
+  const UPDATED_AT = null; 
+  const CREATED_AT = null; 
 
   public function games() {
     return $this->hasMany(Games::class, 'idGame');

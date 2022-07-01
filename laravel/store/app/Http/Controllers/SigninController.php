@@ -43,8 +43,8 @@ class SignInController extends Controller {
     $error = null;
     if (Customers::findByLogin($login)){
       if (Customers::authorize($login, $password)){
-        $request->session()->push('login', $login);
-        $request->session()->push('password', $password);
+        session()->push('login', $login);
+        session()->push('password', $password);
         // setcookie('login',$request->input('login'));
         // setcookie('password',$request->input('password'));
         // Session::put('login', $login);
@@ -107,8 +107,8 @@ class SignInController extends Controller {
       'email' => $email,
       'password' => $password
     ]);
-    $request->session()->push('login', $login);
-    $request->session()->push('password', $password);
+    session()->push('login', $login);
+    session()->push('password', $password);
     // $customer = n;ew Customer($login, $email, $password);
     // setcookie('login', $login);
     // setcookie('password', $password);

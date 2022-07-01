@@ -11,6 +11,10 @@ class GamePlatforms extends Model {
   use HasFactory;
 
   protected $table = "gameplatforms";
+  protected $guarded = [];
+  public $timetstamps = false;
+  const UPDATED_AT = null; 
+  const CREATED_AT = null; 
 
   // public function platform() {
   //   // return $this->hasMany('App\Models\Platforms');

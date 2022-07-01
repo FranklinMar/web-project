@@ -113,6 +113,7 @@
                 <!--                </div>-->
             </div>
         </div>
+@isset ($games)
 <div class="basket basket-group layout">
     <div class="basket-flex layout">
         <div class="basket-flex15 layout">
@@ -122,11 +123,14 @@
         </div>
 
 
-        
-        <div class="basket-group6 layout" style="flex-direction: row; justify-content: space-between;">
-            <div class="basket-flex16 layout" style="width:100%;">
-                <div class="basket-flex16-item" style="width:100%;"><!--  max-width: 180px;-->
+      
+        <!-- <div class="basket-group6 layout" style="flex-direction: row; justify-content: space-between;"> -->
+            <!-- <div class="basket-flex16 layout" style="width:100%;"> -->
+                <!-- <div class="basket-flex16-item" style="width:100%;"> max-width: 180px; -->
 <!--                    <div style="&#45;&#45;src:url(//img/gtaposter.png)" class="basket-img3 layout"></div>-->
+        <!-- <div class="basket-group6 layout" style="flex-direction: row; justify-content: space-between;">
+            <div class="basket-flex16 layout" style="width:100%;">
+                <div class="basket-flex16-item" style="width:100%;">
                     <img src="/img/gtaposter.png" class="basket-img3 layout" alt="Постер">
                 </div>
                 <div class="basket-flex16-spacer"></div>
@@ -166,7 +170,52 @@ height:100%;width:100%">
                     </div>
                 </div>
             </div>
+        </div> -->
+        @foreach ($games as $game)
+        <div class="basket-group6 layout" style="flex-direction: row; justify-content: space-between;">
+            <div class="basket-flex16 layout" style="width:100%;">
+                <div class="basket-flex16-item" style="width:100%;">
+                    <img src="/games/{{ $game->url }}" class="basket-img3 layout" alt="Постер">
+                </div>
+                <div class="basket-flex16-spacer"></div>
+                <div class="basket-flex16-item1" style="display: contents; width:100%; flex: none;">
+                    <div class="basket-flex17 layout" style="width: 100%;">
+                        <div class="basket-flex18 layout" style="justify-content: space-between;">
+                            <div class="basket-flex18-item" style="flex: none;">
+                                <div class="basket-flex19 layout">
+                                    <div class="basket-txt13 layout">{{ $game->name }}</div>
+                                    <div class="basket-img layout9" style="max-height: 32px; max-width: 120px; height:100%; width:100%">
+                                    @foreach ($game->platforms as $platform)
+                                        <img src="/platforms/{{ $platform->url }}" alt="{{ $platform->name }}" style="height: 32px;width: 30px;">
+                                    @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="basket-flex18-spacer"></div>
+                            <div class="basket-txt14 layout">${{ number_format((double)$game->price, 2, '.', '') }}</div>
+                        </div>
+                        <div class="basket-flex20 layout" style="margin: 7px 0 0 0;justify-content: right; width: auto;">
+                            <form style="display:contents;" action="/basket/buy/{{ $game->id }}" method="POST">
+                            <button style="display:contents;" type="submit">
+                            <div class="basket-flex20-item button">
+                                <div class="basket-group7 layout"><div class="basket-txt15 layout">Придбати зараз</div></div>
+                            </div>
+                            </button>
+                            </form>
+                            <div class="basket-flex20-spacer"></div>
+                            <form style="display:contents;" action="/basket/delete/{{ $game->id }}" method="POST">
+                            <button style="display: contents;" type="submit">
+                            <div class="basket-flex20-item1 button">
+                                <div class="basket-group8 layout"><div class="basket-txt16 layout">Вилучити</div></div>
+                            </div>
+                            </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        @endforeach
 
 
         <div class="basket-group9 layout">
@@ -174,14 +223,18 @@ height:100%;width:100%">
                 <div class="basket-flex22 layout" style="flex-direction: row">
                     <div class="basket-flex22-item"><div class="basket-txt layout1">Підсумок:</div></div>
                     <div class="basket-flex22-spacer"></div>
-                    <div class="basket-flex22-item"><div class="basket-txt17 layout">$25.00</div></div>
+                    <div class="basket-flex22-item"><div class="basket-txt17 layout">
+                      {{ ($total != 0) ? '$'.number_format((double)$total, 2, '.', '') : 'Пусто' }}
+                    </div></div>
                 </div>
                 <div class="basket-group10 layout button" style="margin: 0; align-self: flex-end;">
-                        <form action="" style="display: contents" method="POST">
+                      @if (count($games) != 0)
+                        <form action="/basket/buyall/{{ $customer->id }}" style="display: contents" method="POST">
                             <button type="submit" style="display: contents">
                                 <div class="basket-txt18 layout">Придбати</div>
                             </button>
                         </form>
+                      @endif
                 </div>
             </div>
         </div>
@@ -190,13 +243,15 @@ height:100%;width:100%">
                 <div class="basket-group11 layout"><div class="basket-txt19 layout">Продовжити придбання</div></div>
             </a>
             <div class="basket-flex23-spacer"></div>
-            <form style="display:contents;" action="" method="POST">
+            @if (count($games) != 0)
+            <form style="display:contents;" action="/basket/deleteall/{{ $customer->id }}" method="POST">
                 <button type="submit" style="display:contents;">
             <div class="basket-flex23-item1 button">
                 <div class="basket-group12 layout"><div class="basket-txt20 layout">Вилучити все</div></div>
             </div>
                 </button>
             </form>
+            @endif
         </div>
         <div class="basket-txt layout2">ДОСТАВКА</div>
         <div class="basket-group13 layout">
@@ -249,6 +304,12 @@ height:100%;width:100%">
         </div>
     </footer>
 </div>
+@else 
+<div class="error">
+    <h1> Error 404.</h1><br><p>Sorry but there is no game here you are looking for.</p>
+    <a href="/shop"> Return to shop </a>
+</div>
+@endisset
     </main>
 <script type="text/javascript">
     AOS.init();

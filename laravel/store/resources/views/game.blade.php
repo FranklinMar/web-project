@@ -145,7 +145,7 @@
                             <div class="game-page-section2__block8 layout">
                                 <div class="game-page-section2__block8-item">
                                     <div class="game-page-section2__block9 layout">
-                                        <h4 class="game-page-section2__highlights1 layout">${{ number_format((float)$game->price, 2, '.', '') }}</h4>
+                                        <h4 class="game-page-section2__highlights1 layout">${{ number_format((double)$game->price, 2, '.', '') }}</h4>
                                     </div>
                                 </div>
                                 <div class="game-page-section2__block8-spacer" style="flex:none"></div>
@@ -156,7 +156,8 @@
                                     <!-- <div -->
                                             <!-- style="--src:url(/img/addtocart.png)" -->
                                             <!-- class="game-page-section2__block10 layout"> -->
-                                    <button name="gameId" value="{{ $game->id }}" style="--src:url(/img/addtocart.png)" class="game-page-section2__block10 layout" type="submit"> 
+                                    <input type="hidden" name="gameId" value="{{ $game->id }}">
+                                    <button style="--src:url(/img/addtocart.png)" class="game-page-section2__block10 layout" type="submit"> 
                                         <h2 class="game-page-section2__medium-title2 layout" style="width: 100%; height:100%;">Add to Cart</h2>
                                     <!-- </div> -->
                                   </button>

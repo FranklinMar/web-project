@@ -271,7 +271,7 @@
                                     <img src="/platforms/{{ $platform->url }}" alt="{{ $platform->name }}">
                                     @endforeach
                                 </div>
-                                <p>${{ number_format((float)$game->price, 2, '.', '') }}</p>
+                                <p>${{ number_format((double)$game->price, 2, '.', '') }}</p>
                             </div>
                             <p>{{ $game->shortDes }}</p>
                         </div>
