@@ -19,25 +19,24 @@ class ShopController extends Controller {
   }
 
   public function addtobasket(Request $request) {
-    $request->validate(['idGame' => 'required']);
+    // $request->validate(['idGame' => 'required']);
 
+    // $idGame = $request->idGame;//input('idGame')
     $idGame = $request->input('idGame');
     $game = Games::find($idGame);
 
     $customer = Customers::findByLogin(session()->get('login', '')[0]);
 
     if (!$customer){
-      return redirect('/logout');
+     return redirect('/logout');
     }
 
     $basket = Baskets::create([
-      'idCustomer' => $customer->id,
-      'idGame' => $game->id,
-      'payed' => false
+     'idCustomer' => $customer->id,
+     'idGame' => $game->id,
+     'payed' => false
     ]);
 
     return redirect('/basket');
   }
 }
-
-?>

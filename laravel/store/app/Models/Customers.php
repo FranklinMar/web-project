@@ -22,6 +22,11 @@ class Customers extends Model {
     return $this->belongsToMany(Games::class, 'basket', 'idCustomer', 'idGame', 'id', 'id');
   }
 
+  public function basket() {
+    // return $this->belongsTo(Baskets::class, 'idCustomer');
+    return $this->hasMany(Baskets::class, 'idCustomer');
+  }
+
   public static function findByLogin(string $login) {
     //$customers = Customers::all();
     foreach (Customers::all() as $customer) {
@@ -103,5 +108,3 @@ class Customers extends Model {
 //     // return $customer->password == $password;
 //   }
 // }
-
-?>

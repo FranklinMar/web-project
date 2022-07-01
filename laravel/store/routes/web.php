@@ -22,6 +22,7 @@ use App\Http\Controllers\ShopController;
 /*Route::get('/', function () {
     return view('welcome');
 });*/
+
 Route::get('/', [GeneralController::class, 'welcome']);
 Route::get('/home', [GeneralController::class, 'welcome']);
 Route::get('/welcome', [GeneralController::class, 'welcome']);
@@ -37,6 +38,10 @@ Route::post('/game/add', [ShopController::class, 'addtobasket']);
 
 Route::get('/basket', [BasketController::class, 'basket']);
 Route::get('/cart', [BasketController::class, 'basket']);
+Route::post('/basket/buy', [BasketController::class, 'buy']);
+Route::post('/basket/delete', [BasketController::class, 'delete']);
+Route::post('/basket/buyall', [BasketController::class, 'buyAll']);
+Route::post('/basket/deleteall', [BasketController::class, 'deleteAll']);
 
 Route::get('/login', [SignInController::class, 'login'])/*->name('login')*/;
 Route::get('/signup', [SignInController::class, 'signup'])/*->name('signup')*/;

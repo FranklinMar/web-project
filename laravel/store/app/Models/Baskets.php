@@ -18,12 +18,14 @@ class Baskets extends Model {
   const UPDATED_AT = null; 
   const CREATED_AT = null; 
 
-  public function games() {
-    return $this->hasMany(Games::class, 'idGame');
+  public function game() {
+    // return $this->hasMany(Games::class, 'idGame');
+    return $this->belongsTo(Games::class, 'idGame');
   }
 
-  public function customers() {
-    return $this->hasMany(Customers::class, 'idCustomer');
+  public function customer() {
+    // return $this->hasMany(Customers::class, 'idCustomer');
+    return $this->belongsTo(Customers::class, 'idCustomer');
   }
 
 }

@@ -31,6 +31,9 @@ class Games extends Model {
     // $this->belongsTo()
   }
 
-}
+  public function baskets() {
+    // return $this->belongsTo(Baskets::class, 'idGame');
+    return $this->hasMany(Baskets::class, 'idGame');
+  }
 
-?>
+}

@@ -23,5 +23,3 @@ class Platforms extends Model {
     return $this->belongsToMany(Games::class, 'gameplatforms', 'idPlatform', 'idGame', 'id', 'id');
   }
 }
-
-?>

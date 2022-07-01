@@ -26,5 +26,3 @@ class GamePlatforms extends Model {
   //   return $this->hasMany('')
   // }
 }
-
-?>
