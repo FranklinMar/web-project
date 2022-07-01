@@ -14,14 +14,10 @@ class ShopController extends Controller {
   }
 
   public function game($id) {
-    // $game = ;
     return view('game', ['game' => Games::find($id)]);
   }
 
   public function addtobasket(Request $request) {
-    // $request->validate(['idGame' => 'required']);
-
-    // $idGame = $request->idGame;//input('idGame')
     $idGame = $request->input('idGame');
     $game = Games::find($idGame);
 

@@ -15,14 +15,4 @@ class GamePlatforms extends Model {
   public $timetstamps = false;
   const UPDATED_AT = null; 
   const CREATED_AT = null; 
-
-  // public function platform() {
-  //   // return $this->hasMany('App\Models\Platforms');
-  //   return $this->hasMany(Platforms::class, 'idPlatform')
-  // }
-
-  // public function game() {
-  //   // return $this->hasMany('App\Models\Game')
-  //   return $this->hasMany('')
-  // }
 }

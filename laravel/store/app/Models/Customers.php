@@ -18,17 +18,14 @@ class Customers extends Model {
   const CREATED_AT = null; 
 
   public function games() {
-    // return $this->belongsToMany('App\Games');
     return $this->belongsToMany(Games::class, 'basket', 'idCustomer', 'idGame', 'id', 'id');
   }
 
   public function basket() {
-    // return $this->belongsTo(Baskets::class, 'idCustomer');
     return $this->hasMany(Baskets::class, 'idCustomer');
   }
 
   public static function findByLogin(string $login) {
-    //$customers = Customers::all();
     foreach (Customers::all() as $customer) {
       if (strcasecmp(trim($customer['login']), trim($login)) == 0) {
         return $customer;

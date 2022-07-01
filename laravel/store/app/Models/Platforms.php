@@ -1,6 +1,5 @@
 <?php 
 
-// namespace App;
 namespace App\Models;
 
 use App\Models\Games;
@@ -19,7 +18,6 @@ class Platforms extends Model {
   const CREATED_AT = null; 
   
   public function games() {
-    // return $this->belongsToMany('App\Models\Games');
     return $this->belongsToMany(Games::class, 'gameplatforms', 'idPlatform', 'idGame', 'id', 'id');
   }
 }

@@ -1,6 +1,5 @@
 <?php 
 
-// namespace App;
 namespace App\Models;
 
 use App\Models\Customers;
@@ -19,12 +18,10 @@ class Baskets extends Model {
   const CREATED_AT = null; 
 
   public function game() {
-    // return $this->hasMany(Games::class, 'idGame');
     return $this->belongsTo(Games::class, 'idGame');
   }
 
   public function customer() {
-    // return $this->hasMany(Customers::class, 'idCustomer');
     return $this->belongsTo(Customers::class, 'idCustomer');
   }
 
