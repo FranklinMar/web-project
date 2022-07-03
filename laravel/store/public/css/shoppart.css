@@ -1,13 +1,13 @@
-body {
+/* body { */
     /*height: 100%;*/
     /*display: flex;*/
     /*flex-direction: column;*/
     /*align-content: stretch;*/
-}
+/* } */
 
 .part1 .game-column .mobile-group {
     display: none;
-    height: fit-content;
+    /* height: fit-content; */
 }
 
 div.radio-group {
@@ -57,7 +57,7 @@ h1 {
 }
 
 .part1 .display {
-    background: url(../img/poster.png) no-repeat center center;
+    background: var(--src) no-repeat center center/cover;
     filter: drop-shadow(-5px -5px 4px rgba(0, 0, 0, 0.25)) drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.25));
     padding: 0 26px 0 26px;
     width: 55.5555555556vw;
@@ -132,7 +132,7 @@ h1 {
 
 .part1 .display .data .platforms {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     align-items: flex-start;
 }
 
@@ -189,6 +189,7 @@ h1 {
     display: flex;
     flex-direction: row;
     min-width: 330px;
+    max-height: 80px;
     width: 100%;
     height: 100%;
     /*min-height: 80px;*/
@@ -206,14 +207,16 @@ h1 {
 .part1 .game > img {
     box-sizing: border-box;
     /*width: 50%;*/
-    width: 50%;
+    width: 100%;
     /*height: auto; !* TODO СЛАВА БОГУ ЗА auto! *!*/
     height: 100%;
 
     /*width: 100%; без width: 50%; height: 100%; ??? Працює теж*/
     margin-top: auto;
     margin-bottom: auto;
+    /* max-height: 80px; */
     object-fit: cover;
+    /* object-fit: cover; */
 }
 
 .part1 .game .content {
@@ -554,14 +557,21 @@ h1 {
         height: fit-content;
     }
 
-    .part1 .game-column{
+    .part1 .game-column {
         height: fit-content;
         gap: 20px;
     }
 
+    .part1 .game {
+      /* height: 100%; */
+      height: 240px;
+    }
+
     .part1 .game > img {
         width: 100%;
-        height: auto;
+        /* height: 100%; */
+        height: 70%;
+        object-fit: fill;
     }
 
     .part1 .game .content {
@@ -594,6 +604,7 @@ h1 {
 
     .part1 .game {
         flex-direction: column;
+        max-height: none;
     }
 
     .part1 .game .content {

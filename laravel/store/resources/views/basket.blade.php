@@ -104,7 +104,7 @@
           </a>
         </div>
         <!--                <div class="search">-->
-        <form action="" style="display: contents;">
+        <form action="/search" style="display: contents;" method="GET">
           <label class="search">
             <!--style="display: contents"-->
             @csrf
@@ -126,6 +126,9 @@
         <div class="basket-flex15 layout">
           <div class="basket-txt12 layout">ВАШ КОШИК.</div>
           <div class="basket-txt12 layout">Гаманець: ${{ number_format((double)$customer->money, 2, '.', '') }}</div>
+          @isset($error)
+          <div class="error" style="display:contents;"><a>Помилка: {{ $error }}</a></div>
+          @endisset
           @isset($error)
           <div class="error" style="display:contents;"><a>Помилка: {{ $error }}</a></div>
           @endisset

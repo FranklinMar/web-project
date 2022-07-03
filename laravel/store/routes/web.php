@@ -31,11 +31,15 @@ Route::get('/welcome', [GeneralController::class, 'welcome']);
 Route::get('/aboutus', [GeneralController::class, 'aboutus']);
 
 Route::get('/shop', [ShopController::class, 'shop']);
+Route::post('/shop', [ShopController::class, 'addtobasket']);
+
 Route::get('/store', [ShopController::class, 'shop']);
 Route::get('/shoppart', [ShopController::class, 'shop']);
+Route::get('/shop/list', [ShopController::class, 'list']);
 
 Route::get('/game/{id}', [ShopController::class, 'game']);
 Route::post('/game/add', [ShopController::class, 'addtobasket']);
+Route::get('/search', [ShopController::class, 'search']);
 
 Route::get('/basket', [BasketController::class, 'basket']);
 //Route::get('/email', function(){
@@ -53,13 +57,15 @@ Route::get('/signup', [SignInController::class, 'signup'])/*->name('signup')*/;
 Route::get('/login/verify', [SignInController::class, 'showVerify']);
 Route::post('/login/verify', [SignInController::class, 'loginVerify']);
 
-Route::get('/login/verify/code', [SignInController::class, 'showVerify']);
+Route::get('/login/verify/code', function(){
+  return redirect('/login/verify');
+});
 Route::post('/login/verify/code', [SignInController::class, 'codeVerify']);
 
 Route::get('/login/verify/reset', [SignInController::class, 'resetPassword']);
 Route::post('/login/verify/reset', [SignInController::class, 'confirmPassword']);
 
-Route::get('/login/verify/code', [SignInController::class, 'showVerify']);
+// Route::get('/login/verify/code', [SignInController::class, 'showVerify']);
 Route::get('/logout', [SignInController::class, 'logout']);
 
 Route::post('/login/submit', [SignInController::class, 'loginPost']);

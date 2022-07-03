@@ -78,6 +78,45 @@
 
   <div class="game-page game-page-group layout">
     <main class="game-page-main layout">
+    <div class="menu" style="margin-top: 50px;">
+      <div class="menu-panel">
+        <div class="flex-row">
+          <a href="#">
+            <div class="button">
+              <img src="/img/categ.svg" alt="Категорії">
+              <p>Категорії</p>
+            </div>
+          </a>
+          <a href="#">
+            <div class="button">
+              <img src="/img/new.svg" alt="Новинки">
+              <p>Новинки</p>
+            </div>
+          </a>
+          <a href="#">
+            <div class="button">
+              <img src="/img/top.svg" alt="Хіти рейтингу">
+              <p>Хіти рейтингу</p>
+            </div>
+          </a>
+          <a href="shoppart">
+            <div class="button">
+              <img src="/img/discount.svg" alt="Особливі пропозиції">
+              <p>Особливі пропозиції</p>
+            </div>
+          </a>
+        </div>
+        <label class="search">
+          <form action="/search" style="display: contents;" method="GET">
+            @csrf
+            <input class="input" name="search" type="text" placeholder="Пошук">
+            <button class="button">
+              <img src="/img/search.png" alt="Пошук">
+            </button>
+          </form>
+        </label>
+      </div>
+    </div>
       <!-- ======= section2 ======= -->
       @isset($game)
       <section class="game-page-section2__section2 layout" style="margin-top: 50px; margin-bottom: 200px;">
@@ -89,7 +128,8 @@
                 <!--                        <div style="&#45;&#45;src:url(/assets/2250af3834f531e526d680bd1dcf332a.png)"-->
                 <!--                                class="game-page-section2__image3 layout"></div>-->
                 <img src="/games/{{ $game->url }}" alt="Poster" style="max-width: 815.86px/*available*/;
-                    max-height: 460.51px/*available*/;width:100%;height:100%; object-fit: contain" class="game-page-section2__image3 layout">
+                    max-height: 460.51px/*available*/;width:100%;height:100%; object-fit: contain;
+                    filter: drop-shadow(-5px -5px 4px rgba(0, 0, 0, 0.25)) drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.25));" class="game-page-section2__image3 layout">
               </div>
             </div>
             <div class="game-page-section2__block14-spacer"></div>
@@ -164,7 +204,7 @@
             </div>
             <div class="game-page-section2__block11 layout">
               <div class="game-page-section2__block12 layout">
-                <div style="--src:url(/img/line.png)" class="game-page-section2__decorator layout"></div>
+                <div style="--src:url(/img/line.png); right:0; width:100%; height:available" class="game-page-section2__decorator layout"></div>
                 <h2 class="game-page-section2__medium-title3 layout">ABOUT THIS GAME</h2>
               </div>
               <div class="game-page-section2__block13 layout">

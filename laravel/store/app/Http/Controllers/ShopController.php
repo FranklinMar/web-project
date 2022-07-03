@@ -10,7 +10,9 @@ use Illuminate\Http\Request;
 class ShopController extends Controller {
 
   public function shop() {
-    return view('shoppart', ['games' => Games::all()]);
+    $games = Games::all()->slice(0, 14);
+    return view('shoppart', ['displayGames' => $games->slice(0, 4), 'games' => $games->slice(4)]);
+    // return view('shoppart', ['games' => Games::all()->slice(0, 10)]);
   }
 
   public function game($id) {
@@ -26,7 +28,7 @@ class ShopController extends Controller {
 
     $customer = Customers::findByLogin(session()->get('login', '')[0]);
 
-    if (!$customer){
+    if (!$customer) {
      return redirect('/logout');
     }
 
@@ -37,5 +39,29 @@ class ShopController extends Controller {
     ]);
 
     return redirect('/basket');
+  }
+
+  public function search(Request $request) {
+    $request->validate([
+      'search' => 'required'
+    ]);
+    $regex = "/[-_$%\"\':;,.\/?!|\s]/";//"[:;,./?!|\\s+]"
+    $search = strtolower(trim(preg_replace($regex, "", $request->input('search'))));
+    $games = Games::all();
+    // $search = 
+    foreach($games as $game) {
+      // $game->name = preg_replace("[:;,./?!|\\s+]", "", $game->name);
+      // if(strcasecmp(trim(preg_replace("[:;,./?!|\\s+]", "", $game->name)), $search) == 0){
+      //   return redirect("/game/{$game->id}");
+      // }
+      if(str_contains(strtolower(trim(preg_replace($regex, "", $game->name))), $search)){
+        return redirect("/game/{$game->id}");
+      }
+    }
+    return view('empty', ['search' => $request->input('search')]);
+  }
+
+  public function list() {
+    return view('gamelist', ['games' => Games::all()]);
   }
 }
