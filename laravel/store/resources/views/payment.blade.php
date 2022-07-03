@@ -8,8 +8,8 @@
   <link rel="preconnect" href="http://fonts.googleapis.com">
   <link rel="preconnect" href="http://fonts.gstatic.com" crossorigin>
   <link href="http://fonts.googleapis.com/css2?family=Share+Tech&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <title>Особливі пропозиції</title>
-  <link rel="stylesheet" type="" href="/css/shoppart.css">
+  <title>Payment</title>
+  <link rel="stylesheet" type="" href="/css/aboutus.css">
   <link rel="stylesheet" type="" href="/css/bluebackground.css">
   <link rel="stylesheet" type="" href="/css/all.css">
 </head>
@@ -39,6 +39,10 @@
         <div class="text">Крамниця</div>
         <img src="/img/shop.svg" alt="Shop">
       </a>
+      <!-- <a href="/login" class="link">
+            <div class="text">Вхід</div>
+            <img src="/img/acc.svg" alt="Log in">
+          </a> -->
       @if (session()->has('login') && session()->has('password'))
       <a href="/basket" class="link">
         <div class="text">Корзина</div>
@@ -54,10 +58,6 @@
         <img src="/img/acc.svg" alt="Log in">
       </a>
       @endif
-      <!-- <a href="/login" class="link">
-            <div class="text">Вхід</div>
-            <img src="/img/acc.svg" alt="Log in">
-            </a> -->
       <button class="menu">
         <div>
           <svg></svg>
@@ -67,7 +67,7 @@
       </button>
     </span>
   </nav>
-  <main>
+  <main style="display: block; min-height:auto; padding-top:50px;">
     <div class="menu">
       <div class="menu-panel">
         <div class="flex-row">
@@ -97,7 +97,7 @@
           </a>
         </div>
         <label class="search">
-          <form action="/search" style="display: contents;" method="GET">
+          <form action="/search" style="display: contents;">
             @csrf
             <input class="input" name="search" type="text" placeholder="Пошук">
             <button class="button">
@@ -107,37 +107,17 @@
         </label>
       </div>
     </div>
-    <h1>Список ігор</h1>
-    
-    <div class="part2">
-      <div class="flex-column">
-        <div class="bar">
-        </div>
-        <div class="game-column">
-          @isset ($games)
-          @foreach ($games as $game)
-          <a href="/game/{{ $game->id }}">
-            <div class="game">
-              <img src="/games/{{ $game->url }}" alt="{{ $game -> name }}">
-              <div class="info">
-                <h6>{{ $game -> name }}</h6>
-                <div class="data">
-                  <div class="platforms">
-                    @foreach ($game->platforms as $platform)
-                    <img src="/platforms/{{ $platform->url }}" alt="{{ $platform->name }}">
-                    @endforeach
-                  </div>
-                  <p>${{ number_format((double)$game->price, 2, '.', '') }}</p>
-                </div>
-                <p>{{ Str::limit($game->shortDes, 158, '...') }}</p>
-              </div>
-            </div>
-          </a>
-          @endforeach
-          @endisset
-        </div>
-      </div>
-      <footer>
+    <div class="main">
+      <h1>Вітаємо з покупкою! Ваші ключі:</h1>
+      <ul>
+        @foreach($uuids as $uuid)
+        <li style="color: #2af598;">{{ $uuid }}</li>
+        @endforeach
+      </ul>
+      <img src="/img/logotype.png" alt="Galactic Games Logo">
+    </div>
+  </main>
+    <footer>
         <div class="left">
           <div class="logo">
             <img src="/img/logotype.png" class="logo-img" alt="Galactic games">
@@ -159,8 +139,6 @@
           </div>
         </div>
       </footer>
-    </div>
-  </main>
 </body>
 
 </html>

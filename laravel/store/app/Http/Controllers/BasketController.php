@@ -54,6 +54,8 @@ class BasketController extends Controller {
       $basket->payed = true;
       $basket->save();
       $customer->save();
+      // session()->put('uuids', collect([self::genUuid()])->all());
+      return view('payment', ['uuids' => collect([self::genUuid()])->all()]);
     } else {
       session()->push('error', 'Недостатньо коштів для придбання');
     }
@@ -93,11 +95,15 @@ class BasketController extends Controller {
 
     if ($customer->money >= $total) {
       $customer->money -= $total;
+      $uuidArray = [];
       foreach($baskets as $basket){
         $basket->payed = true;
         $basket->save();
+        array_push($uuidArray, self::genUuid());
       }
       $customer->save();
+      // session()->put('uuids', collect($uuidArray)->all());
+      return view('payment', ['uuids' => collect($uuidArray)->all()]);
     } else {
       session()->push('error', 'Недостатньо коштів для придбання');
     }
@@ -119,4 +125,26 @@ class BasketController extends Controller {
     
     return redirect('/basket');
   }
+
+  protected static function genUuid() {
+    return sprintf( '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
+        // 32 bits for "time_low"
+        mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ),
+
+        // 16 bits for "time_mid"
+        mt_rand( 0, 0xffff ),
+
+        // 16 bits for "time_hi_and_version",
+        // four most significant bits holds version number 4
+        mt_rand( 0, 0x0fff ) | 0x4000,
+
+        // 16 bits, 8 bits for "clk_seq_hi_res",
+        // 8 bits for "clk_seq_low",
+        // two most significant bits holds zero and one for variant DCE1.1
+        mt_rand( 0, 0x3fff ) | 0x8000,
+
+        // 48 bits for "node"
+        mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff )
+    );
+}
 }

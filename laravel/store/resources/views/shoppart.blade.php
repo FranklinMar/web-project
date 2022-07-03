@@ -595,7 +595,7 @@
                   </div>
                   <p>${{ number_format((double)$game->price, 2, '.', '') }}</p>
                 </div>
-                <p>{{ $game->shortDes }}</p>
+                <p>{{ Str::limit($game->shortDes, 150, '...') }}</p>
               </div>
             </div>
           </a>

@@ -129,9 +129,6 @@
           @isset($error)
           <div class="error" style="display:contents;"><a>Помилка: {{ $error }}</a></div>
           @endisset
-          @isset($error)
-          <div class="error" style="display:contents;"><a>Помилка: {{ $error }}</a></div>
-          @endisset
           <!--            <div style="&#45;&#45;src:url(//img/line.png)" class="basket-img layout8"></div>-->
           <img src="/img/line.png" class="basket-img layout8" alt="">
         </div>
