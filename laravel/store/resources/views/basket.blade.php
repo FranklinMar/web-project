@@ -250,17 +250,17 @@ height:100%;width:100%">
                 </div>
               </div>
             </div>
-            <div class="basket-group10 layout button" style="margin: 0; align-self: flex-end;">
-              @if (count($games) != 0)
-              <form action="/basket/buyall" style="display: contents" method="POST">
+            @if (count($games) != 0)
+            <form action="/basket/buyall" style="display: contents" method="POST">
+              <div class="basket-group10 layout button" style="margin: 0; align-self: flex-end;">
                 @csrf
                 <input type="hidden" name="idCustomer" value="{{ $customer->id }}">
                 <button type="submit" style="display: contents">
                   <div class="basket-txt18 layout">Придбати</div>
                 </button>
-              </form>
-              @endif
-            </div>
+              </div>
+            </form>
+            @endif
           </div>
         </div>
         <div class="basket-flex23 layout">
@@ -274,13 +274,13 @@ height:100%;width:100%">
           <form style="display:contents;" action="/basket/deleteall" method="POST">
             @csrf
             <input type="hidden" name="idCustomer" value="{{ $customer->id }}">
-            <button type="submit" style="display:contents;">
-              <div class="basket-flex23-item1 button">
+            <div class="basket-flex23-item1 button">
+              <button type="submit" style="display:contents;">
                 <div class="basket-group12 layout">
                   <div class="basket-txt20 layout">Вилучити все</div>
                 </div>
-              </div>
-            </button>
+              </button>
+            </div>
           </form>
           @endif
         </div>

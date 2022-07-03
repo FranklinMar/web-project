@@ -1670,8 +1670,22 @@
 .basket-group7 {
   display: flex;
   flex-direction: column;
-  background-color: #2af598;
+  background-color: rgba(42, 245, 152, 0.6);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  /* background-color: #2af598; */
+  /* opacity: 0.6; */
   border-radius: 22px 22px 22px 22px;
+  cursor: pointer;
+}
+.basket-group7:hover {
+  transition: 0.2s;
+  background-color: rgba(42, 245, 152, 1);
+  /* opacity: 0.8; */
+  /* background-color: rgba(42, 245, 152, 0.8); */
+}
+.basket-group7:active {
+  /* opacity: 1; */
+  box-shadow: inset 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .basket-group7.layout {
   position: relative;
@@ -1727,8 +1741,17 @@
 .basket-group8 {
   display: flex;
   flex-direction: column;
-  background-color: #c424ff;
+  background-color: rgb(196, 36, 255, 0.6);
+  /* background-color: #c424ff; */
   border-radius: 22px 22px 22px 22px;
+  cursor: pointer;
+}
+.basket-group8:hover {
+  transition: 0.2s;
+  background-color: rgb(196, 36, 255, 1);
+}
+.basket-group8:active {
+  box-shadow: inset 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .basket-group8.layout {
   position: relative;
@@ -1941,8 +1964,21 @@
 .basket-group10 {
   display: flex;
   flex-direction: column;
-  background-color: #2af598;
+  background-color: rgb(42, 245, 152, 0.6);
+  /* background-color: #2af598; */
   border-radius: 22px 22px 22px 22px;
+  cursor: pointer;
+}
+.basket-group10:hover {
+  transition: 0.2s;
+  background-color: rgb(42, 245, 152, 1);
+  cursor: pointer;
+}
+.basket-group10:active {
+  box-shadow: inset 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.basket-group8:active {
+  box-shadow: inset 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .basket-group10.layout {
   position: relative;
@@ -2053,8 +2089,17 @@
 .basket-group11 {
   display: flex;
   flex-direction: column;
-  background-color: #2ebfff;
+  /* background-color: #2ebfff; */
+  background-color: rgb(46, 191, 255, 0.6);
   border-radius: 25px 25px 25px 25px;
+  cursor: pointer;
+}
+.basket-group11:hover {
+  transition: 0.2s;
+  background-color: rgb(46, 191, 255, 1);
+}
+.basket-group11:active {
+  box-shadow: inset 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .basket-group11.layout {
   position: relative;
@@ -2111,8 +2156,17 @@
   display: flex;
   flex-direction: column;
   justify-content: right;
-  background-color: #c424ff;
+  background-color: rgb(196, 36, 255, 0.6);
+  /* background-color: #c424ff; */
   border-radius: 22px 22px 22px 22px;
+  cursor: pointer;
+}
+.basket-group12:hover {
+  transition: 0.2s;
+  background-color: rgb(196, 36, 255, 1);
+}
+.basket-group12:active {
+  box-shadow: inset 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .basket-group12.layout {
   position: relative;
@@ -2352,4 +2406,7 @@
   height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
+}
+button {
+  cursor: pointer;
 }

@@ -131,7 +131,8 @@ class SignInController extends Controller
     $code = rand(1000, 9999);
     // Mail::to()
     // Mail::to($login)->send(new VerifyMail($code));
-    Mail::to('fake@mail.com')->send(new VerifyMail($login, $code));
+    
+    Mail::to(Customers::findByLogin($login)->email)->send(new VerifyMail($login, $code));
     session()->push('code', $code);
     session()->push('attempts', 3);
     // return redirect()->action([self::class, 'insertLogin']);
