@@ -20,7 +20,7 @@ class Customers extends Model {
     return $this->belongsToMany(Games::class, 'basket', 'idCustomer', 'idGame', 'id', 'id');
   }
 
-  public function basket() {
+  public function baskets() {
     return $this->hasMany(Baskets::class, 'idCustomer');
   }
 

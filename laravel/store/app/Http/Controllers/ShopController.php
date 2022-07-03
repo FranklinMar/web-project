@@ -18,6 +18,9 @@ class ShopController extends Controller {
   }
 
   public function addtobasket(Request $request) {
+    if(!session()->has('login') && !session()->has('password')) {
+      return redirect('/login');
+    }
     $idGame = $request->input('idGame');
     $game = Games::find($idGame);
 

@@ -26,7 +26,15 @@ class BasketController extends Controller {
       $total += ((double) $game->price);
     }
 
-    return view('basket', ['games' => $games, 'customer' => $customer, 'total' => $total]);
+    $array = ['games' => $games, 'customer' => $customer, 'total' => $total];
+
+    if(session()->has('error')) {
+      $array['error'] = session()->pull('error', '')[0];
+      // $array['error'] = session()->get('error')[0];
+      // session()->forget('error');
+    }
+
+    return view('basket', $array);
   }
 
   public function buy(Request $request) {
@@ -46,6 +54,8 @@ class BasketController extends Controller {
       $basket->payed = true;
       $basket->save();
       $customer->save();
+    } else {
+      session()->push('error', 'Недостатньо коштів для придбання');
     }
     return redirect('/basket');
   }
@@ -88,6 +98,8 @@ class BasketController extends Controller {
         $basket->save();
       }
       $customer->save();
+    } else {
+      session()->push('error', 'Недостатньо коштів для придбання');
     }
     return redirect('/basket');
   }

@@ -74,11 +74,31 @@ main {
     font-family: 'Space Mono', monospace;
     font-style: normal;
     font-weight: 700;
+    font-size:50px;
+    text-align: center;
+    /* font-size: 60px; */
+    /* line-height: 71px; */
+    color: #FFFFFF;
+}
+
+.main p {
+    font-family: 'Space Mono', monospace;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    /* line-height: 71px; */
+    color: #FFFFFF;
+}
+
+
+.main h1 {
+    font-family: 'Space Mono', monospace;
+    font-style: normal;
+    font-weight: 700;
     font-size: 60px;
     line-height: 71px;
     color: #FFFFFF;
 }
-
 .fields {
     display: flex;
     flex-direction: column;
@@ -188,6 +208,13 @@ input:focus, input:hover{
     text-align: center/*right*/;
     letter-spacing: -0.05em;
     color: #FFFFFF;
+}
+
+.warning {
+  color: #BF1CFF;
+  font-family: 'Space Mono', monospace;
+  font-style: normal;
+  font-weight: 700;
 }
 
 @media (max-width: 1322px) {

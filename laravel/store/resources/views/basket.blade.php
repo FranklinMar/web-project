@@ -126,6 +126,9 @@
         <div class="basket-flex15 layout">
           <div class="basket-txt12 layout">ВАШ КОШИК.</div>
           <div class="basket-txt12 layout">Гаманець: ${{ number_format((double)$customer->money, 2, '.', '') }}</div>
+          @isset($error)
+          <div class="error" style="display:contents;"><a>Помилка: {{ $error }}</a></div>
+          @endisset
           <!--            <div style="&#45;&#45;src:url(//img/line.png)" class="basket-img layout8"></div>-->
           <img src="/img/line.png" class="basket-img layout8" alt="">
         </div>

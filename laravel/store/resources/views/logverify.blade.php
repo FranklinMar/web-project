@@ -53,21 +53,6 @@
         <img src="/img/acc.svg" alt="Log in">
       </a>
       @endif
-      <!-- @if (isset($_COOKIE['login']) && isset($_COOKIE['password']))
-      <a href="/basket" class="link">
-        <div class="text">Корзина</div>
-        <img src="/img/basket.svg" alt="Cart">
-      </a>
-      <a href="/logout" class="link">
-        <div class="text">Вихід</div>
-        <img src="/img/acc.svg" alt="Log in">
-      </a>
-      @else
-      <a href="/login" class="link">
-        <div class="text">Вхід</div>
-        <img src="/img/acc.svg" alt="Log in">
-      </a>
-      @endif -->
       <button class="menu">
         <div>
           <svg></svg>
@@ -84,95 +69,53 @@
   </div>
   <main>
     <div class="main">
-      <!-- @isset( $success ) -->
-      <!-- <h1 style="font-size: 20px">{{$success}}</h1> -->
-      <!-- @else -->
-      @if ( $boolean )
-      <h1>Увійти</h1>
-      <form action="/login/submit" method="POST" style="display: contents">
+      <h1 style="font-size:50px;">Відновлення паролю</h1>
+      <p style="max-width: 630px;">{{ (session()->has('login')) ? 'На електронну пошту вашої email адреси було відправлено лист з кодом підтвердження входу в акаунт. Будь ласка, введіть даний код у поле внизу.' : 
+        'Будь ласка, введіть логін вашого акаунту у поле внизу.' }}</p>
+      <form action="/login/verify{{ (session()->has('login')) ? '/code' : '' }}" method="POST" style="display: contents">
         <div class="fields">
+          @if (session()->has('login'))
           <label>
             @csrf
-            <input id="login" required="required" name="login" type="text" placeholder="Логін">
-            <!-- {{$login = request()->input('login')}}-->
+            <input required="required" name="code" type="text" placeholder="Код підтвердження">
           </label>
-          <!--class="field" -->
+          @else
+          <!-- </form> -->
+          <!-- <form action="/login/verify" method="POST" style="display: contents"> -->
           <label>
             @csrf
-            <input name="password" required="required" type="password" placeholder="Пароль">
-            <!-- <strong class="warning" style="display: none;">Цей логін уже зайнято</strong> -->
+            <input required="required" name="login" type="text" placeholder="Введіть Ваш логін">
           </label>
-          <!--class="field" -->
-
-          @isset($error)
-            @foreach($error as $i)
-            <strong class="warning">{{$i}}</strong>
-            @endforeach
+          @endif
+          <!-- @if (session()->has('login'))
+          <form action="/login/verify/code" method="POST" style="display: contents">
+            <label>
+              @csrf
+              <input required="required" name="code" type="text" placeholder="Код підтвердження">
+            </label>
+          </form>
+          @else
+          <form action="/login/verify" method="POST" style="display: contents">
+            <label>
+              @csrf
+              <input required="required" name="login" type="text" placeholder="Введіть Ваш логін">
+            </label>
+          </form>
+          @endif -->
+          @isset ($error)
+          <strong class="warning">{{ $error }}</strong>
           @endisset
         </div>
         <div class="action">
-          <button class="button" type="submit">
-            Увійти
+          <button class="button" type="submit" onclick="this.form.submit();this.disabled = true;">
+            Підтвердити
           </button>
           <div class="options">
-            <a href="/login/verify"><small>Забули свій пароль?</small></a>
+            <a href="/login"><small>Увійти</small></a>
             <a href="/signup"><small>Зареєструватись</small></a>
           </div>
         </div>
       </form>
-    </div>
-    @else
-    <h1>Реєстрація</h1>
-    <form action="/signup/submit" method="POST" style="display: contents">
-      <div class="fields">
-        <label>
-          @csrf
-          <input id="loginreg" name="loginreg" required="required" type="text" placeholder="Логін"><br>
-          <!-- <strong class="warning" style="display: none;">Цей логін уже зайнято</strong> -->
-        </label>
-        <!--class="field" -->
-        <label>
-          @csrf
-          <input id="email" name="email" required="required" type="email" placeholder="Email">
-          <!-- <strong class="warning" style="display: none;">Цей логін уже зайнято</strong> -->
-        </label>
-        <label>
-          @csrf
-          <input id="pwd1" name="pwd1" required="required" type="password" placeholder="Пароль">
-          <!-- <strong class="warning" style="display: none;">Цей логін уже зайнято</strong> -->
-        </label>
-        <!--class="field" -->
-        <label>
-          @csrf
-          <input id="pwd2" name="pwd2" required="required" type="password" placeholder="Повторіть пароль">
-          <!-- <strong class="warning" style="display: none;">Цей логін уже зайнято</strong> -->
-          <!-- @php
-                  $pwd1 = request()->input('pwd1');
-                  $pwd2 = request()->input('pwd2');
-                  $match = ($pwd1 == $pwd2);
-                @endphp
-                @if (!$match)
-                  <strong class="warning">{{$pwd1.$pwd2.$match}}Паролі не співпадають</strong>
-                @endif -->
-        </label>
-        @isset($error)
-        @foreach($error as $i)
-        <strong class="warning">{{$i}}</strong>
-        @endforeach
-        @endisset
-      </div>
-      <div class="action">
-        <!-- {{ (!$match) ? '' : 'disabled' }} -->
-        <button class="button" type="submit">
-          Зареєструватись
-        </button>
-        <div class="options">
-          <a href="/login"><small>Зареєстровані? Увійти</small></a>
-        </div>
-      </div>
-    </form>
-    @endif
-    <!-- @endisset -->
     </div>
     <footer>
       <div class="left">
