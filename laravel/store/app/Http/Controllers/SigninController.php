@@ -20,10 +20,6 @@ class SignInController extends Controller
     if (session()->has('login') && !session()->has('password')){
       session()->forget('login');
     }
-    // if (session()->has('code')) {
-      // session()->forget('code');
-      // session()->forget('attempts');
-    // }
     if (session()->has('login') && session()->has('password')) {
       return redirect('/basket');
     }
@@ -32,14 +28,6 @@ class SignInController extends Controller
 
   public function signup()
   {
-    // if (session()->has('login') && !session()->has('password')){
-      // session()->forget('login');
-    // }
-    
-    // if (session()->has('code')) {
-      // session()->forget('code');
-      // session()->forget('attempts');
-    // }
     session()->forget('verified');
     session()->forget('code');
     session()->forget('attempts');
@@ -129,23 +117,17 @@ class SignInController extends Controller
     }
     session()->push('login', $login);
     $code = rand(1000, 9999);
-    // Mail::to()
-    // Mail::to($login)->send(new VerifyMail($code));
     
     Mail::to(Customers::findByLogin($login)->email)->send(new VerifyMail($login, $code));
     session()->push('code', $code);
     session()->push('attempts', 3);
-    // return redirect()->action([self::class, 'insertLogin']);
     return view('logverify');
   }
 
   public function codeVerify(Request $request) {
-    // $login = session()->get('login', '')[0];
     $code = $request->input('code');
 
     if ($code != session()->get('code', [0])[0]) {
-      // $attempts = null;
-      // if (session()->has('attempts')) {
         $attempts = session()->pull('attempts', [0])[0];
         if ($attempts == 1) {
           session()->forget('login');
@@ -154,15 +136,9 @@ class SignInController extends Controller
           return redirect('/login');
         }
         $attempts--;
-        // session()->forget('attempts');
         session()->push('attempts', $attempts);
-      // } else {
-      //   session()->push('attempts', 3);
-      // }
       return redirect('/login/verify/code');
     }
-    // return redirect('/login/verify/reset');
-    // return view('resetpass');
     session()->forget('code');
     session()->forget('attempts');
     session()->push('verified', false);
