@@ -122,17 +122,17 @@
             <a href="/game/{{ $minecraft->id }}" class="product">
               <img src="/img/minecraft.png" alt="{{ $minecraft->name }}">
               <p>{{ $minecraft->name }}</p>
-              <p>{{ number_format((double)$minecraft->price, 2, '.', '') }}</p>
+              <p>${{ number_format((double)$minecraft->price, 2, '.', '') }}</p>
             </a>
             <a href="/game/{{ $portal->id }}" class="product">
               <img src="/img/portal2.png" alt="{{ $portal->name }}">
               <p>{{ $portal->name }}</p>
-              <p>{{ number_format((double)$portal->price, 2, '.', '') }}</p>
+              <p>${{ number_format((double)$portal->price, 2, '.', '') }}</p>
             </a>
             <a href="/game/{{ $terraria->id }}" class="product">
               <img src="/img/terraria.png" alt="{{ $terraria->name }}">
               <p>{{ $terraria->name }}</p>
-              <p>{{ number_format((double)$terraria->price, 2, '.', '') }}</p>
+              <p>${{ number_format((double)$terraria->price, 2, '.', '') }}</p>
             </a>
           </div>
           <!-- <div class="products">
