@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Games;
+use App\Models\Customers;
 
 class GeneralController extends Controller {
 
@@ -10,7 +11,11 @@ class GeneralController extends Controller {
     $minecraft = Games::all()->where('name', '=', 'Minecraft')->first();
     $portal = Games::all()->where('name', '=', 'Portal 2')->first();
     $terraria = Games::all()->where('name', '=', 'Terraria')->first();
-    return view('welcome', ["minecraft" => $minecraft, "portal" => $portal, "terraria" => $terraria]);
+    $array = ["minecraft" => $minecraft, "portal" => $portal, "terraria" => $terraria];
+    if (session()->has('login') && session()->has('password')) {
+      $array["customer"] = Customers::findByLogin(session()->get('login')[0]);
+    }
+    return view('welcome', $array);
   }
 
   public function aboutus() {

@@ -113,28 +113,193 @@ nav .link {
 }
 
 nav .right .menu {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
     display: none;
-    cursor: pointer;
+    pointer-events: none;
+    /* cursor: pointer; */
 }
 
-nav .right .menu > div {
+nav .right .menu .button {
+    /* z-index: 1; */
+    -webkit-appearance: none;
     display: flex;
     flex-direction: column;
+    background: transparent;
     align-items: center;
     gap: 4px;
 
     width: 30px;
     height: 26px;
     top: 12px;
+    cursor: pointer;
+    
+    pointer-events: auto;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
-nav .right .menu > div > svg {
+nav .right .menu .button > svg {
     width: 30px;
     height: 6px;
 
     background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.6) 100%);
     border-radius: 5px;
 }
+
+nav .right .menu:focus-within .button {
+  pointer-events: none;
+}
+
+nav .right .menu .bg {
+  position: fixed;
+  /* position: absolute; */
+  top: 53px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 53px);
+  visibility: hidden;
+  opacity: 0;
+  transition: .3s;
+  background: #000;
+}
+
+nav .right .menu:focus-within .bg {
+  visibility: visible;
+  opacity: .6;
+}
+
+nav .right .menu * {
+  visibility: visible;
+  box-sizing: border-box;
+}
+
+nav .right .menu .slide-in {
+  cursor: initial;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  /* gap: 167px; */
+
+  position: fixed;
+  /* position: absolute; */
+  top: 0;
+  right: 0;
+  width: 250px;
+  /* height: 657px; */
+  height: 100%;
+  background: #0A0111;
+  border-left: 1px solid #FFFFFF;
+  
+  pointer-events: auto;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  transform: translateX(100%);
+  transition: transform .3s;
+  will-change: transform;
+  contain: paint;
+}
+
+nav .right .menu .slide-in .nav-content {
+  width: 100%;
+  min-height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 22.5px;
+
+  gap: 18px;
+  /* width: 205px; */
+  /* height: 175px; */
+}
+
+nav .right .menu .slide-in .nav-content .link {
+  display: flex;
+}
+
+nav .right .menu .slide-in .nav-content .flex-row {
+  width: 100%;
+  min-height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /* gap: 59px; */
+  align-self: stretch;
+  /* width: 205px; */
+  /* height: 27px; */
+}
+
+nav .right .menu .slide-in .nav-content .flex-row {
+  font-family: 'Space Mono', monospace;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  /* line-height: 140%; */
+  /* or 22px */
+  text-align: right;
+  letter-spacing: 0.05em;
+  color: #FFFFFF;
+}
+
+nav .right .menu .slide-in .nav-content .nav-column {
+  width: 100%;
+  min-height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+nav .right .menu .slide-in .footer {
+  height: 100%;
+  width:100%;
+  padding: 15px 24px 18px 24px;
+  max-height: 237px;
+  background: rgba(28, 16, 38, 0.5);
+  box-shadow: 0px -4px 4px rgba(255, 255, 255, 0.25);
+}
+
+nav .right .menu .slide-in .footer .header {
+  font-family: 'Space Mono', monospace;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: left;
+  /* line-height: 21px; */
+  /* identical to box height */
+  color: #FFFFFF;
+  min-height: fit-content;
+}
+
+nav .right .menu .slide-in .footer .media {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 10px;
+}
+
+nav .right .menu .slide-in .footer .text {
+  margin-top: 15px;
+  font-family: 'Space Mono', monospace;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  text-align: left;
+  /* line-height: 130%; */
+  /* or 16px */
+  color: #FFFFFF;
+  min-height: fit-content;
+}
+
+nav .right .menu:focus-within .slide-in {
+  transform: none;
+}
+
+
 
 .menu {
     display: flex;
@@ -213,7 +378,7 @@ nav .right .menu > div > svg {
     border-radius: 30px;
 }
 
-.menu-panel .search .button{
+.menu-panel .search .button {
     display: flex;
     flex-direction: row;
     justify-content: center;
