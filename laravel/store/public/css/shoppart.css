@@ -444,6 +444,7 @@ h1 {
     /*flex: 1 1 auto;*/
     /*max-height: 250px;*/
     height: fit-content;
+    max-height: 250px;
     /*max-width: 1180px;*/
 
 
@@ -452,7 +453,7 @@ h1 {
 }
 
 .part2 .game-column .game > img {
-    object-fit: contain;
+    object-fit: cover;
     /*display: block TODO ?????*/
     cursor: pointer;
     filter: drop-shadow(4px 0px 4px rgba(255, 255, 255, 0.25));
@@ -474,7 +475,8 @@ h1 {
     flex-direction: column;
     /*align-items: flex-start;*/
     align-content: stretch;
-    padding: 25px 20px 22px;
+    /* padding: 25px 20px 22px; */
+    padding: 25px 20px 0 22px;
     gap: 12px;
     background: rgba(0,0,0,0);
 
@@ -498,8 +500,11 @@ h1 {
     font-style: normal;
     font-weight: 700;
     font-size: 22px;
+    line-height: 33px;
     /*line-height: 33px;*/
     letter-spacing: -0.06em;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     color: rgba(255, 255, 255, 0.75);
     height: available;
@@ -572,6 +577,7 @@ h1 {
         /* height: 100%; */
         height: 70%;
         object-fit: fill;
+        margin: 0;
     }
 
     .part1 .game .content {
@@ -656,6 +662,7 @@ h1 {
 
     .part2 .game-column .game > img {
         max-width: 50%;
+        /* object-fit: contain; */
     }
 
     .part2 .game-column .game .info > h6 {
@@ -664,6 +671,7 @@ h1 {
 
     .part2 .game-column .game .info > p {
         font-size: 16px;
+        line-height: 23px;
     }
 
     .part2 .game-column .game .info .data > p {
@@ -677,6 +685,11 @@ h1 {
 }
 
 @media (max-width: 700px) {
+
+    .part2 .game-column .game > img {
+        object-fit: contain;
+    }
+
     .part2 .flex-column .game-column {
         margin-bottom: 25px;
     }

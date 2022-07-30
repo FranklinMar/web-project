@@ -45,6 +45,7 @@
       <a href="/basket" class="link">
         <div class="text">Корзина</div>
         <img src="/img/basket.svg" alt="Cart">
+        <p class="cash">${{number_format((double)$customer->money, 2, '.', '')}}</p>
       </a>
       <!-- <form action="/logout" style="display:contents;" method="POST"> -->
       <!-- <button type="submit"style="cursor: pointer; display: contents;"> -->

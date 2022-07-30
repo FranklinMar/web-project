@@ -144,9 +144,26 @@ nav .right .menu .button > svg {
     width: 30px;
     height: 6px;
 
-    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.6) 100%);
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.5) 100%);
     border-radius: 5px;
 }
+
+nav .right .menu .button:hover > svg {
+  /* transition: 0.4s; */
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%);
+  -webkit-transition: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%) 3000ms linear;
+  -moz-transition: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%) 3000ms linear;
+  -ms-transition: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%) 3000ms linear;
+  -o-transition: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%) 3000ms linear;
+  transition: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%) 3000ms linear;
+}
+
+/* nav .right .menu .button:active > svg {
+  transition: 0.2s;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.4) 100%);
+  outline: #FFFFFF solid 3px;
+} */
+
 
 nav .right .menu:focus-within .button {
   pointer-events: none;
@@ -231,7 +248,7 @@ nav .right .menu .slide-in .nav-content .flex-row {
   /* height: 27px; */
 }
 
-nav .right .menu .slide-in .nav-content .flex-row {
+nav .cash {
   font-family: 'Space Mono', monospace;
   font-style: normal;
   font-weight: 400;
@@ -523,9 +540,10 @@ footer .right .media img {
     height: auto;
 }
 
-@media (max-width: 700px){
-    .nav {
-        position: sticky;
+/* @media (max-width: 700px){ */
+@media (max-width: 880px){
+    nav {
+        position: fixed;
     }
 
     nav .link {
