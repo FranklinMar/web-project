@@ -278,7 +278,7 @@ height:100%;width:100%">
                     </div>
                   </div>
                   <div class="basket-flex18-spacer"></div>
-                  <div class="basket-txt14 layout">${{ number_format((double)$game->price, 2, '.', '') }}</div>
+                  <div class="basket-txt14 layout">${{ number_format((double)($game->price - ($game->price * $game->discount/100)), 2, '.', '') }}</div>
                 </div>
                 <div class="basket-flex20 layout" style="margin: 7px 0 0 0;justify-content: right; width: auto;">
                   <form style="display:contents;" action="/basket/buy" method="POST">

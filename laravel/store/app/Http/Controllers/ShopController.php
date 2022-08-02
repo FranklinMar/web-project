@@ -11,6 +11,11 @@ class ShopController extends Controller {
 
   public function shop() {
     $games = Games::all()->slice(0, 14);
+    return view('shop', ['displayGames' => $games->slice(0, 4), 'games' => $games->slice(4)]);
+  }
+
+  public function shoppart() {
+    $games = Games::all()->slice(0, 14);
     return view('shoppart', ['displayGames' => $games->slice(0, 4), 'games' => $games->slice(4)]);
     // return view('shoppart', ['games' => Games::all()->slice(0, 10)]);
   }

@@ -238,7 +238,8 @@
         </label>
       </div>
     </div>
-    <h1>Особливі пропозиції</h1>
+    <h1></h1>
+
     <div class="part1">
       <!-- <div id="display" class="display" style="--src:url(../img/poster.png)" data-gameid=""> -->
       <div id="display" class="display" style="--src:url(/games/{{ $displayGames[0]->url }})">
@@ -396,6 +397,126 @@
             </div>
           </label>
         </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="header">
+        <div class="head">
+          <img src="/img/discount.svg" alt="Особливі пропозиції">
+          <p>Особливі пропозиції</p>
+        </div>
+        <a href="/shop/list">
+          <div class="button-listall">
+            Переглянути все
+          </div>
+        </a>
+      </div>
+      <div class="games">
+        <a href="" class="game">
+          <img src="/games/sot.jpg" alt="">
+          <div class="content">
+            <div class="section">
+              <div class="discount">-50%</div>
+              <p>Garry's Mod</p>
+            </div>
+            <div class="section">
+              <small>$20.00</small>
+              <p>$10.00</p>
+            </div>
+          </div>
+        </a>
+        <a href="" class="game">
+          <img src="/games/sot.jpg" alt="">
+          <div class="content">
+            <div class="section">
+              <div class="discount">-50%</div>
+              <p>Garry's Mod</p>
+            </div>
+            <div class="section">
+              <small>$20.00</small>
+              <p>$10.00</p>
+            </div>
+          </div>
+        </a>
+        <a href="" class="game">
+          <img src="/games/sot.jpg" alt="">
+          <div class="content">
+            <div class="section">
+              <div class="discount">-50%</div>
+              <p>Garry's Mod</p>
+            </div>
+            <div class="section">
+              <small>$20.00</small>
+              <p>$10.00</p>
+            </div>
+          </div>
+        </a>
+        <a href="" class="game">
+          <img src="/games/sot.jpg" alt="">
+          <div class="content">
+            <div class="section">
+              <div class="discount">-50%</div>
+              <p>Garry's Mod</p>
+            </div>
+            <div class="section">
+              <small>$20.00</small>
+              <p>$10.00</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="category news">
+      <div class="header">
+        <div class="head">
+          <img src="/img/new.svg" alt="Новинки">
+          <p>Новинки</p>
+        </div>
+        <!-- <a href="/shop/list">
+          <div class="button-listall">
+            Переглянути все
+          </div>
+        </a> -->
+      </div>
+      <div class="games">
+        <a href="" class="game">
+          <img src="/games/swlegoskysaga.jpg" alt="">
+          <div class="content">
+            <div class="section">
+              <p>LEGO Star Wars. The skywalker saga</p>
+            </div>
+            <div class="section">
+              <div class="new">New</div>
+              <p>$10.00</p>
+            </div>
+          </div>
+        </a>
+        <a href="" class="game">
+          <img src="/games/swlegoskysaga.jpg" alt="">
+          <div class="content">
+            <div class="section">
+              <p>LEGO Star Wars. The skywalker saga</p>
+            </div>
+            <div class="section">
+              <div class="new">New</div>
+              <p>$10.00</p>
+            </div>
+          </div>
+        </a>
+        <a href="" class="game">
+          <img src="/games/swlegoskysaga.jpg" alt="">
+          <div class="content">
+            <div class="section">
+              <p>LEGO Star Wars. The skywalker saga</p>
+            </div>
+            <div class="section">
+              <div class="new">New</div>
+              <p>$10.00</p>
+            </div>
+          </div>
+        </a>
       </div>
     </div>
 

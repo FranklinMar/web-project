@@ -9,13 +9,13 @@
   <link rel="preconnect" href="http://fonts.gstatic.com" crossorigin>
   <link href="http://fonts.googleapis.com/css2?family=Share+Tech&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <title>Особливі пропозиції</title>
-  <link rel="stylesheet" type="" href="/css/shoppart.css">
+  <link rel="stylesheet" type="" href="/css/shop.css">
   <link rel="stylesheet" type="" href="/css/bluebackground.css">
   <link rel="stylesheet" type="" href="/css/all.css">
 </head>
 
 <body>
-<nav>
+  <nav>
     <span class="left">
       <a href="/welcome" class="logo">
         <img src="/img/logotype.png" class="logo-img" alt="Logo">
@@ -202,7 +202,7 @@
                     <img src="/platforms/{{ $platform->url }}" alt="{{ $platform->name }}">
                     @endforeach
                   </div>
-                  <p>${{ number_format((double)$game->price, 2, '.', '') }}</p>
+                  <p>${{ number_format((double)($game->price - ($game->price * $game->discount/100)), 2, '.', '') }}</p>
                 </div>
                 <p>{{ Str::limit($game->shortDes, 158, '...') }}</p>
               </div>

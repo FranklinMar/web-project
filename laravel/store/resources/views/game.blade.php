@@ -254,7 +254,7 @@
                   <div class="game-page-section2__block8 layout">
                     <div class="game-page-section2__block8-item">
                       <div class="game-page-section2__block9 layout">
-                        <h4 class="game-page-section2__highlights1 layout">${{ number_format((double)$game->price, 2, '.', '') }}</h4>
+                        <h4 class="game-page-section2__highlights1 layout">${{ number_format((double)($game->price - ($game->price * $game->discount/100)), 2, '.', '') }}</h4>
                       </div>
                     </div>
                     <div class="game-page-section2__block8-spacer" style="flex:none"></div>

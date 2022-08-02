@@ -34,7 +34,7 @@ Route::get('/shop', [ShopController::class, 'shop']);
 Route::post('/shop', [ShopController::class, 'addtobasket']);
 
 Route::get('/store', [ShopController::class, 'shop']);
-Route::get('/shoppart', [ShopController::class, 'shop']);
+Route::get('/shoppart', [ShopController::class, 'shoppart']);
 Route::get('/shop/list', [ShopController::class, 'list']);
 
 Route::get('/game/{id}', [ShopController::class, 'game']);

@@ -23,7 +23,7 @@ class BasketController extends Controller {
 
     $total = 0.0;
     foreach($games as $game) {
-      $total += ((double) $game->price);
+      $total += ((double)($game->price - ($game->price * $game->discount/100)));
     }
 
     $array = ['games' => $games, 'customer' => $customer, 'total' => $total];
@@ -46,8 +46,8 @@ class BasketController extends Controller {
     }
 
 
-    if ($customer->money >= $game->price) {
-      $customer->money -= $game->price;
+    if ($customer->money >= ($game->price - ($game->price * $game->discount/100))) {
+      $customer->money -= ($game->price - ($game->price * $game->discount/100));
       $basket = Baskets::all()->where('idCustomer', $customer->id)->where('idGame', $game->id)->first();
       $basket->payed = true;
       $basket->save();
@@ -87,7 +87,7 @@ class BasketController extends Controller {
     $baskets = Baskets::all()->where('idCustomer', $customer->id)->where('payed', false);
     $total = 0.0;
     foreach($baskets as $basket) {
-      $total += ((double) $basket->game->price);
+      $total += ((double)($basket->game->price - ($basket->game->price * $basket->game->discount/100)));
     }
 
     if ($customer->money >= $total) {
