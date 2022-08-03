@@ -67,6 +67,33 @@
     };
 
   </script>
+  
+  <script>
+    function switchHandler() {
+      console.log("worked");
+      let input = document.querySelector('input[name="switch"]:checked');
+      // let dis = "";
+      let topStyle = "";
+      let newStyle = "";
+      let topgame = document.getElementsByClassName("topgame");
+      let newgame = document.getElementsByClassName("newgame");
+      if (input.id !== "switch1") {
+        // console.log("first");
+        newStyle = "none";
+        topStyle = "initial";
+      } else /*if (input.id = "switch2") */{
+        // console.log("second");
+        newStyle = "initial";
+        topStyle = "none";
+      }
+      for (let i of newgame) {
+        i.style.display = newStyle;
+      }
+      for (let i of topgame) {
+        i.style.display = topStyle;
+      }
+    }
+  </script>
 
 </head>
 
@@ -413,7 +440,30 @@
         </a>
       </div>
       <div class="games">
-        <a href="" class="game">
+        @isset($discounts)
+        @foreach($discounts->slice(0, 4) as $game)
+        <a href="/game/{{ $game->id }}" class="game">
+          <img src="/games/{{ $game->url }}" alt="">
+          <div class="content">
+            <div class="section">
+              <div class="discount">-{{ $game->discount }}%</div>
+              <?php 
+              $style = '';
+              if (strlen($game->name) > 17) {
+                $style = 'style="font-size: 16px;"';
+              }
+              echo "<p $style>{$game->name}</p>";
+              ?>
+            </div>
+            <div class="section">
+              <small>${{ number_format((double)$game->price, 2, '.', '') }}</small>
+              <p>${{ number_format((double)($game->price - ($game->price * $game->discount/100)), 2, '.', '') }}</p>
+            </div>
+          </div>
+        </a>
+        @endforeach
+        @endisset
+        <!-- <a href="" class="game">
           <img src="/games/sot.jpg" alt="">
           <div class="content">
             <div class="section">
@@ -464,7 +514,7 @@
               <p>$10.00</p>
             </div>
           </div>
-        </a>
+        </a> -->
       </div>
     </div>
 
@@ -481,7 +531,24 @@
         </a> -->
       </div>
       <div class="games">
-        <a href="" class="game">
+        @isset($news)
+        @foreach($news->slice(0, 3) as $game)
+        <a href="/game/{{ $game->id }}" class="game">
+          <img src="/games/{{ $game->url }}" alt="">
+          <div class="content">
+            <div class="section">
+              <!-- <p>LEGO Star Wars. The skywalker saga</p> -->
+              <p>{{ $game->name }}
+            </div>
+            <div class="section">
+              <div class="new">New</div>
+              <p>${{ number_format((double)($game->price - ($game->price * $game->discount/100)), 2, '.', '') }}</p>
+            </div>
+          </div>
+        </a>
+        @endforeach
+        @endisset
+        <!-- <a href="" class="game">
           <img src="/games/swlegoskysaga.jpg" alt="">
           <div class="content">
             <div class="section">
@@ -504,19 +571,7 @@
               <p>$10.00</p>
             </div>
           </div>
-        </a>
-        <a href="" class="game">
-          <img src="/games/swlegoskysaga.jpg" alt="">
-          <div class="content">
-            <div class="section">
-              <p>LEGO Star Wars. The skywalker saga</p>
-            </div>
-            <div class="section">
-              <div class="new">New</div>
-              <p>$10.00</p>
-            </div>
-          </div>
-        </a>
+        </a> -->
       </div>
     </div>
 
@@ -524,13 +579,13 @@
       <div class="row">
         <div class="buttons">
           <input id="switch1" type="radio" name="switch" checked="checked">
-          <label for="switch1" class="button">
+          <label for="switch1" class="button" onclick="switchHandler();">
             <img src="/img/top.svg" alt="Хіти рейтингу">
             <p>Хіти Рейтингу</p>
           </label>
 
           <input id="switch2" type="radio" name="switch">
-          <label for="switch2" class="button">
+          <label for="switch2" class="button" onclick="switchHandler();">
             <img src="/img/new.svg" alt="Новинки">
             <p>Новинки</p>
           </label>
@@ -547,7 +602,30 @@
         <div class="game-column">
           @isset ($games)
           @foreach ($games as $game)
-          <a href="/game/{{ $game->id }}">
+          <a href="/game/{{ $game->id }}" class="topgame">
+            <div class="game">
+              <img src="/games/{{ $game->url }}" alt="{{ $game -> name }}">
+              <div class="info">
+                <h6>{{ $game -> name }}</h6>
+                <div class="data">
+                  <div class="platforms">
+                    @foreach ($game->platforms as $platform)
+                    <img src="/platforms/{{ $platform->url }}" alt="{{ $platform->name }}">
+                    @endforeach
+                  </div>
+                  <p>${{ number_format((double)($game->price - ($game->price * $game->discount/100)), 2, '.', '') }}</p>
+                </div>
+                <p>{{ Str::limit($game->shortDes, 150, '...') }}</p>
+              </div>
+            </div>
+          </a>
+          @endforeach
+          @endisset
+
+
+          @isset ($news)
+          @foreach ($news as $game)
+          <a href="/game/{{ $game->id }}" class="newgame">
             <div class="game">
               <img src="/games/{{ $game->url }}" alt="{{ $game -> name }}">
               <div class="info">

@@ -5,13 +5,17 @@ namespace App\Http\Controllers;
 use App\Models\Baskets;
 use App\Models\Customers;
 use App\Models\Games;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class ShopController extends Controller {
 
   public function shop() {
     $games = Games::all()->slice(0, 14);
-    return view('shop', ['displayGames' => $games->slice(0, 4), 'games' => $games->slice(4)]);
+    $discounts = Category::find(2)->games;
+    $news = Category::find(1)->games;
+    return view('shop', ['displayGames' => $games->slice(0, 4), 'games' => $games/*->slice(4)*/,
+  'discounts' => $discounts/*->slice(0, 4)*/, 'news' => $news/*->slice(0, 3)*/]);
   }
 
   public function shoppart() {

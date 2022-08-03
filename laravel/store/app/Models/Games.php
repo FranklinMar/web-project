@@ -21,7 +21,11 @@ class Games extends Model {
   }
 
   public function customers() {
-    return $this->belongsToMany(Customers::class, 'basket', 'idCustomer', 'idGame', 'id', 'id');
+    return $this->belongsToMany(Customers::class, 'basket', 'idGame', 'idCustomer', 'id', 'id');
+  }
+
+  public function categories() {
+    return $this->belongsToMany(Category::class, 'category', 'idGame', 'idCategory', 'id', 'id');
   }
 
   public function baskets() {

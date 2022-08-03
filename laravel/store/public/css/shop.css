@@ -308,6 +308,7 @@ h1 {
   flex-direction: row;
   justify-content: space-between;
   align-content: center;
+  align-items: flex-end;
 }
 .category .header .button-listall {
   margin: 0;
@@ -341,17 +342,24 @@ h1 {
 
 .category .games {
   width: 100%;
-  max-height: 300px;
+  /* max-height: 300px; */
+  height: 300px;
   display: flex;
   flex-direction: row;
   height: 100%;
   justify-content: space-between;
   gap: 10px;
+  align-content: stretch;
+  align-items: stretch;
 }
 
 .category .games .game {
+  align-self: stretch;
   max-width: 290px;
-  height: 100%;
+  width: 100%;
+  height: 300px;
+  /* height: 100%; */
+  height: available;
   display: flex;
   flex-direction: column;
   background: rgba(107, 64, 255, 0.2);
@@ -371,6 +379,11 @@ h1 {
 .category .games .game img {
   width: 100%;
   height: calc(200%/3);
+  object-fit: fill;
+  /* object-fit: cover; */
+  /* object-fit: contain; */
+  /* object-fit: scale-down; */
+  object-position: top center;
 }
 
 .category .games .game .content {
@@ -466,10 +479,16 @@ h1 {
 } */
 
 .news .games {
-  max-height: 382px;
+  /* height: 382px; */
+  height: 382px;
+  align-items: stretch;
+
 }
 
 .news .games .game {
+  max-height: inherit;
+  /* height: available; */
+  height: 100%;
   max-width: 400px;
 }
 
@@ -792,6 +811,13 @@ h1 {
     height: 50px;
 }
 
+@media (max-width: 1200px) {
+  
+  .category .games .game img {
+    object-fit: scale-down;
+  }
+}
+
 @media (max-width: 900px) {
     .menu-panel {
         flex-direction: column;
@@ -915,6 +941,10 @@ h1 {
     .category .games .game {
       flex-shrink: 0;
     }
+    
+    .category .games .game img {
+      object-fit: fill;
+    }
 
     .news .games {
       max-height: 315px;
@@ -926,6 +956,7 @@ h1 {
 
     .news .games .game img {
       height: calc(22600%/315);
+      max-height: 210px;
     }
 
     .news .games .game .content {
@@ -1016,4 +1047,12 @@ h1 {
         margin-bottom: 25px;
     }
 
+}
+
+.newgame {
+  display: none;
+}
+
+.topgame {
+  display: initial;
 }
