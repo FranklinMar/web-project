@@ -247,7 +247,7 @@ input:focus, input:hover{
         gap: 24px;
 
         position: absolute;
-        width: 360px;
+        /* width: 360px; */
         height: 395px;
         margin-left: auto;
         margin-right: auto;
