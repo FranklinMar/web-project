@@ -150,9 +150,7 @@
       </button>
     </span>
   </nav>
-
-  <div class="game-page game-page-group layout">
-    <main class="game-page-main layout">
+  <main>
     <div class="menu" style="margin-top: 50px;">
       <div class="menu-panel">
         <div class="flex-row">
@@ -192,117 +190,48 @@
         </label>
       </div>
     </div>
-      <!-- ======= section2 ======= -->
-      @isset($game)
-      <section class="game-page-section2__section2 layout" style="margin-top: 50px; margin-bottom: 200px;">
-        <div class="game-page-section2__flex layout">
-          <h1 class="game-page-section2__hero-title layout">{{ $game->name }}</h1>
-          <div class="game-page-section2__block14 layout">
-            <div class="game-page-section2__block14-item">
-              <div class="game-page-section2__block18 layout">
-                <!--                        <div style="&#45;&#45;src:url(/assets/2250af3834f531e526d680bd1dcf332a.png)"-->
-                <!--                                class="game-page-section2__image3 layout"></div>-->
-                <img src="/games/{{ $game->url }}" alt="Poster" style="max-width: 815.86px/*available*/;
-                    max-height: 460.51px/*available*/;width:100%;height:100%; object-fit: contain;
-                    filter: drop-shadow(-5px -5px 4px rgba(0, 0, 0, 0.25)) drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.25));" class="game-page-section2__image3 layout">
-              </div>
-            </div>
-            <div class="game-page-section2__block14-spacer"></div>
-            <div class="game-page-section2__block14-item1">
-              <div class="game-page-section2__block15 layout">
-                <h2 class="game-page-section2__medium-title4 layout">{{ $game->shortDes }}</h2>
-                <div class="game-page-section2__block16 layout">
-                  <div class="game-page-section2__block17 layout">
-                    <h4 class="game-page-section2__highlights3 layout">RELEASE DATA:</h4>
-                    <div class="game-page-section2__block17-spacer"></div>
-                    <h4 class="game-page-section2__highlights4 layout">{{ $game->release }}</h4>
-                  </div>
-                  <div class="game-page-section2__block17 layout">
-                    <h4 class="game-page-section2__highlights31 layout">DEVELOPER:</h4>
-                    <div class="game-page-section2__block17-spacer1"></div>
-                    <h4 class="game-page-section2__highlights4 layout1">{{ $game->dev }}</h4>
-                  </div>
-                  <div class="game-page-section2__block17 layout">
-                    <h4 class="game-page-section2__highlights32 layout">PUBLISHER:</h4>
-                    <div class="game-page-section2__block17-spacer2"></div>
-                    <h4 class="game-page-section2__highlights4 layout2">{{ $game->pub }}</h4>
-                  </div>
-                </div>
-              </div>
-            </div>
+    <div class="main">
+      <h1>{{ $game->name }}</h1>
+      <div class="preview">
+        <div class="thumbnail">
+          <img src="/games/{{ $game->url }}" alt="Preview">
+        </div>
+        <div class="info">
+          <header>{{ $game->shortDes }}</header>
+          <div class="details">
+            <p>RELEASE DATA:    <span>{{ $game->release }}</span></p>
+            <p>DEVELOPER:   <span>{{ $game->dev }}</span></p>
+            <p>PUBLISHER:   <span>{{ $game->pub }}</span></p>
           </div>
-          <div class="game-page-section2__block6 layout">
-            <div style="--src:url(/img/gradient.png)" class="game-page-section2__block7 layout">
-              <div class="game-page-section2__group layout" style="flex-direction: row;">
-                <div class="game-page-section2__flex1 layout">
-                  <div class="game-page-section2__flex1-item" style="flex: none;">
-                    <h1 class="game-page-section2__big-title layout">Buy {{ $game->name }}</h1>
-                  </div>
-                  <!-- <div class="game-page-section2__flex1-spacer"></div> -->
-                  <!-- <div class="game-page-section2__flex1-spacer1"></div> -->
-                </div>
-                <div class="game-page-section2__flex2 layout" style="align-items: flex-end;">
-                  <!--                            <div-->
-                  <!--                                    style="&#45;&#45;src:url(/img/steam.svg)"-->
-                  <!--                                    class="game-page-section2__icon1 layout"-->
-                  <!--                            ></div>-->
-                  <div style="display: flex; flex-direction: row; align-content: flex-end; justify-content: right; width:fit-content;">
-                    @foreach ($game->platforms as $platform)
-                    <img src="/img/{{ $platform->url }}" alt="{{ $platform->name }}" class=" layout" style="max-width: 30px; object-fit: contain;">
-                    @endforeach
-                  </div>
-                  <div class="game-page-section2__block8 layout">
-                    <div class="game-page-section2__block8-item">
-                      <div class="game-page-section2__block9 layout">
-                        <h4 class="game-page-section2__highlights1 layout">${{ number_format((double)($game->price - ($game->price * $game->discount/100)), 2, '.', '') }}</h4>
-                      </div>
-                    </div>
-                    <div class="game-page-section2__block8-spacer" style="flex:none"></div>
-                    <div class="game-page-section2__block8-item1" style="width:fit-content; align-items:center; align-content:center; justify-content: center;">
-                      <!-- <form id="form" style="display: contents;" action="/game/add/{{ $game->id }}" method="POST"> -->
-                      <form style="display: contents;" action="/game/add" method="POST">
-                        <!-- <button style="display: conтtents;" type="submit"> -->
-                        <!-- <div -->
-                        <!-- style="--src:url(/img/addtocart.png)" -->
-                        <!-- class="game-page-section2__block10 layout"> -->
-                        @csrf
-                        <input type="hidden" name="idGame" value="{{ $game->id }}">
-                        <button style="--src:url(/img/addtocart.png)" class="game-page-section2__block10 layout" type="submit">
-                          <h2 class="game-page-section2__medium-title2 layout" style="width: 100%; height:100%;">Add to Cart</h2>
-                          <!-- </div> -->
-                        </button>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        </div>
+      </div>
+      <div class="body">
+        <div class="buy-section">
+          <h2>Buy {{ $game->name }}</h2>
+          <div class="column">
+            <div class="platforms">
+              @foreach ($game->platforms as $platform)
+              <img src="/platforms/{{ $platform->url }}" alt="{{ $platform->name }}" class=" layout" style="max-width: 30px; object-fit: contain;">
+              @endforeach
             </div>
-            <div class="game-page-section2__block11 layout">
-              <div class="game-page-section2__block12 layout">
-                <div style="--src:url(/img/line.png); right:0; width:100%; height:available" class="game-page-section2__decorator layout"></div>
-                <h2 class="game-page-section2__medium-title3 layout">ABOUT THIS GAME</h2>
-              </div>
-              <div class="game-page-section2__block13 layout">
-                <h4 class="game-page-section2__highlights2-box layout">
-                  <pre class="game-page-section2__highlights2">
-
-                  {{ $game->description }}
-
-                  </pre>
-                </h4>
-              </div>
+            <div class="cost-widget">
+              <h4>${{ number_format((double)($game->price - ($game->price * $game->discount/100)), 2, '.', '') }}</h4>
+              <form style="display: contents;" action="/game/add" method="POST">
+                @csrf
+                <input type="hidden" name="idGame" value="{{ $game->id }}">
+                <button type="submit">
+                  Add to Cart
+                </button>
+              </form>
             </div>
           </div>
         </div>
-      </section>
-      @else
-      <div class="error">
-        <h1> Error 404.</h1><br>
-        <p>Sorry but there is no game here you are looking for.</p>
-        <a href="/shop"> Return to shop </a>
+        <h3>ABOUT THIS GAME</h3>
+        <div class="line"></div>
+        <p>{{ $game->description }}</p>
       </div>
-      @endisset
-      <footer>
+    </div>
+    <footer>
         <div class="left">
           <div class="logo">
             <img src="/img/logotype.png" class="logo-img" alt="Galactic games">
@@ -324,11 +253,7 @@
           </div>
         </div>
       </footer>
-    </main>
-  </div>
-  <script type="text/javascript">
-    AOS.init();
-  </script>
+  </main>
 </body>
 
 </html>
